@@ -1,0 +1,33 @@
+{
+  "name": "deanrobertcook.github.io",
+  "version": "1.0.0",
+  "description": "My own website",
+  "main": "compile.js",
+  "scripts": {
+    "dev": "nodemon compile.js",
+    "compile": "node compile.js",
+    "clean": "rm www/*"
+  },
+  "nodemonConfig": {
+    "ext": "pug,js,html,css,md",
+    "watch": ["compile.js", "src", "content"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deanrobertcook/deanrobertcook.github.io.git"
+  },
+  "author": "Dean Cook",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deanrobertcook/deanrobertcook.github.io/issues"
+  },
+  "homepage": "https://github.com/deanrobertcook/deanrobertcook.github.io#readme",
+  "dependencies": {
+    "jstransformer-markdown-it": "^2.1.0",
+    "markdown-it": "^12.2.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

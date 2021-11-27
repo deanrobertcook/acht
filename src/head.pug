@@ -1,0 +1,14 @@
+- var blogTitle = "Acht"
+
+doctype html
+html(lang='en')
+  head
+    title #{blogTitle}#{title ? ': ' + title : ''}
+    link(rel='stylesheet', href='normalize.css', type='text/css')
+    link(rel='stylesheet', href='style.css', type='text/css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+  body
+    block body
+
+       
+

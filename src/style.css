@@ -1,0 +1,31 @@
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  color: #2A373C;
+  background-color: #F8F2F6;
+}
+
+a:hover {
+  color: #DD6E42;
+}
+
+a {
+  color: #4F6D7A;
+}
+
+.content {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+@media (max-width: 760px) {
+  .content {
+    max-width: 80%;
+  } 
+}
+
+@media (max-width: 600px) {
+  .content {
+    max-width: 95%;
+  } 
+}

@@ -1,0 +1,11 @@
+extends head.pug
+
+block body
+  div.content
+    h1 #{blogTitle}
+    p Navigating the evergrowing complexity in our modern world.
+    h2 Posts:
+    ul
+      each post in posts
+        li
+          a(href=post.filename) #{post.title}
