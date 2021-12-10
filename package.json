@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "nodemon compile.js",
     "compile": "node compile.js",
-    "clean": "rm www/*"
+    "clean": "rm www/*",
+    "info": "s3cmd ws-info s3://www.achtfast.me",
+    "deploy": "s3cmd --no-mime-magic --acl-public --delete-removed --delete-after sync www/ s3://www.achtfast.me"
   },
   "nodemonConfig": {
     "ext": "pug,js,html,css,md",
