@@ -1,11 +1,18 @@
 extends head.pug
 
 block body
-  div.content
-    h1 #{blogTitle}
-    p This is the object storage version
-    h2 Posts:
-    ul
-      each post in posts
-        li
-          a(href=post.filename) #{post.title}
+  div.section
+    div.container.header
+      div.logo 
+        h1 #{blogTitle}#[span Some subtitle?]
+      nav.nav-links
+        a(href="#test") Hire me!
+        a(href="#test2") Posts
+  div.section.about
+    div.container
+      h2 About
+      include:markdown-it(linkify langPrefix='highlight-') about.md    
+
+  div.section.hire-me
+    dive.container
+      h2 Hire me!
