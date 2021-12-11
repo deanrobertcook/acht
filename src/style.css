@@ -38,6 +38,14 @@ a {
   margin: 0 auto;
 }
 
+@media (max-width: 760px) {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+
 .header {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -55,7 +63,7 @@ a {
   flex-direction: row;
 }
 
-@media (max-width:460px) {
+@media (max-width: 460px) {
   .header {
     display: flex;
     flex-direction: column;
