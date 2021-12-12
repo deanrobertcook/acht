@@ -4,21 +4,21 @@ block body
   div.section
     div.container.header
       div.logo 
-        h1 #{blogTitle}#[span Some subtitle?]
+        h1 #{blogTitle}#[span Under heavy construction]
       nav.nav-links
-        a(href="#test") Hire me!
-        a(href="#test2") Posts
+        a(href="#hire-me") Hire me!
+        a(href="#posts") Posts
   
-  div.section
+  div#about.section
     div.container
       h2 About
       include:markdown-it(linkify langPrefix='highlight-') about.md    
 
-  div.section
+  div#hire-me.section
     div.container
-      h2 Hire me!
+      h2 Hire me! #[span (coming soon)]
 
-  div.section
+  div#posts.section
     div.container
       h2 Posts:
       ul.post-list

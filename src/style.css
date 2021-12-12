@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 *, *:before, *:after {
@@ -23,6 +24,11 @@ h1 {
 h1 span {
   display: block;
   font-size: 0.3em;
+}
+
+h2 span {
+  display: block;
+  font-size: 0.5em;
 }
 
 a:hover {
