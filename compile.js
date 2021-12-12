@@ -2,6 +2,11 @@ const pug = require('pug');
 const fs = require('fs');
 var md = require('markdown-it')();
 
+// clear www directory
+fs.readdirSync('www').forEach(file => {
+  fs.unlinkSync(`www/${file}`);
+});
+
 var posts = [];
 fs.readdirSync('content').reverse().forEach(file => {
   let date = file.match('[0-9]{4}\-[0-9]{2}\-[0-9]{2}')[0];
