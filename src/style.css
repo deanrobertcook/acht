@@ -38,13 +38,18 @@ a {
   margin: 0 auto;
 }
 
+.container > h2 {
+  /* max-width: max-content;
+  margin: 0 auto; */
+  text-align: center;
+}
+
 @media (max-width: 760px) {
   .container {
     max-width: 90%;
     margin: 0 auto;
   }
 }
-
 
 .header {
   display: grid;
@@ -91,4 +96,9 @@ a {
 
 .section:nth-of-type(2) {
   min-height: calc(100vh - 5rem);
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
 }

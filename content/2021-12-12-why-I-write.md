@@ -1,4 +1,3 @@
-## Why I'm writing
 Why start another blog? Why try and contribute to the millions or (by now, even billions) of other voices typing away on the Internet?
 
 ### My old, global view

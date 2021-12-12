@@ -17,3 +17,11 @@ block body
   div.section
     div.container
       h2 Hire me!
+
+  div.section
+    div.container
+      h2 Posts:
+      ul.post-list
+        each post in posts.slice(0, 10)
+          li
+            a(href=post.filename) #{post.title}
