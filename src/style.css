@@ -21,7 +21,7 @@ h1 {
   padding: 0.5em 0;
 }
 
-h1 span {
+h1 > span {
   display: block;
   font-size: 0.3em;
 }
@@ -74,19 +74,6 @@ a {
   flex-direction: row;
 }
 
-@media (max-width: 460px) {
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 .nav-links a {
   padding: 1em;
   width: max-content;
@@ -107,4 +94,18 @@ a {
 .post-list {
   list-style: none;
   padding: 0;
+}
+
+.container.post > h1 {
+  margin-top: 0;
+  padding: 0;
+}
+
+.container.post > h1 > span {
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+.container.post {
+  padding: 1.5em 0;
 }
