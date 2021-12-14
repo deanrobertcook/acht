@@ -9,11 +9,15 @@
     "clean": "rm www/*",
     "info": "s3cmd ws-info s3://www.achtfast.me",
     "deploy": "s3cmd --no-mime-magic --acl-public --delete-removed --delete-after sync www/ s3://www.achtfast.me",
-    "content": "git branch | grep content/ | xargs git merge" 
+    "content": "git branch | grep content/ | xargs git merge"
   },
   "nodemonConfig": {
     "ext": "pug,js,html,css,md",
-    "watch": ["compile.js", "src", "content"]
+    "watch": [
+      "compile.js",
+      "src",
+      "content"
+    ]
   },
   "repository": {
     "type": "git",
