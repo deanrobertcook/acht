@@ -10,7 +10,7 @@ html {
 
 body {
   height: 100%;
-  font-family: Verdana, sans-serif;
+  font-family: system-ui;
   font-size: 16px;
   color: #2A373C;
   background-color: #F8F2F6;
