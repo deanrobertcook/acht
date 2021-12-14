@@ -1,6 +1,6 @@
+/* Base styles */
 html {
   box-sizing: border-box;
-  height: 100%;
   scroll-behavior: smooth;
 }
 
@@ -9,7 +9,6 @@ html {
 }
 
 body {
-  height: 100%;
   font-family: system-ui;
   font-size: 16px;
   color: #2A373C;
@@ -45,8 +44,6 @@ a {
 }
 
 .container > h2 {
-  /* max-width: max-content;
-  margin: 0 auto; */
   text-align: center;
 }
 
