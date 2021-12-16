@@ -15,16 +15,3 @@ Negativity is a valence, a quality that something might have in a particular dir
 Pessimism is a state of mind, a very particular type of negativity - that of __being__ negative, and often what we think of when talking about negativity in relation to our mindsets or attitudes towards the world. Pessimism, while perhaps useful in some circumstances (I'll leave the reader to decide for themselves when that might be the case), tends to be toxic and only serves to demotivate and alienate you from others. There seems to be something fundamentally useful about [optimism](https://en.wikipedia.org/wiki/A*_search_algorithm) and I don't think it conflicts with the idea of negativity I'm trying to push here.
 
 To drive home the point of what David Whyte and the researchers that discovered ironic processes or mental contrasting are saying, we can hold the negative aspects of our lives - the things that have gone in the direction opposite to that which we arbitrarily defined for ourselves - in our minds without succumbing to fear or anger, or perhaps even with warmth and respect for ourselves. In fact, it might be necessary to do so if we want to really understand ourselves and make progress.
-
-Hopefully it's quite easy to see how these ideas might play into a strategy for setting good goals for the future. It's useful to ask ourselves what's wrong now, what went wrong before, and what might go wrong in the future. As easy as it sounds, examining negativity - past, present or future - requires extreme honesty with one's self. And so, in an attempt of radical self-honesty: what do I regret?
-  - I regret not having learnt more skills that might bring me closer to other people or provide value to them.
-  - I regret ever thinking that I could take or steal from others without consequence.
-  - I regret letting my ability to speak publicly decline
-  - I regret not developing my sense of style further
-  - I regret not travelling a bit further outside of Berlin for an extended period of time.
-  - I regret ignoring my family as much as I did after moving away.
-  - I regret trying to speak German at the cost of making friendships
-  - I regret not learning to stand up for myself better - to give my honest opinion when I need to (cough, tattoo)
-  - I regret the loneliness I have often experienced in Berlin - thinking that I could function well alone or that I don't need others
-
-As for what might be wrong now in my life, and what might go wrong in the future, I'll cover those in another post. In fact, I think it's pretty obvious from this list what might be wrong right now, and for recognising what might go wrong, first I need to figure out the direction I'll be going in.
