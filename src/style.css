@@ -80,6 +80,7 @@ a {
   gap: 1em;
 }
  
+/* PREVIEW CARDS */
 .preview > a {
   padding: 1em;
   background-color: white;
@@ -87,6 +88,17 @@ a {
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto 1fr;
   gap: 1em;
+}
+
+.preview > a:hover {
+  animation: 0.25s ease forwards anim;
+}
+
+@keyframes anim {
+  to {
+    box-shadow: 4px 4px 4px #a8a29e;
+    transform: translate(-4px, -4px);
+  }
 }
 
 .post-img {
@@ -113,6 +125,7 @@ a {
   margin-top: 0;
 }
 
+/* POST PAGES */
 .container.post > h1 {
   margin-top: 0;
   padding: 0;
