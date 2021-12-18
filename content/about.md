@@ -1,3 +1,9 @@
+---
+title: About
+date: 2021-12-01
+priority: 1000
+---
+
 My name is Dean.\
 I’m a software developer, a mover, a thinker, und auch stolzer Berliner.
 
