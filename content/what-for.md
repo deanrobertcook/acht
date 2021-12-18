@@ -1,3 +1,9 @@
+---
+title: What For?
+date: 2021-12-13
+draft: true
+---
+
 Despite my growing skepticism of modern tech, I'm not a Luddite. We need our technology, we need to keep advancing it. It's what we choose to do with technology that concerns me. 
 
 ### What is progress?

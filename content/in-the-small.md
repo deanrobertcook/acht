@@ -1,3 +1,9 @@
+---
+title: In the Small
+date: 2021-12-15
+draft: true
+---
+
 - Our entire world is fractal in nature.
 - The modern Geist seems to be enthralled with exploring and expanding. Pushing into new terrain is often the easiest way to find new resources, make more space and gain fame fast. 
 - However, as the world becomes more crowded and new terrain scarcer, we'd best start exploring what we already have. 

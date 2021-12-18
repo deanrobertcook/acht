@@ -1,3 +1,8 @@
+---
+title: Think Negative
+date: 2021-03-10
+---
+
 ### What do I regret?
 
 David Whyte recalls his realisation in [this podcast episode](https://samharris.org/podcasts/240-boundaries-self/) with Sam Harris at just how unfashionable the word __regret__ has become in modern life; that many people profess living lives without regret and that even though they surely do harbour memories they'd rather not have (or else, what sort of boring lives had they been living?), that it seems a sign of weakness or unhappiness with one's self to admit them to others. He goes on to suggest that admitting regret can be a means of growth; of acknowledging that there are things you wish you'd done differently so that you can be sure not to repeat these same mistakes in the future.

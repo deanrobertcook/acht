@@ -1,3 +1,8 @@
+---
+title: Why I write
+date: 2021-12-12
+---
+
 Why start another blog? Why try and contribute to the millions or (by now, even billions) of other voices typing away on the Internet?
 
 ### For a stable middle class

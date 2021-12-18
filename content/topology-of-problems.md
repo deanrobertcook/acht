@@ -1,3 +1,9 @@
+---
+title: The Topology of Our Problems
+date: 2021-12-18
+draft: true
+---
+
 - What shapes can a trend have? Linear, exponential, logarithmic? What about any other shape you can possibly imagine?
 - The [Anscombe's quartet and the Datasaurus dozen](https://www.autodesk.com/research/publications/same-stats-different-graphs)
 - Couple that with multiple dimensions of interest (we often talk in just 2), and things start to get really confusing. 

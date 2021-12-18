@@ -1,3 +1,9 @@
+---
+title: The Hitchhiker's Guide to Learning German 
+date: 2020-08-27
+draft: true
+---
+
 ### Universal tips:
 * Decide if you need to be able to produce or just consume the language and to what level you need to learn it. Production is significantly harder and you may be better off just aiming to understand a language. For this reason, be very clear what your goals are and **don't** try and be noble here, be honest with yourself and question your underlying motives, otherwise you're in for a lot of unnecessary discomfort e.g:
   * To travel to the place: intermediate level consumption, low level production

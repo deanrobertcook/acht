@@ -1,3 +1,9 @@
+---
+title: My Values
+date: 2021-12-12
+draft: true
+---
+
 ### Local, regional, national, then global
 - A.k.a. apply your own oxygen mask before you help those around you.
 - You understand your home better than you understand someone elses. You know where things are and how they work. You can use that understanding to effect more change.
