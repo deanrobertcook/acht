@@ -14,10 +14,6 @@ block body
       h2 About
       include:markdown-it(linkify langPrefix='highlight-') about.md    
 
-  div#hire-me.section
-    div.container
-      h2 Hire me! #[span (coming soon)]
-
   div#posts.section
     div.container
       h2 Posts:
@@ -25,3 +21,9 @@ block body
         each post in posts.slice(0, 10)
           li
             a(href=post.filename) #{post.title}
+            if !post.draft
+              != post.preview
+
+  div#hire-me.section
+    div.container
+      h2 Hire me! #[span (coming soon)]

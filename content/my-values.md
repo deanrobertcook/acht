@@ -4,7 +4,7 @@ date: 2021-12-12
 draft: true
 ---
 
-### Local, regional, national, then global
+## Local, regional, national, then global
 - A.k.a. apply your own oxygen mask before you help those around you.
 - You understand your home better than you understand someone elses. You know where things are and how they work. You can use that understanding to effect more change.
 - The universe is fractal. The closer you look at something, the more sub-dimensions you find the thing contains. 
@@ -12,13 +12,13 @@ draft: true
 - Like the cells of our bodies, we want our local communities to maintain independent functioning, while still participating in ever larger contextual rings of interdependence. 
 - Share ideas and raw resources globally, produce goods and services locally. 
 
-### Technology is a tool, not God
+## Technology is a tool, not God
 - Modern technology promises more and more power and even immortality. It has replaced for many of us, the role that [religion once played](https://stevesammartino.com/2021/11/05/technology-as-a-religion/) in the past.
 - Tech should be used to achieve things in the real world. Get offline as fast as possible.
 - We should take a lesson from the Amish and deeply consider the consequences of each new piece of tech we introduce.
 - Like any tool, we should understand deeply how our tech works, and make sure that we can always make do without it. 
 
-### Accuracy over efficiency
+## Accuracy over efficiency
 - Think of an archer shooting an array at a moving target. 
 - Accuracy demands efficiency, as drawing another arrow wastes more time than preparing the shot, or perhaps picking another target altogether. 
 - Accuracy demands practice. A good archer would train relentlessly 
@@ -27,12 +27,12 @@ draft: true
 - Accuracy has an end-state - once the target is hit, the archer can retreat, regroup and find another target.
 - Rather than an efficient economy, we want an accurate economy, where our goals are based on human-centric design. We figure out what we *need*, aim for that, achieve it and then pause to reconsider our next goal. Rather than just working more efficiently for growth's sake - put the purpose of our work in the spotlight.
 
-### Apathy and aggression are corrosive. 
+## Apathy and aggression are corrosive. 
 - Aggression is displayed when an individual advances their own goals at the expense of another - through lying, fraud, manipulation or physical violence. The spectrum of violence starts with seeing others as opponents. 
 - Apathy leads to laziness, willful ignorance and the inability to resist evil. 
 - Both are highly corrosive to a complex, cooperative society.
 
-### Authenticity and transparency
+## Authenticity and transparency
 - Honesty is a blunt tool. It often fails to consider timing and can easily become aggressive. Sprich, sometimes no one cares about your opinion.
 - Instead, listen to and sharpen your "gut" instinct, the system 1 thinking, das Bauchgefühl. This is authenticity. Train it in your interactions with others, within your profession, understand what it has to say about your health and wellbeing. 
 - You can only train it by letting it make mistakes. Do as you feel is right, and stand up to any consequences when things go wrong.

@@ -9,7 +9,7 @@ I must have heard this quote for the first time some ten years ago and never tho
 
 I once pictured myself travelling the world as a digital nomad, learning (perfectly) up to as many as 10 different languages; winning marathons and weight-lifting championships simultaneously; earning PhDs, millions of dollars and starting companies that might improve the world on a global scale; or performing guitar solos on stage in front of thousands of people. Now 4 years over-schedule, I've learnt only one other language (to a level I reluctantly call "well") having moved to one other city (albeit on the other side of the planet), worked at a handful of failed startups as a slightly better-than-average-paid software developer and have close to given up on my guitar practice entirely after performing just once in front of about 40 people. I'm currently nursing a few injuries that are holding me back from the handstands I'm so proud of being able to do and the parkour I never learnt. What happened?
 
-### Am I a failure?
+## Am I a failure?
 These "Batman ideals" - all centered around attaining power to do good - definitely had their talons wrapped around my naive mind and influenced the direction I would take over the course of the next 10 years - and by many measures I've made a good shot at it. However, where that raw ambition has faded away, age has left something else in its place - a more complex understanding of the world.
 
 Looking back at these old goals, I see they were based on many faulty assumptions, some dangerous thinking and left a lot to be desired for a well-rounded life. With the knowledge I've gained the last ten years, I'm in a better position to set worthier goals for the next chapter of my life.
@@ -25,7 +25,7 @@ Perhaps I'm just justifying my own lack of success against the goals I originall
 
 The only real failure would be sticking to a bad map that obviously doesn't fit the terrain: it's time to draw a new map.
 
-### Are goals necessary?
+## Are goals necessary?
 With all these complex questions to answer, it might seem like the act of goal-setting is somewhat pointless; that the very eschewing the rigidity of those first goals and meandering away from them is what allowed me to understand the world better.
 
 It's no coincidence, however, that I'm writing this during the second (and remarkably colder and longer) lockdown in Germany during the Covid-19 pandemic. Without the fast pace of our "normal" lives - the new opportunities, distractions and things to look forward to - I've learnt first hand the danger of not having some guiding star to aim at.
@@ -36,7 +36,7 @@ This post and those that follow are a response to the challenges that the pandem
 
 The very act of researching and writing these posts has restarted my engines and provided another avenue of creativity that I seem to desperately need right now: alone the goal of trying to redefine my goals seems to offer some meaning that purely existing from day-to-day doesn't.
 
-### Dream to dream
+## Dream to dream
 So given all of that, how do I intend on setting goals that make sense? Goals that take into account the complexity of the world while at the same time motivating me to get through the hard work necessary in achieving them?
 
 That's what this series is all about. A live process; a messy research project that will feed back in on itself as I discover more about setting good goals, about what there is out there to learn and build, and about myself and what I enjoy. By the end of it, I hope to have a clear idea of what interests me most deeply and a plan of action for doing something with that knowledge - and a plan that makes sense, at that.

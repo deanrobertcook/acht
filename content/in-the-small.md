@@ -10,7 +10,7 @@ draft: true
 - I recently heard a great term for this, optimising as n -> 0, a.k.a. optimising in the small. 
 - The alternative is at heart, expansionism, which needless to say, brings with it much suffering.
 
-### Technology
+## Technology
 - What technology has the promise of reducing road deaths and emissions due to passenger transport (which make up the largest overall portion of emissions due to [transport](https://ourworldindata.org/emissions-by-sector#transport-16-2))? Self-driving cars? Electric cars? Hyperloops? Turns out, it's [the humble bus](https://99percentinvisible.org/episode/missing-the-bus/)
 - What about finding ways to keep our water cleaner and make sure everyone has enough? How about by giving our [toilet systems an overhaul](https://99percentinvisible.org/episode/pipe-dreams/)?
 - What about something smaller and more personal, like not receiving any more updates for your mobile phone that's still only 3-4 years old? Time for an upgrade? How about tapping into an ecosystem of enthusiasts who wring [every last bit out](https://fsfe.org/activities/upcyclingandroid/) of their phones?
@@ -18,7 +18,7 @@ draft: true
 - Often promised better futures by tech giants.
 - Instead, focus on the tech we have and integrate it better.
 
-### Travel
+## Travel
 - Travel is often seen as an unalloyed good
 - Tourism on the other hand, can have [serious negative impacts](https://awareimpact.com/negative-effects-of-tourism/)
 - Again, the more expensive option seems to be the most popular. 
@@ -30,7 +30,7 @@ draft: true
 - Taking sabbaticals to travel for months at a time, learning about local languages and customs, taking trains and boats to appreciate the distance.
 - Be careful with the temptation to move away from home - turns out the happiest people are those that live within 100km of they're parents
 
-### Doing Good
+## Doing Good
 - There's a lot of good being done by companies finding out which [charities are most effective](https://www.givewell.org/)
 - The very existence of GiveWell begs the questions - how good are we at giving globally?
 - But imagine if you had to help the people most in need in your city? Would you need much research to figure out who they are? 
