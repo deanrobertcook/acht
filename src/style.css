@@ -12,30 +12,12 @@ body {
   font-family: system-ui;
   font-size: 16px;
   color: #2A373C;
-  background-color: #d6d3d1;
-}
-
-h1 {
-  margin: 0;
-  padding: 0.5em 0;
+  background-color: #d1d5db;
 }
 
 h1 > span {
   display: block;
   font-size: 0.3em;
-}
-
-h2 span {
-  display: block;
-  font-size: 0.5em;
-}
-
-a:hover {
-  color: #DD6E42;
-}
-
-a {
-  color: #4F6D7A;
 }
 
 .container {
@@ -50,28 +32,24 @@ a {
   }
 }
 
-.header {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-}
-
+/* HEADER */
 .logo {
-  max-width: max-content;
-  grid-column: 1 / span 1;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
-.nav-links {
-  grid-column: 3 / span 1;
-  margin: auto 0;
-  display: flex;
-  flex-direction: row;
-}
-
-.nav-links a {
-  padding: 1em;
+.logo > h1 {
   width: max-content;
+  margin: 0 auto;
+  font-size: 4em;
 }
 
+.logo > p {
+  width: max-content;
+  margin: 0 auto;
+}
+
+/* INDEX POST LIST */
 .post-list {
   list-style: none;
   padding: 0;
@@ -90,6 +68,7 @@ a {
   gap: 1em;
   margin: 0 auto;
   max-width: 50ch;
+  color: inherit;
 }
 
 .preview:hover {
