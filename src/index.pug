@@ -9,16 +9,14 @@ block body
         a(href="#hire-me") Hire me!
         a(href="#posts") Posts
 
-  div#posts.section
-    div.container
-      h2 Posts:
+  div.section
+    div#posts.container
       ul.post-list
         each post in posts.slice(0, 10).sort(postOrder)
-          li
-            a(href=post.filename) #{post.title}
-            if !post.draft
-              != post.preview
-
-  div#hire-me.section
-    div.container
-      h2 Hire me! #[span (coming soon)]
+          li.preview
+            a(href=post.filename)
+              div.post-img
+              h2.post-title #{post.title}
+              div.post-intro
+                != post.preview
+                  

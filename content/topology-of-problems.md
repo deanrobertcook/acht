@@ -5,7 +5,6 @@ draft: true
 ---
 
 - What shapes can a trend have? Linear, exponential, logarithmic? What about any other shape you can possibly imagine?
-- The [Anscombe's quartet and the Datasaurus dozen](https://www.autodesk.com/research/publications/same-stats-different-graphs)
 - Couple that with multiple dimensions of interest (we often talk in just 2), and things start to get really confusing. 
 - Throw in there any issues at the point of data collection - consistency, human bias, etc., you need a lot of expertise to sort out the mess. 
 - Start talking about statistics on a global scale collected by a range of institutions, and things are impossible.
@@ -36,4 +35,7 @@ draft: true
 - At the city level - improve energy-use efficiency, use more busses and public transport, reduce car use, make public spaces pedestrian and human-friendly, set up incentives to encourage healthier lifestyles. 
 - That's a tall order, but if we focused solely on living more harmoniously with ourselves and our local environments, we can at least ensure that we're okay and not doing harm to others. 
 - Then we can leave it up to the experts as to how to help others far away.
+
+## References:
+- The [Anscombe's quartet and the Datasaurus dozen](https://www.autodesk.com/research/publications/same-stats-different-graphs)
 
