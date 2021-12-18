@@ -3,8 +3,6 @@ const fs = require('fs');
 const md = require('markdown-it')();
 const yaml = require('yaml');
 
-const PREVIEW_LEN_WORDS = 50;
-
 //Sort first based on priority (descending), then by date (reverse chronological)
 const postOrder = (p1, p2) => 
   (p2.priority ?? 0) - (p1.priority ?? 0) - p1.date.localeCompare(p2.date);
@@ -39,7 +37,7 @@ function compilePosts() {
   
     posts.push({
       filename,
-      preview: extractPreview(content),
+      preview: md.render(content.split('## ')[0]),
       ...frontMatter
     });
     
@@ -64,13 +62,4 @@ function splitFrontMatter(fileContent) {
   return {
     content: fileContent
   };
-}
-
-function extractPreview(content) {
-  return md.render(
-    content
-      .split('## ')[0] // Take everything before first heading
-      .split(" ") //Split into words
-      .slice(0, PREVIEW_LEN_WORDS) //Take first n words
-      .join(' ')) //Rejoin
 }
