@@ -15,6 +15,14 @@ body {
   background-color: #d1d5db;
 }
 
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #DD6E42;
+}
+
 h1 > span {
   display: block;
   font-size: 0.3em;
@@ -44,9 +52,10 @@ h1 > span {
   font-size: 4em;
 }
 
-.logo > p {
+.subtitle {
   width: max-content;
   margin: 0 auto;
+  opacity: 70%;
 }
 
 /* INDEX POST LIST */
@@ -68,11 +77,12 @@ h1 > span {
   gap: 1em;
   margin: 0 auto;
   max-width: 50ch;
-  color: inherit;
+  text-decoration: none;
 }
 
 .preview:hover {
   animation: 0.25s ease forwards anim;
+  color: #2A373C;
 }
 
 @keyframes anim {
