@@ -32,6 +32,10 @@ function compilePosts() {
     let filename = file.replace('.md', '.html');
   
     let {content, frontMatter} = splitFrontMatter(fs.readFileSync(`content/${file}`, 'utf8'));
+
+    if (frontMatter['exclude']) {
+      return;
+    }
   
     posts.push({
       filename,
