@@ -6,7 +6,7 @@ date: 2021-12-12
 Why start another blog? Why try and contribute to the millions or (by now, even billions) of other voices typing away on the Internet?
 
 ### For a stable middle class
-Why do anything for that matter? It doesn't matter whether you're making computer programs or an olympic high jumper, there will always be someone better than you on the world's stage. Wouldn't we just be better off letting the world's best do all the work and the rest of us just relax if we don't have any hope of getting to the top?
+Why do anything for that matter? It doesn't matter whether you're making computer programs or a professional high jumper, there will always be someone better than you on the world's stage. Wouldn't we just be better off letting the world's best do all the work and the rest of us just relax if we don't have any hope of getting to the top?
 
 This is often the thinking I'd fall into in my personal life. We [praise the elite](https://www.samharris.org/podcasts/making-sense-episodes/205-failure-meritocracy) in our modern society for their ability to change the world - and for good reason, some of their feats are damned impressive. But where does that put me, the regular Joe or Jane? If I can't create a world-class blog with millions of readers like some of the greats out there, then what's the point? It's also unlikely I'm going to find a niche for myself either. It's an unwritten law of the Internet that *somebody else has already thought of it* - whatever "it" is - and they're probably doing it better.
 
