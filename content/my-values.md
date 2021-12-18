@@ -2,6 +2,7 @@
 title: My Values
 date: 2021-12-12
 draft: true
+priority: 900
 ---
 
 ## Local, regional, national, then global

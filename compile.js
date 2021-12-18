@@ -5,6 +5,10 @@ const yaml = require('yaml');
 
 const PREVIEW_LEN_WORDS = 50;
 
+//Sort first based on priority (descending), then by date (reverse chronological)
+const postOrder = (p1, p2) => 
+  (p2.priority ?? 0) - (p1.priority ?? 0) - p1.date.localeCompare(p2.date);
+
 // clear www directory
 fs.readdirSync('www').forEach(file => {
   fs.unlinkSync(`www/${file}`);
@@ -14,6 +18,7 @@ fs.readdirSync('www').forEach(file => {
 fs.writeFileSync('www/index.html', pug.renderFile('src/index.pug', {
   pretty: true,
   posts: compilePosts(),
+  postOrder
 }));
 
 // Copy across dependencies

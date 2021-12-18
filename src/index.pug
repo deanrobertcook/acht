@@ -18,7 +18,7 @@ block body
     div.container
       h2 Posts:
       ul.post-list
-        each post in posts.slice(0, 10)
+        each post in posts.slice(0, 10).sort(postOrder)
           li
             a(href=post.filename) #{post.title}
             if !post.draft
