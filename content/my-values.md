@@ -4,7 +4,11 @@ date: 2021-12-12
 draft: true
 priority: 900
 ---
+Our values are perhaps the most important things we have, and we all have them. They implicitly guide every action that we undertake as human beings. However, when we are not clear on our values we are easily distracted and persuaded by others who might wish to exploit us. 
 
+While we should constantly assess and challenge our own values, we don't always have, and I would argue, don't always *need* a cognitive rationale for their existence. Some are axiomatic, others intuitive. 
+
+Below is a list of the values I strive to live by and would wish to see more of in the world.
 ## Local, regional, national, then global
 - A.k.a. apply your own oxygen mask before you help those around you.
 - You understand your home better than you understand someone elses. You know where things are and how they work. You can use that understanding to effect more change.
