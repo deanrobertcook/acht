@@ -34,6 +34,7 @@
     "pug": "^3.0.2"
   },
   "devDependencies": {
+    "date-fns": "^2.27.0",
     "nodemon": "^2.0.15",
     "remove-markdown": "^0.3.0",
     "yaml": "^1.10.2"

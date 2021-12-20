@@ -3,6 +3,7 @@ const fs = require('fs');
 const md = require('markdown-it')();
 const yaml = require('yaml');
 const removeMd = require('remove-markdown');
+const datefmt = require('date-fns');
 
 //Sort first based on priority (descending), then by date (reverse chronological)
 const postOrder = (p1, p2) => 
@@ -55,14 +56,21 @@ function compilePosts() {
 function splitFrontMatter(fileContent) {
   let sections = fileContent.split('---');
   if (fileContent.indexOf('---') == 0 && sections.length > 2) {
+    let frontMatter = yaml.parse(sections[1]);
+    frontMatter['date'] = formatDate(frontMatter['date']);
     return {
-      frontMatter: yaml.parse(sections[1]),
+      frontMatter,
       content: sections.slice(2).join('---')
     }
   }
   return {
     content: fileContent
   };
+}
+
+function formatDate(dateStr) {
+  const date = new Date(dateStr);
+  return datefmt.format(date, 'MMM. yyyy');
 }
 
 function extractPreview(content) {
