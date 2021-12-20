@@ -11,8 +11,8 @@ html {
 body {
   font-family: system-ui;
   font-size: 16px;
-  color: #2A373C;
-  background-color: #d1d5db;
+  color: #0f172a;
+  background-color: #94a3b8;
 }
 
 a {
@@ -80,7 +80,7 @@ h1 > span {
 /* PREVIEW CARDS */
 .preview {
   padding: 1em;
-  background-color: white;
+  background-color: #e2e8f0;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -92,7 +92,6 @@ h1 > span {
 
 .preview:hover {
   animation: 0.25s ease forwards anim;
-  color: #2A373C;
 }
 
 @media (max-width: 768px) {
@@ -103,7 +102,7 @@ h1 > span {
 
 @keyframes anim {
   to {
-    box-shadow: 4px 4px 4px #a8a29e;
+    box-shadow: 4px 4px 4px #334155;
     transform: translate(-4px, -4px);
   }
 }
