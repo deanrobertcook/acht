@@ -9,6 +9,8 @@ const datefmt = require('date-fns');
 const postOrder = (p1, p2) => 
   (p2.priority ?? 0) - (p1.priority ?? 0) - p1.date.localeCompare(p2.date);
 
+const formatDate = (dateStr) => datefmt.format(new Date(dateStr), 'MMM. yyyy');
+
 // clear www directory
 fs.readdirSync('www').forEach(file => {
   fs.unlinkSync(`www/${file}`);
@@ -47,7 +49,8 @@ function compilePosts() {
       pretty: true,
       filename,
       content: md.render(content),
-      ...frontMatter
+      ...frontMatter,
+      formatDate
     }));
   });
   return posts;
@@ -56,21 +59,14 @@ function compilePosts() {
 function splitFrontMatter(fileContent) {
   let sections = fileContent.split('---');
   if (fileContent.indexOf('---') == 0 && sections.length > 2) {
-    let frontMatter = yaml.parse(sections[1]);
-    frontMatter['date'] = formatDate(frontMatter['date']);
     return {
-      frontMatter,
+      frontMatter: yaml.parse(sections[1]),
       content: sections.slice(2).join('---')
     }
   }
   return {
     content: fileContent
   };
-}
-
-function formatDate(dateStr) {
-  const date = new Date(dateStr);
-  return datefmt.format(date, 'MMM. yyyy');
 }
 
 function extractPreview(content) {
