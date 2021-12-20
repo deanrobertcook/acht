@@ -10,7 +10,7 @@ draft: true
 - Start talking about statistics on a global scale collected by a range of institutions, and things are impossible.
 
 ## The world is getting better...?
-- There are many people that argue the world is getting better ([Gapminder][https://upgrader.gapminder.org/]). These averages are probably true, things are getting better for more people.
+- There are many people that argue the world is getting better ([Gapminder](https://upgrader.gapminder.org/)). These averages are probably true, things are getting better for more people.
 - Some things are getting worse in different pockets of society: e.g., suicide rates are down globally, but increasing for certain age groups.
 - One person argues that [depression is on the rise](https://thelostconnections.com/), [others](https://www.theguardian.com/science/brain-flapping/2018/jan/08/is-everything-johann-hari-knows-about-depression-wrong-lost-connections) point out flaws in his arguments.
 
