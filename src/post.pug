@@ -2,7 +2,7 @@ extends head.pug
 
 block body
   div.container.post
-    h1 #{title} #[span First published on: #{date}]
+    h1.post-title #{title} #[span.post-date First published on: #{date}]
     hr
     != content
     

@@ -10,9 +10,9 @@ block body
     ul.post-list
       each post in posts.slice(0, 10).sort(postOrder)
         li
-          a(href=post.filename).preview
-            h2.post-title #{post.title}
-            p.post-intro
+          a(href=post.filename).post-prev
+            h2.post-prev-title #{post.title}
+            p.post-prev-intro
               != post.preview
                 
       
