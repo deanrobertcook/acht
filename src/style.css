@@ -1,3 +1,13 @@
+/* Utility classes */
+.uc {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mg-btm {
+  margin-bottom: 1rem;
+}
+
 /* Base styles */
 html {
   box-sizing: border-box;
@@ -28,21 +38,35 @@ a:hover {
 }
 
 /* HEADER */
-.logo {
-  margin-top: 2em;
-  margin-bottom: 2em;
+#header {
+  /* background: url('hexagons.svg'); */
+  background-color: #001845;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #85AFFF;
 }
 
 .logo > h1 {
   width: max-content;
   margin: 0 auto;
-  font-size: 4em;
+  font-size: 5em;
 }
 
 .subtitle {
   width: max-content;
   margin: 0 auto;
   opacity: 70%;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+@media (max-width: 375px) {
+  .subtitle {
+    width: min-content;
+  }
 }
 
 /* INDEX POST LIST */
@@ -124,9 +148,7 @@ a:hover {
 }
 
 .post-date {
-  text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 2px;
   line-height: 1em;
   font-size: 0.8em;
   opacity: 0.5;

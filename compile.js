@@ -33,7 +33,6 @@ fs.writeFileSync(
 [
   'normalize.css',
   'style.css',
-  'anchors.svg'
 ].forEach(file => {
   fs.copyFileSync(path.join(I_DIR, file), path.join(O_DIR, file));
 })
