@@ -67,5 +67,7 @@ function splitFrontMatter(fileContent) {
 
 function extractPreview(content) {
   const intro = content.split('## ')[0].trim();
-  return removeMd(intro).replace(/(?:\r\n|\r|\n)/g, "<br>");
+  return removeMd(intro, {
+    stripListLeaders: false
+  }).replace(/(?:\r\n|\r|\n)/g, "<br>");
 }
