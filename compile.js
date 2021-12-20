@@ -2,6 +2,7 @@ const pug = require('pug');
 const fs = require('fs');
 const md = require('markdown-it')();
 const yaml = require('yaml');
+const removeMd = require('remove-markdown');
 
 //Sort first based on priority (descending), then by date (reverse chronological)
 const postOrder = (p1, p2) => 
@@ -37,7 +38,7 @@ function compilePosts() {
   
     posts.push({
       filename,
-      preview: md.render(content.split('## ')[0]),
+      preview: extractPreview(content),
       ...frontMatter
     });
     
@@ -62,4 +63,9 @@ function splitFrontMatter(fileContent) {
   return {
     content: fileContent
   };
+}
+
+function extractPreview(content) {
+  const intro = content.split('## ')[0].trim();
+  return removeMd(intro).replace(/(?:\r\n|\r|\n)/g, "<br>");
 }

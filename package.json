@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15",
+    "remove-markdown": "^0.3.0",
     "yaml": "^1.10.2"
   }
 }

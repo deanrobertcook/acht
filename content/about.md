@@ -3,8 +3,7 @@ title: About
 date: 2021-12-01
 priority: 1000
 ---
-
-My name is Dean.\
+My name is Dean.
 I’m a software developer, a mover, a thinker, und auch stolzer Berliner.
 
 I’m curently concerned with our growing dependency on technology, which has become something of a modern religion, promising omnipotence, immortality and deliverence. 
