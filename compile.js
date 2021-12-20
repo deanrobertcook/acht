@@ -1,9 +1,13 @@
+const path = require('path');
 const pug = require('pug');
 const fs = require('fs');
 const md = require('markdown-it')();
 const yaml = require('yaml');
 const removeMd = require('remove-markdown');
 const datefmt = require('date-fns');
+
+const O_DIR = "www"; //output directory
+const I_DIR = "src"; //input directory
 
 //Sort first based on priority (descending), then by date (reverse chronological)
 const postOrder = (p1, p2) => 
@@ -12,22 +16,32 @@ const postOrder = (p1, p2) =>
 const formatDate = (dateStr) => datefmt.format(new Date(dateStr), 'MMM. yyyy');
 
 // clear www directory
-fs.readdirSync('www').forEach(file => {
-  fs.unlinkSync(`www/${file}`);
+fs.readdirSync(O_DIR).forEach(file => {
+  fs.unlinkSync(path.join(O_DIR, file));
 });
 
 // render index.html with list of posts
-fs.writeFileSync('www/index.html', pug.renderFile('src/index.pug', {
-  pretty: true,
-  posts: compilePosts(),
-  postOrder
-}));
+fs.writeFileSync(
+  path.join(O_DIR, 'index.html'), 
+  pug.renderFile(path.join(I_DIR, 'index.pug'), {
+    pretty: true,
+    posts: compilePosts(),
+    postOrder
+  }));
 
 // Copy across dependencies
-fs.copyFileSync('src/normalize.css', 'www/normalize.css');
-fs.copyFileSync('src/style.css', 'www/style.css');
+[
+  'normalize.css',
+  'style.css',
+  'anchors.svg'
+].forEach(file => {
+  fs.copyFileSync(path.join(I_DIR, file), path.join(O_DIR, file));
+})
 
-// UTILITY FUNCTIONS
+/**************************************************
+ ** UTILITY FUNCTIONS 
+ **************************************************/ 
+
 function compilePosts() {
   var posts = [];
   fs.readdirSync('content').reverse().forEach(file => {
