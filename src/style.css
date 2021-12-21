@@ -62,8 +62,6 @@ a:hover {
  
 .post-prev {
   padding: 1em;
-  background-color: var(--bg-color-1);
-  margin: 0 auto;
   max-width: 50ch;
   text-decoration: none;
   height: 100%;
@@ -81,8 +79,9 @@ a:hover {
 
 @keyframes anim {
   to {
-    box-shadow: 4px 4px 4px #94a3b8;
-    transform: translate(-4px, -4px);
+    /* same as shdw-l */
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transform: translate(0, -4px);
   }
 }
 
@@ -199,5 +198,10 @@ a:hover {
 .bg-highlight { background-color: var(--bg-color-1); }
 
 .opac-reduced { opacity: 0.7; }
+
+.shdw { box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); }
+.shdw-m { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+.shdw-l { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+.shdw-in { box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05); }
 
 

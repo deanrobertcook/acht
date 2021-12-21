@@ -10,7 +10,7 @@ block body
       ul.post-list.gap-m
         each post in posts.slice(0, 10).sort(postOrder)
           li
-            a(href=post.filename).post-prev.flex-stack.gap-l.bg-highlight
+            a(href=post.filename).post-prev.flex-stack.center.gap-l.bg-highlight
               h2.post-prev-title #{post.title}
               p.post-prev-intro
                 != post.preview
