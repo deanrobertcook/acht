@@ -6,54 +6,62 @@ priority: 900
 ---
 Economic incentives are perhaps the most powerful leverages we have to encourage behaviour change in our societies - make train and bus rides cheaper than going by car, and unsurprisingly, more people give up their cars; force fathers to give up their paternity leave if they don't use it and [more men take on the role of caretaker](https://www.iceland.is/press/press--media-kit/gender-equality-in-iceland/) in the home.
 
-It's tempting to end the debate there: "just fix the incentives. Boom. Mission accomplished". But which incentive structures do we pick for ourselves? Well, perhaps that can be answered with a few [well-conducted studies](https://www.gallup.com/home.aspx)? Just find out which structures offer the most utilitarian benefit and implement those, right? If it's obvious that more equal representation of women throughout our society brings us closer to say, [reaching our climate goals](https://bloombergcities.medium.com/5-women-mayors-to-watch-for-climate-leadership-3d3ea407afed), then that's a force for good we want to replicate elsewhere with similar incentive structures around the world.
+But as I see it, this only accounts for half the battle in designing ourselves better lives. In order for us to decide what incentive structures to pick and to give the incentive structures fertile ground on which to take hold and have any chance of succeeding, the individuals within those structures have to align sufficiently on what they value. 
 
-Now, for the record, I do in fact think that's a fantastic strategy: follow those plans with the best evidence we have. But, in my opinion, it's only half the battle. I'm going to call it the top-down approach: look around the world for systems that provably work and design a incentive structures that [nudge](https://en.wikipedia.org/wiki/Nudge_%28book%29) us in the right direction. People with authority and knowledge are designing systems that reach down into and shape our lives. 
+While our knowledge on designing a better world seems to be growing, it's frustrating that our progress is often hampered by individuals with [empty values](https://en.wikipedia.org/wiki/Lobbying). As society - thankfully - continues to become more aware of the damage it's doing to the world and to itself, it's becoming more important than ever to question the values of the people we give our money, time and attention to.
 
-If this were a calculus problem, I see it as the part where we [find the integral](https://www.stevenstrogatz.com/books/infinite-powers). But what are we putting back together here as we attempt to integrate the lifestyles of millions of people into one cohesive whole?
+So, without further ado, here are the values I have steadily come to see as the positive ones guiding my life. I don't claim to live up them perfeclty all the time, but for now, it's a start.
 
-The answer here are our values. The intuitions that we build up over the course of our lives that tell us whether something is going well or going poorly; our gut feelings of what is right and wrong. To continue stretching this abstract analogy, our value systems allow us to measure the slope of our current trajectory through life, in this moment in time and space - within our individual contexts. They are the derivative. 
+## 1. Do not be apathetic, do not be aggressive.
+I define aggression as anything in which I perform some act so as to further my goals at the expense of somebody else's. I like this definition because it then includes lying, fraud, manipulation and omitting of facts as well as physical aggression (credits to Sam Harris for the original idea).
 
-Before any large-scale incentive (re)design can take place, it takes individuals with nothing but a hunch to recognise that our trajectory isn't right. There will have been, at this point in time, no research conducted that tells these people *why* things aren't right. They will not be able to rationalise and justify the intuition yet. They will just *know* things aren't right.
+Aggression and apathy are for me the two states of mind to be most careful of. They have surely evolved for good reason, but I see no way in which they are any longer constructive for modern society, except as a warning sign things are not going well (and in the case of aggression - in situations of life-and-death). 
 
-Our values allow us to make these judgements. They are the axioms we hold for ourselves and have gathered - implicitly or explicitly - over the course of our lives that have allowed us to survive this far. As a society, we would do well to really listen to not only our own value judgements, but those of our fellow citizens. 
+But aside from that, both are corrosive to a complex, cooperative society. They cause division, create evil and also sap our ability to resist evil: either I will be happy to see evil happen to those that anger me (aggression) or I don't care enough about anyone else to bother stopping the evil (apathy). 
 
-While I'm an optimist and believe that most people are mostly good most of the time, not all values are good. Some are empty, some destructive, some hateful. Some allow us to be easily exploited or cause us to be overly cautious in exploring the world. For this reason, it's important for us to reflect on and examine our values as closely as possible. 
+We need to care for ourselves. We need to reach out across our aisles of division and take care for one another. We need to care about living harmoniously with the environment. In order to achieve our goals, we need to put down our weapons of anger, carry our own weight and give support to those that are strugging.
+## 2. Apply your own oxygen mask first.
+I've done a full 180 on this one throughout the course of my life. I no longer believe that the most effective strategy is to simply find the global poor and help them first.
 
-One way I like to do this is to simply list them out and explore their limits. So, without further ado, here are the values I have steadily come to see as the positive ones guiding my life. I don't claim to live up them perfeclty all the time - perhaps I'll do another article exploring my more sinister, implicit values when I'm feeling braver - but for now, it's a start:
+Instead, I think we need to focus on getting our own houses in order. Getting ourselves stable as individuals first (within the constrains of value 1.), then we need to act locally and regionally to stamp out injustice and ensure those around us can contribute to a better world. Then, once our towns and cities are in order, start thinking at national and global levels how we can send aid out far and wide. 
 
-## Do not be apathetic, do not be aggressive.
-- Aggression is displayed when an individual advances their own goals at the expense of another - through lying, fraud, manipulation or physical violence. The spectrum of violence starts with seeing others as opponents. 
-- Apathy leads to laziness, willful ignorance and the inability to resist evil. 
-- Both are highly corrosive to a complex, cooperative society.
+There are of course exceptions here, as with any rules. We should care about the people working on our supply chains and make sure they are treated fairly, as one example. 
 
-## Apply your own oxygen mask first.
-- A.k.a. act first locally, then regional, national, global
-- You understand your home better than you understand someone elses. You know where things are and how they work. You can use that understanding to effect more change.
-- The universe is fractal. The closer you look at something, the more sub-dimensions you find the thing contains. 
-- Come more into contact with your community, understand its problems, understand its people. Solve their problems first.
-- Like the cells of our bodies, we want our local communities to maintain independent functioning, while still participating in ever larger contextual rings of interdependence. 
-- Share ideas and raw resources globally, produce goods and services locally. 
+But even in those cases, the same thinking applies: we can communicate far better with those we are physically close to or come into contact with regularly; we can understand the intricicies of our local issues far better than those of foriegn cultures. We only have a chance of shaping the values of those people we are close to, and should start there first.
 
-## Be authentic and transparent
-- Honesty is a blunt tool. It often fails to consider timing and can easily become aggressive. Sprich, sometimes no one cares about your opinion.
-- Instead, listen to and sharpen your "gut" instinct, the system 1 thinking, das Bauchgefühl. This is authenticity. Train it in your interactions with others, within your profession, understand what it has to say about your health and wellbeing. 
-- You can only train it by letting it make mistakes. Do as you feel is right, and stand up to any consequences when things go wrong.
-- Understand it's limits, and communicate to others what is happening whenever they express the need to understand what you're doing. 
-- Trust that you are a good human being, like most others, and that if you do what you really want, you'll also achieve a lot of good for the world. 
+Just as independence as individuals only comes from owning your own problems, our towns and cities must do the same. We can't solve other people's problems for them, we can only act as examples, good or bad.
 
-## See technology as a tool, not God
-- Modern technology promises more and more power and even immortality. It has replaced for many of us, the role that [religion once played](https://stevesammartino.com/2021/11/05/technology-as-a-religion/) in the past.
+## 3. Be authentic and transparent
+Within the constrains of the values above, I think it's then important to begin sharpening your gut instinct, the system's 1 thinking: das Bauchgefühl. 
+
+Unfortunately this only comes from training it: in your career and in your interactions with others. But essentially, the formula is pretty simple: do what you *feel* is right and stand up to any consequences when things go wrong. This is the part of one's life where making mistakes is incredibly important.
+
+However, do also aim to understand the limits of your intuition. Don't fall into the trap of thinking that everything you think is [the ultimate truth](https://www.verywellmind.com/what-is-the-false-consensus-effect-2795030). This system is far more intelligent than we often give it credit for, but as we're learning (and we always are), it's important to *communicate* openly with others just how you're feeling and why you think so. When you do, you often learn a great deal more about yourself than if you say or do whatever you *think* you should. It's this transparency that allows you to train your authenticity. 
+
+Trust that you are a good human being, like most other people, and that if you train your intuition well, you'll also eventually achieve a lot of good for the world. 
+
+## 4. Aim for accuracy, not efficiency
+Efficiency is the aim of the game in the modern world. But as the complexity of our world continues to rise, something gets lost with this efficiency-seeking. It's easy to fall into the trap of celebrating gains in efficiency along some metric while entirely forgetting why we picked that metric in the first place. 
+
+Instead, I think trying to improve the accuracy of our efforts is a far better mindset to have than just the efficiency. Accuracy often demands efficiency (at least for challenging tasks), but does much more than that. Accuracy forces us to keep the goal in mind, demands self-knowledge and understanding, encourages minimalism and has an end-state - namely, that of the goal being reached.
+
+As an example, let's consider personal income. An efficiency mindset would come to the conclusion that "more is more". More money means more time and more freedom, so more money is better. If I have a chance of getting a raise or a better paid job, I should go for it.
+
+An accuracy mindset, as I'm trying to describe here, would instead force oneself to look one's own goals. "I want to be rich" is far too broad a definition. Okay, so how much money do you need? But then you have to answer the question: "what for?" In my case, I want to be able to maintain my modest flat in Berlin, afford a coffee each morning and have plenty of time to do the things I enjoy doing or making the world a better place. For that, a 50-60K income is more than enough. Anything above that and I'm actually being *wasteful* in my efforts.
+
+In fact, if I cut out all of the things that are really not that important or enriching to me, I might need even less
+than that to achieve my goal. If I manage to find work that's meaningful to me, then suddenly I've also gained an extra 8 hours a day doing something I enjoy!
+
+This idea is by no means new, but I like framing it this way. It reminds me to chase for simplicity. It reminds me to ask myself what I really *need*. It's minimalistic at heart, and I think we'd be better off if our economy functioned in a similar way: aiming for a comfortable stasis; a clear and achievable goal, rather than just simply trying to always find more.
+
+## 5. See technology as a tool, not God
+Modern technology promises more and more power and even immortality. It has replaced for many of us, the role that [religion once played](https://stevesammartino.com/2021/11/05/technology-as-a-religion/) in the past.
+
+However, this trend seems more and more dangerous to me. While I'm still a big believer that technology will help us 
+
 - Tech should be used to achieve things in the real world. Get offline as fast as possible.
 - We should take a lesson from the Amish and deeply consider the consequences of each new piece of tech we introduce.
 - Like any tool, we should understand deeply how our tech works, and make sure that we can always make do without it. 
 
-## Aim for accuracy, not efficiency
-- Think of an archer shooting an array at a moving target. 
-- Accuracy demands efficiency, as drawing another arrow wastes more time than preparing the shot, or perhaps picking another target altogether. 
-- Accuracy demands practice. A good archer would train relentlessly 
-- Accuracy demands self-knowledge. You must know where you stand and what the surrounding conditions are like.
-- Accuracy demands minimalism. To gain a vantage over the target, the archer must be nimble.
-- Accuracy has an end-state - once the target is hit, the archer can retreat, regroup and find another target.
-- Rather than an efficient economy, we want an accurate economy, where our goals are based on human-centric design. We figure out what we *need*, aim for that, achieve it and then pause to reconsider our next goal. Rather than just working more efficiently for growth's sake - put the purpose of our work in the spotlight.
+
 
