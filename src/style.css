@@ -2,6 +2,7 @@
 .uc {
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-weight: 700;
 }
 
 .mg-btm {
@@ -148,7 +149,6 @@ a:hover {
 }
 
 .post-date {
-  font-weight: 700;
   line-height: 1em;
   font-size: 0.8em;
   opacity: 0.5;
