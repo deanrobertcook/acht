@@ -1,12 +1,14 @@
 extends head.pug
 
 block body
-  article.post
-    header.post-header
-      h1.post-title #{title} 
-      p.post-date.uc!=formatDate(date)
-    hr
-    != content
+  body.group
+    div.bg-hero
+    article.post.center.fs-l.up25vh.mg-btm-l.bg-highlight.mg-btm-0--last-child
+      header.flex-row-separate.gap-m
+        h1.post-title #{title} 
+        p.post-date.uc!=formatDate(date)
+      hr
+      != content
     
       
 

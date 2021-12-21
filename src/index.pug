@@ -1,19 +1,19 @@
 extends head.pug
 
 block body
-  div#header.section.mg-btm
-    div.logo
-      h1 #{blogTitle}
-      p.subtitle.uc Under heavy construction
+  body
+    div.bg-hero.flex-stack-centered.mg-btm.gap-l
+      h1.fs-xxl.mg-0 #{blogTitle}
+      p.txt-center.fs-l.uc.opac-reduced.mg-0 Under heavy construction  
 
-  div.section
-    ul.post-list
-      each post in posts.slice(0, 10).sort(postOrder)
-        li
-          a(href=post.filename).post-prev
-            h2.post-prev-title #{post.title}
-            p.post-prev-intro
-              != post.preview
-                
+    div
+      ul.post-list.gap-m
+        each post in posts.slice(0, 10).sort(postOrder)
+          li
+            a(href=post.filename).post-prev.flex-stack.gap-l.bg-highlight
+              h2.post-prev-title #{post.title}
+              p.post-prev-intro
+                != post.preview
+                  
       
                   
