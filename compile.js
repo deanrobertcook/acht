@@ -33,6 +33,7 @@ fs.writeFileSync(
 [
   'normalize.css',
   'style.css',
+  'temple.svg'
 ].forEach(file => {
   fs.copyFileSync(path.join(I_DIR, file), path.join(O_DIR, file));
 })

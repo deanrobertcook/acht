@@ -39,7 +39,7 @@ a:hover {
 
 /* HEADER */
 #header {
-  /* background: url('hexagons.svg'); */
+  background: url('temple.svg');
   background-color: #001845;
   min-height: 50vh;
   display: flex;
