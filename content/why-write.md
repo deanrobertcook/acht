@@ -1,5 +1,5 @@
 ---
-title: Why I write
+title: Why write?
 date: 2021-12-12
 priority: 800
 ---
