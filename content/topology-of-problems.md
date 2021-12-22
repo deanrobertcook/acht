@@ -2,6 +2,7 @@
 title: The Topology of Our Problems
 date: 2021-12-18
 draft: true
+exclude: true
 ---
 
 - What shapes can a trend have? Linear, exponential, logarithmic? What about any other shape you can possibly imagine?

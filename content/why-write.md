@@ -4,7 +4,7 @@ date: 2021-12-12
 priority: 800
 ---
 
-Why start another blog? Why try and contribute to the millions or (by now, even billions) of other voices typing away on the Internet?
+Why start another blog? Why try and contribute to the millions or (by now, even billions) of other voices typing away on the Internet? 
 
 ## For a stable middle class
 Why do anything for that matter? It doesn't matter whether you're making computer programs or a professional high jumper, there will always be someone better than you on the world's stage. Wouldn't we just be better off letting the world's best do all the work and the rest of us just relax if we don't have any hope of getting to the top?

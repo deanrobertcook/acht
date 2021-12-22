@@ -2,6 +2,7 @@
 title: The Hitchhiker's Guide to Learning German 
 date: 2020-08-27
 draft: true
+exclude: true
 ---
 
 ## Universal tips:
