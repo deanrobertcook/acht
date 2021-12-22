@@ -31,7 +31,6 @@ fs.writeFileSync(
 
 // Copy across dependencies
 [
-  'normalize.css',
   'style.css',
   'temple.svg'
 ].forEach(file => {

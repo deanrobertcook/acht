@@ -4,15 +4,15 @@ block body
   body
     div.bg-hero.flex-stack-centered.mg-btm.gap-l
       h1.fs-xxl.mg-0 #{blogTitle}
-      p.txt-center.fs-l.uc.opac-reduced.mg-0 Under heavy construction  
+      p.txt-center.lh-1.fs-l.uc.opac-7.mg-0 Under heavy construction  
 
     div
-      ul.post-list.gap-m
+      ul.grid-3.md--grid-1.mwidth-100ch.mg-center.list-none.gap-m.mg-btm
         each post in posts.slice(0, 10).sort(postOrder)
           li
-            a(href=post.filename).post-prev.flex-stack.center.gap-l.bg-highlight
-              h2.post-prev-title #{post.title}
-              p.post-prev-intro
+            a(href=post.filename).flex-stack.mwidth-50ch.mg-center.height-max.pd-m.txt-dec-none.bg-highlight.hover--animate-away
+              h2 #{post.title}
+              p.mg-0.maxlines-10
                 != post.preview
                   
       
