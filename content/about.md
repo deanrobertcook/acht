@@ -1,15 +1,14 @@
 ---
 title: About
-date: 2021-12-01
+date: 2021-12-22
 priority: 1000
 ---
-My name is Dean.
-I’m a software developer, a mover, a thinker, und auch stolzer Berliner.
+Mein Name ist Dean, ursprünglich aus Australien, aber nach sieben Jahren in Berlin kann ich auch langsam sagen, dass ich stolzer Berliner bin.
 
-I’m curently concerned with our growing dependency on technology, which has become something of a modern religion, promising omnipotence, immortality and deliverence. 
+I'm a software developer (currently [on the hunt](hire-me.html) for a new job!), but I define myself primarly by [many other things](my-areas.html).
 
-And yet, the wheels are falling off this big, global wagon: Depression, self-harm and inequality are on the rise. We are divided politically and struggle to reach consensus on the simplest of matters. Conspiratorial thinking floods our over-connected digital community faster than the virus that has the physical world on its knees. Our technology is so complex that even those building it don’t understand what they’re doing.
+This blog is really just a place for me to [write down](why-write.md) some ideas and experiment with web design. I built it entirely by scratch, but for more information on that please see the [GitHub repo README](https://github.com/deanrobertcook/acht).
 
-We would do well to recognise our cognitive limits as we try to expand our reach across the entire planet (and beyond). With a mindful, values-based application of technology, tailored to our local needs - seen as a tool, not as God - we might be able to disconnect from the Internet and reconnect with each other.
+The name for the blog is the German word for eight. One of my dearest friends once explained to me why she see's the octopus as my spirit animal, and I've held onto that ever since. Deswegen: Acht. It also means *attention*, like in the word *Achtsamkeit* (Engl: *mindfulness*).
 
-How this looks concretely, I don’t know. But currently I imagine a technologically independent Hauptstadtregion with it’s own independent IT infrastructure making it’s own decisions; a shining example of resistence against the greedy FAANG.
+Please don't hesitate to reach out for any reason - whether it's to work together or to criticise any of my ideas. 

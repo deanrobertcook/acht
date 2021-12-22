@@ -149,6 +149,7 @@ a:hover {
 .mg-btm-s { margin-bottom: 0.5rem; }
 .mg-btm { margin-bottom: 1rem; }
 .mg-btm-l { margin-bottom: 1.5rem; }
+.mg-btm-25vh { margin-bottom: 25vh; }
 .mg-0 { margin: 0; }
 
 .mg-btm-0--last-child > *:last-child { margin-bottom: 0 }
