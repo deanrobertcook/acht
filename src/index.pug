@@ -2,9 +2,17 @@ extends head.pug
 
 block body
   body
-    div.bg-hero.flex-stack-centered.mg-btm.gap-l
-      h1.fs-xxl.mg-0 #{blogTitle}
-      p.txt-center.lh-1.fs-l.uc.opac-7.mg-0 Under heavy construction  
+    div.bg-hero.flex-stack-centered.mg-btm
+      h1.fs-xxl.mg-btm-s #{blogTitle}
+      p.txt-center.lh-1.fs-l.uc.opac-7.mg-btm-xl Under heavy construction
+      div.flex-stack-centered
+        p.txt-center.mg-btm-s deanrobertcook@gmail.com
+        div.flex-row-together.gap-s
+          a(href="https://www.linkedin.com/in/deanrobertcook/" target="_blank" rel="noopener noreferrer")
+            img(src="linkedin.svg").wh-icon.mg-0
+          a(href="https://github.com/deanrobertcook" target="_blank" rel="noopener noreferrer")
+            img(src="github.svg").wh-icon.mg-0
+
 
     div
       ul.grid-3.md--grid-1.mwidth-100ch.mg-center.list-none.gap-m.mg-btm
