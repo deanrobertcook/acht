@@ -59,6 +59,10 @@ a:hover {
 /************************
  ** Layout classes
  ************************/
+
+.width-max { width: 100%;}
+.width-min-content { width: min-content; }
+.width-max-content { width: max-content; }
 .mwidth-50ch { max-width: 50ch; }
 .mwidth-100ch { max-width: 100ch; }
 .mwidth-680 { max-width: 680px; }
@@ -102,6 +106,17 @@ a:hover {
   grid-auto-rows: 1fr;
 }
 
+.grid-square-3 { 
+  grid-template-columns: repeat(3, 3em); 
+  grid-auto-rows: 3em;
+}
+.grid-square-4r { 
+  grid-template-columns: repeat(3, 4rem); 
+  grid-auto-rows: 4rem;
+}
+
+.grid-center { place-items: center; }
+
 @media (max-width: 768px) {
   .md--grid-1 {
     grid-template-columns: 1fr;
@@ -126,6 +141,12 @@ a:hover {
 .fs-s { font-size: 0.8em; }
 
 .lh-1 { line-height: 1em; }
+.lh-1p5 { line-height: 1.5em; }
+.lh-2 { line-height: 2em; }
+.lh-3r { line-height: 3rem; }
+.lh-4r { line-height: 4rem; }
+
+.vert-align { vertical-align: middle; }
 
 .uc {
   text-transform: uppercase;
@@ -150,6 +171,8 @@ a:hover {
   overflow: hidden;
 }
 
+.hover--pointer:hover { cursor:pointer; }
+
 /*****************************
  ** Gaps, Margins, Paddings
  *****************************/
@@ -169,9 +192,6 @@ a:hover {
   margin-bottom: 10rem;
 }
 
-
-
-
 .mg-btm-0--last-child > *:last-child { margin-bottom: 0 }
 
 .pd-top-l { padding-top: 2rem; }
@@ -190,6 +210,7 @@ a:hover {
 }
 
 .color-hero { color: var(--font-color-hero); }
+.bg-color-hero { background-color: var(--bg-hero); }
 
 .bg-highlight { background-color: var(--bg-color-1); }
 

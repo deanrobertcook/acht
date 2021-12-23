@@ -5,6 +5,7 @@
   "main": "compile.js",
   "scripts": {
     "dev": "nodemon compile.js",
+    "dev:react": "webpack serve --open",
     "compile": "node compile.js",
     "clean": "rm www/*",
     "info": "s3cmd ws-info s3://www.achtfast.me",

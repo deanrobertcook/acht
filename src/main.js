@@ -2,42 +2,49 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 class Square extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: props.value
+    }
+  }
+
   render() {
     return (
-      <button className="square">
-        {/* TODO */}
-      </button>
+      <a className="width-max height-max bg-color-hero color-hero block fs-l txt-center lh-4r mg-0 hover--pointer"
+        onClick={() => this.setState({ value: 'X' })}
+      >
+        {this.state.value}
+      </a>
     );
   }
 }
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square />;
+    return <Square value={i} />;
   }
 
   render() {
     const status = 'Next player: X';
 
     return (
-      <div>
-        <div className="status">{status}</div>
-        <div className="board-row">
+      <div className="flex-stack gap-m">
+        <div className="mg-center width-max-content block" >{status}</div>
+        <div className="grid-3 grid-square-4r gap-s grid-center mg-center width-min" >
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
           {this.renderSquare(3)}
           {this.renderSquare(4)}
           {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
           {this.renderSquare(6)}
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
       </div>
+
     );
   }
 }
