@@ -61,6 +61,7 @@ a:hover {
 .mwidth-680 { max-width: 680px; }
 
 .height-max { height: 100%; }
+.mheight-20 { min-height: 20rem; }
 
 .wh-icon { width: 2rem; height: 2rem; }
 
@@ -159,12 +160,13 @@ a:hover {
 .mg-btm-s { margin-bottom: 0.5rem; }
 .mg-btm { margin-bottom: 1rem; }
 .mg-btm-l { margin-bottom: 1.5rem; }
-.mg-btm-xl { margin-bottom: 3rem; }
+.mg-btm-xl { margin-bottom: 2rem; }
 .mg-btm-25vh { margin-bottom: 25vh; }
 .mg-0 { margin: 0; }
 
 .mg-btm-0--last-child > *:last-child { margin-bottom: 0 }
 
+.pd-top-l { padding-top: 2rem; }
 .pd-m { padding: 1rem; }
 .pd-l { padding: 1.5rem; }
 
@@ -176,7 +178,6 @@ a:hover {
 .bg-hero {
   background: url('temple.svg');
   background-color: var(--bg-hero);
-  min-height: 50vh;
   color: var(--font-color-hero);
   z-index: -1;
 }
