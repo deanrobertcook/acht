@@ -14,3 +14,7 @@ I've also been working as a freelancer the last couple of years, which in all ho
 
 I place a high importance on good design and engineering, always aiming to simplify any systems and workflows I come into contact with. I have experience with leading a small team and all of the associated skills: hiring, feature planning and coordinating with other teams. 
 
+You can find more about my resume on my [LinkedIn profile](https://www.linkedin.com/in/deanrobertcook/). What I want to do here is showcase some of my relevant skills.
+
+## Frontend and React
+I've used HTML, CSS and JS throughout my career for small support and hobby projects, but never really had to build a polished feature. This website is my effort to fix that. 
