@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/react.js',
+  entry: './src/main.js',
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {

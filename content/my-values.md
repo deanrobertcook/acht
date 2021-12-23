@@ -12,7 +12,16 @@ While our knowledge on designing a better world seems to be growing, it's frustr
 
 So, without further ado, here are the values I have steadily come to see as the positive ones guiding my life. I don't claim to live up them perfeclty all the time, but for now, it's a start.
 
-## 1. Do not be apathetic, do not be aggressive.
+## 1. Give up hope.
+The first step to improving the world is to acknowledge that it is terrible, and it [always will be](https://markmanson.net/books/everything-is-fucked).
+
+Hope is nothing but fear in disguise: fear that the current situation, in all of its inadequecies, will never improve. When we are uncomfortable, irritated, annoyed or unhappy, we *hope* automatically that things will improve. And so, when we hope for a better future, we fail to appreciate the present moment, while simultaneously succumbing to the illusion of our own self-narrative to which all hope (and fear) is tied. It is in this way that hope is simultaneously the driver of both progress and suffering.
+
+As soon as we accept that things are in fact, shit, we can cease resisting the present moment. It becomes easier to wash the piling up dishes, to visit that sick friend, to take that necessary break during a stressful day at work that you haven't been allowing yourself. Giving up hope gives you access to self-compassion (since efforts towards self-optimisation are futile anyway!) and allows you to relax into who you *are*.
+
+## 2. Resist apathy and aggression.
+Secondly, we have to improve our relationships to one another. Human connection is really what it™'s all about.
+
 I define aggression as anything in which I perform some act so as to further my goals at the expense of somebody else's. I like this definition because it then includes lying, fraud, manipulation and omitting of facts as well as physical aggression (credits to Sam Harris for the original idea).
 
 Aggression and apathy are for me the two states of mind to be most careful of. They have surely evolved for good reason, but I see no way in which they are any longer constructive for modern society, except as a warning sign things are not going well (and in the case of aggression - in situations of life-and-death). 
@@ -20,10 +29,10 @@ Aggression and apathy are for me the two states of mind to be most careful of. T
 But aside from that, both are corrosive to a complex, cooperative society. They cause division, create evil and also sap our ability to resist evil: either I will be happy to see evil happen to those that anger me (aggression) or I don't care enough about anyone else to bother stopping the evil (apathy). 
 
 We need to care for ourselves. We need to reach out across our aisles of division and take care for one another. We need to care about living harmoniously with the environment. In order to achieve our goals, we need to put down our weapons of anger, carry our own weight and give support to those that are strugging.
-## 2. Apply your own oxygen mask first.
+## 3. Apply your own oxygen mask first.
 I've done a full 180 on this one throughout the course of my life. I no longer believe that the most effective strategy is to simply find the global poor and help them first.
 
-Instead, I think we need to focus on getting our own houses in order. Getting ourselves stable as individuals first (within the constrains of value 1.), then we need to act locally and regionally to stamp out injustice and ensure those around us can contribute to a better world. Then, once our towns and cities are in order, start thinking at national and global levels how we can send aid out far and wide. 
+Instead, I think we need to focus on getting our own houses in order. Getting ourselves stable as individuals first (within the constrains of value 2.), then we need to act locally and regionally to stamp out injustice and ensure those around us can contribute to a better world. Then, once our towns and cities are in order, start thinking at national and global levels how we can send aid out far and wide. 
 
 There are of course exceptions here, as with any rules. We should care about the people working on our supply chains and make sure they are treated fairly, as one example. 
 
@@ -31,7 +40,7 @@ But even in those cases, the same thinking applies: we can communicate far bette
 
 Just as independence as individuals only comes from owning your own problems, our towns and cities must do the same. We can't solve other people's problems for them, we can only act as examples, good or bad.
 
-## 3. Be authentic and transparent
+## 4. Be authentic and transparent
 Within the constrains of the values above, I think it's then important to begin sharpening your gut instinct, the system's 1 thinking: das Bauchgefühl. 
 
 Unfortunately this only comes from training it: in your career and in your interactions with others. But essentially, the formula is pretty simple: do what you *feel* is right and stand up to any consequences when things go wrong. This is the part of one's life where making mistakes is incredibly important.
@@ -40,7 +49,7 @@ However, do also aim to understand the limits of your intuition. Don't fall into
 
 Trust that you are a good human being, like most other people, and that if you train your intuition well, you'll also eventually achieve a lot of good for the world. 
 
-## 4. Aim for accuracy, not efficiency
+## 5. Aim for accuracy, not efficiency
 Efficiency is the aim of the game in the modern world. But as the complexity of our world continues to rise, something gets lost with this efficiency-seeking. It's easy to fall into the trap of celebrating gains in efficiency along some metric while entirely forgetting why we picked that metric in the first place. 
 
 Instead, I think trying to improve the accuracy of our efforts is a far better mindset to have than just the efficiency. Accuracy often demands efficiency (at least for challenging tasks), but does much more than that. Accuracy forces us to keep the goal in mind, demands self-knowledge and understanding, encourages minimalism and has an end-state - namely, that of the goal being reached.
@@ -54,8 +63,10 @@ than that to achieve my goal. If I manage to find work that's meaningful to me, 
 
 This idea is by no means new, but I like framing it this way. It reminds me to chase for simplicity. It reminds me to ask myself what I really *need*. It's minimalistic at heart, and I think we'd be better off if our economy functioned in a similar way: aiming for a comfortable stasis; a clear and achievable goal, rather than just simply trying to always find more.
 
-## 5. See technology as a tool, not God
+## 6. See technology as a tool, not God
 Modern technology promises more and more power and even immortality. It has replaced for many of us, the role that [religion once played](https://stevesammartino.com/2021/11/05/technology-as-a-religion/) in the past.
+
+It's also the 
 
 However, this trend seems more and more dangerous to me. While I'm still a big believer that technology will help us 
 

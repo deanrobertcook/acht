@@ -2,17 +2,19 @@ extends head.pug
 
 block body
   body.group
-    div.bg-hero
-    article.mwidth-680.mg-center.up25vh.fs-l.pd-l.mg-btm-l.bg-highlight.mg-btm-0--last-child.shdw-l
-      header.flex-row-separate.gap-m
-        h1.mg-btm-s.post-title #{title} 
-        p.opac-5.fs-s.mg-btm-s.lh-1.uc!=formatDate(date)
-      hr.hr-big.mg-btm
-      != content
-      if filename === 'hire-me.html'
-        div.react
-        script(defer="defer" src="react.js")
-    
+    div.bg-hero.mheight-20
+    div.mwidth-680.mg-center.up-10.fs-l.shdw-l
+      a(href="index.html").color-hero.block.mg-btm-s < Home
+        
+      article.bg-highlight.pd-l.mg-btm-0--last-child
+        header.flex-row-separate.gap-m
+          h1.mg-btm-s #{title} 
+          p.opac-5.fs-s.mg-btm-s.lh-1.uc!=formatDate(date)
+        hr.hr-big.mg-btm
+        != content
+        if filename === 'hire-me.html'
+          div.react
+          script(defer="defer" src="main.js")
       
 
        

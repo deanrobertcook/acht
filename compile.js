@@ -32,7 +32,9 @@ fs.writeFileSync(
 // Copy across dependencies
 [
   'style.css',
-  'temple.svg'
+  'temple.svg',
+  'linkedin.svg',
+  'github.svg'
 ].forEach(file => {
   fs.copyFileSync(path.join(I_DIR, file), path.join(O_DIR, file));
 })
