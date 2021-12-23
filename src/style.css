@@ -41,6 +41,9 @@ h1,h2,h3,h4,h5,h6 {
   line-height: 1em;
 }
 
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+
 p, ul, ol {
   line-height: 1.5em;
 }
@@ -64,6 +67,8 @@ a:hover {
 .mheight-20 { min-height: 20rem; }
 
 .wh-icon { width: 2rem; height: 2rem; }
+
+.block { display: block; }
 
 .flex-stack {
   display: flex;
@@ -103,9 +108,7 @@ a:hover {
   }
 }
 
-.up25vh {
-  margin-top: -25vh;
-}
+.up25vh { margin-top: -25vh; }
 
 /* Clearfix, see https://css-tricks.com/snippets/css/clear-fix/ */
 .group:after {
@@ -178,9 +181,10 @@ a:hover {
 .bg-hero {
   background: url('temple.svg');
   background-color: var(--bg-hero);
-  color: var(--font-color-hero);
   z-index: -1;
 }
+
+.color-hero { color: var(--font-color-hero); }
 
 .bg-highlight { background-color: var(--bg-color-1); }
 
