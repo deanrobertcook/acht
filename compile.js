@@ -17,7 +17,9 @@ const formatDate = (dateStr) => datefmt.format(new Date(dateStr), 'MMM. yyyy');
 
 // clear www directory
 fs.readdirSync(O_DIR).forEach(file => {
-  fs.unlinkSync(path.join(O_DIR, file));
+  if (!file.includes('.js')) { //TODO, integrate this script with webpack
+    fs.unlinkSync(path.join(O_DIR, file));
+  }
 });
 
 // render index.html with list of posts
@@ -46,7 +48,8 @@ fs.writeFileSync(
 function compilePosts() {
   var posts = [];
   fs.readdirSync('content').reverse().forEach(file => {
-    let filename = file.replace('.md', '.html');
+    let slug = file.slice(0, file.lastIndexOf('.md'));
+    let href = slug + '.html';
   
     let {content, frontMatter} = splitFrontMatter(fs.readFileSync(`content/${file}`, 'utf8'));
 
@@ -55,14 +58,16 @@ function compilePosts() {
     }
   
     posts.push({
-      filename,
+      slug,
+      href,
       preview: extractPreview(content),
       ...frontMatter
     });
     
-    fs.writeFileSync(`www/${filename}`, pug.renderFile('src/post.pug', {
+    fs.writeFileSync(`www/${slug}.html`, pug.renderFile('src/post.pug', {
       pretty: true,
-      filename,
+      slug,
+      href,
       content: md.render(content),
       ...frontMatter,
       formatDate
