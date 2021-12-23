@@ -2,12 +2,10 @@ extends head.pug
 
 block body
   body.group
+    script(defer="defer" src="main.js")
     div.bg-hero.mheight-20
     div.mwidth-680.mg-center.up-10.fs-l.shdw-l
       a(href="index.html").color-hero.block.mg-btm-s < Home
-      if slug === 'hire-me'
-        div.react
-        script(defer="defer" src="main.js")
       article.bg-highlight.pd-l.mg-btm-0--last-child
         header.flex-row-separate.gap-m
           h1.mg-btm-s #{title} 

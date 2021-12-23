@@ -18,3 +18,5 @@ You can find more about my resume on my [LinkedIn profile](https://www.linkedin.
 
 ## Frontend and React
 I've used HTML, CSS and JS throughout my career for small support and hobby projects, but never really had to build a polished feature. This website is my effort to fix that. 
+
+<div id="react"/>
