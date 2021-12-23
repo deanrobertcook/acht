@@ -15,7 +15,7 @@ So, without further ado, here are the values I have steadily come to see as the 
 ## 1. Give up hope.
 The first step to improving the world is to acknowledge that it is terrible, and it [always will be](https://markmanson.net/books/everything-is-fucked).
 
-Hope is nothing but fear in disguise: fear that the current situation, in all of its inadequecies, will never improve. When we are uncomfortable, irritated, annoyed or unhappy, we *hope* automatically that things will improve. And so, when we hope for a better future, we fail to appreciate the present moment, while simultaneously succumbing to the illusion of the self to which all hope (and fear) is tied. It is in this way that hope is simultaneously the driver of both progress and suffering.
+Hope is nothing but fear in disguise: fear that the current situation, in all of its inadequecies, will never improve. When we are uncomfortable, irritated, annoyed or unhappy, we *hope* automatically that things will improve. And so, when we hope for a better future, we fail to appreciate the present moment, while simultaneously succumbing to the illusion of our own self-narrative to which all hope (and fear) is tied. It is in this way that hope is simultaneously the driver of both progress and suffering.
 
 As soon as we accept that things are in fact, shit, we can cease resisting the present moment. It becomes easier to wash the piling up dishes, to visit that sick friend, to take that necessary break during a stressful day at work that you haven't been allowing yourself. Giving up hope gives you access to self-compassion (since efforts towards self-optimisation are futile anyway!) and allows you to relax into who you *are*.
 
