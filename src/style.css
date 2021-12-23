@@ -108,8 +108,6 @@ a:hover {
   }
 }
 
-.up25vh { margin-top: -25vh; }
-
 /* Clearfix, see https://css-tricks.com/snippets/css/clear-fix/ */
 .group:after {
   content: "";
@@ -164,8 +162,15 @@ a:hover {
 .mg-btm { margin-bottom: 1rem; }
 .mg-btm-l { margin-bottom: 1.5rem; }
 .mg-btm-xl { margin-bottom: 2rem; }
-.mg-btm-25vh { margin-bottom: 25vh; }
 .mg-0 { margin: 0; }
+
+.up-10 { 
+  margin-top: -10rem;
+  margin-bottom: 10rem;
+}
+
+
+
 
 .mg-btm-0--last-child > *:last-child { margin-bottom: 0 }
 
