@@ -32,7 +32,7 @@ class Board extends React.Component {
     return (
       <div className="flex-stack gap-m">
         <div className="mg-center width-max-content block" >{status}</div>
-        <div className="grid-3 grid-square-4r gap-s grid-center mg-center width-min" >
+        <div className="grid-3 grid-square-4r gap-s place-items-center mg-center width-min" >
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}

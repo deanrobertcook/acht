@@ -115,7 +115,8 @@ a:hover {
   grid-auto-rows: 4rem;
 }
 
-.grid-center { place-items: center; }
+.align-items-center { align-items: center; }
+.place-items-center { place-items: center; }
 
 @media (max-width: 768px) {
   .md--grid-1 {
@@ -185,7 +186,11 @@ a:hover {
 .mg-btm { margin-bottom: 1rem; }
 .mg-btm-l { margin-bottom: 1.5rem; }
 .mg-btm-xl { margin-bottom: 2rem; }
+.mg-btm-2 { margin-bottom: 2rem; }
 .mg-0 { margin: 0; }
+
+.mg-top-auto { margin-top: auto; }
+.mg-btm-auto { margin-bottom: auto; }
 
 .up-10 { 
   margin-top: -10rem;
