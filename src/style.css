@@ -172,8 +172,6 @@ a:hover {
   overflow: hidden;
 }
 
-.hover--pointer:hover { cursor:pointer; }
-
 /*****************************
  ** Gaps, Margins, Paddings
  *****************************/
@@ -215,6 +213,14 @@ a:hover {
 }
 
 .color-hero { color: var(--font-color-hero); }
+.color-accent { color: var(--font-color-accent); }
+
+.no-hover { pointer-events: none; }
+.hover--pointer:hover { cursor: pointer; }
+
+.hover--color-hero:hover { color: var(--font-color-hero); }
+.hover--color-main:hover { color: var(--font-color); }
+
 .bg-color-hero { background-color: var(--bg-hero); }
 
 .bg-highlight { background-color: var(--bg-color-1); }

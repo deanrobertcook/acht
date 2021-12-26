@@ -2,9 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 function Square(props) {
-  const active = props.active ? "hover--pointer" : ""
+  const active = props.active ? "hover--pointer" : "no-hover"
+  const color = props.highlight ? "color-accent" : "color-hero"
   return (
-    <a className={`width-max height-max bg-color-hero color-hero block fs-l txt-center lh-4r mg-0 ${active}`}
+    <a className={`width-max height-max bg-color-hero block fs-l txt-center 
+    lh-4r mg-0 ${active} ${color}`}
       onClick={props.onClick}
     >
       {props.value}
@@ -26,7 +28,7 @@ class Board extends React.Component {
         return;
       }
 
-      const newSquares = Array.from(this.state.squares);
+      const newSquares = this.state.squares.slice();
       newSquares[index] = this.state.next;
 
       const winningLine = [
@@ -35,7 +37,7 @@ class Board extends React.Component {
         [6, 7, 8],
 
         [0, 3, 6],
-        [1, 6, 7],
+        [1, 4, 7],
         [2, 5, 8],
 
         [0, 4, 8],
@@ -46,12 +48,11 @@ class Board extends React.Component {
           newSquares[line[0]] === newSquares[line[2]]
       });
 
-      const winner = winningLine ? newSquares[winningLine[0]] : undefined;
-
       this.setState({
         squares: newSquares,
         next: this.state.next == 'X' ? 'O' : 'X',
-        winner
+        winningLine,
+        winner: winningLine ? newSquares[winningLine[0]] : undefined
       })
     }
   }
@@ -65,7 +66,11 @@ class Board extends React.Component {
         <div className="grid-3 grid-square-4r gap-s place-items-center mg-center width-min" >
           {this.state.squares.map((square, index) => {
             const active = square == null && this.state.winner == null;
-            return <Square key={index} value={square} active={active} onClick={() => this.onSquareClick(index)} />;
+            let highlight; 
+              if (this.state.winningLine) {
+                highlight = this.state.winningLine.includes(index);
+              }
+            return <Square key={index} value={square} highlight={highlight} active={active} onClick={() => this.onSquareClick(index)} />;
           }) }
         </div>
       </div>
