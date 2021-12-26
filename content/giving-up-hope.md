@@ -32,8 +32,6 @@ And just in time to enjoy Christmas, too.
 
 Cheers.
 
-P.S: 
-
 ## Notes and further reading:
 1. Mark Manson, [Everything is F*cked](https://markmanson.net/books/everything-is-fucked)
 2. The Happiness Lab, [The Unhappy Millionaire](https://www.happinesslab.fm/season-1-episodes/the-unhappy-millionaire)
