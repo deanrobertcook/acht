@@ -11,13 +11,9 @@ const md = require('markdown-it')({ html: true });
 const yaml = require('yaml');
 const datefmt = require('date-fns');
 
-let cachedDeps;
-
 const formatDate = (dateStr) => datefmt.format(new Date(dateStr), 'MMM. yyyy');
 
 module.exports = function (source) {
-
-
   let p = path.resolve('./src/post.pug');
   this.addDependency(p);
 
@@ -29,17 +25,11 @@ module.exports = function (source) {
     compileDebug: this.debug || false,
   });
 
-  if (this.cacheable) {
-    this.cacheable(true)
-  }
-
-  cachedDeps = template.dependencies ? template.dependencies.slice() : undefined;
   template.dependencies.forEach(this.addDependency);
   let data = this.query.data || {}
+
   return template({
     pretty: true,
-    slug: 'about',
-    href: 'about.html',
     content: md.render(content),
     ...frontMatter,
     formatDate

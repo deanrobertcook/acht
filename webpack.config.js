@@ -1,13 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const fs
-
+const fs = require('fs');
 
 module.exports = {
   entry: {
-    css: require.resolve("./src/style.css"),
-    js: './src/main.js'
+    main: './src/main.js'
   },
   mode: 'development',
   devtool: 'inline-source-map',
@@ -21,24 +19,30 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'content/about.md',
+      template: 'src/index.pug',
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
       }
     }),
+    ...postHtmlPages(),
     new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
+      {
+        test: /\.pug$/i,
+        use: [
+          "html-loader",
+          {
+            loader: path.resolve('loaders', 'index-pug.js'),
+          }]
+      },
       {
         test: /\.md$/i,
         use: [
           "html-loader",
           {
             loader: path.resolve('loaders', 'md-pug.js'),
-            options: {
-              test: "test"
-            }
           }]
       },
       {
@@ -47,6 +51,7 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           'css-loader',
         ],
+        type: 'asset/resource'
       },
       {
         test: /\.js$/i,
@@ -62,33 +67,21 @@ module.exports = {
   },
 };
 
-function htmlPlugins() {
+function postHtmlPages() {
   var posts = [];
   fs.readdirSync('content').forEach(file => {
+
     let slug = file.slice(0, file.lastIndexOf('.md'));
     let href = slug + '.html';
-
-    let { content, frontMatter } = splitFrontMatter(fs.readFileSync(`content/${file}`, 'utf8'));
-
-    if (frontMatter['exclude']) {
-      return;
-    }
-
-    posts.push({
-      slug,
-      href,
-      preview: extractPreview(content),
-      ...frontMatter
-    });
-
-    fs.writeFileSync(`www/${slug}.html`, pug.renderFile('src/post.pug', {
-      pretty: true,
-      slug,
-      href,
-      content: md.render(content),
-      ...frontMatter,
-      formatDate
-    }));
+    posts.push(
+      new HtmlWebpackPlugin({
+        template: `content/${file}`,
+        filename: href,
+        meta: {
+          viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+        }
+      })
+    )
   });
   return posts;
 }
