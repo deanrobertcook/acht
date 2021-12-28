@@ -4,8 +4,8 @@
   "description": "My own website",
   "main": "compile.js",
   "scripts": {
-    "dev": "webpack serve --open",
-    "compile": "webpack",
+    "dev": "webpack serve --open --mode=development",
+    "compile": "webpack --mode=development",
     "clean": "rm www/*",
     "deploy": "scp -r www/* admin@194.195.244.93:/home/www/achtfast"
   },

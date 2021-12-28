@@ -3,22 +3,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs');
 
-module.exports = {
+var config = {
   entry: {
     main: './src/main.js'
   },
-  mode: 'development',
-  devtool: 'inline-source-map',
-  devServer: {
-    static: './www',
-  },
+  mode: "production",
   output: {
-    path: path.resolve(__dirname, 'www'),
+    path: path.resolve('www'),
     clean: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.pug',
+      template: path.resolve('src', 'index.pug'),
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
       }
@@ -69,10 +65,20 @@ module.exports = {
   },
 };
 
+module.exports = (env, argv) => {
+  if (argv.mode == 'development') {
+    config.devtool = 'inline-source-map';
+    config.devServer = {
+      static: './www',
+    };
+  }
+  return config;
+}
+
 function buildPostHtmlPlugins() {
   return fs.readdirSync('content').map(file => {
     return new HtmlWebpackPlugin({
-      template: `content/${file}`,
+      template: path.resolve('content', file),
       filename: path.parse(file).name + '.html',
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
