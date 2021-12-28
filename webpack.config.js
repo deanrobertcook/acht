@@ -13,7 +13,6 @@ module.exports = {
     static: './www',
   },
   output: {
-    filename: '[name].js',
     path: path.resolve(__dirname, 'www'),
     clean: true,
   },
@@ -24,7 +23,7 @@ module.exports = {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
       }
     }),
-    ...postHtmlPages(),
+    ...buildPostHtmlPlugins(),
     new MiniCssExtractPlugin(),
   ],
   module: {
@@ -34,7 +33,7 @@ module.exports = {
         use: [
           "html-loader",
           {
-            loader: path.resolve('loaders', 'index-pug.js'),
+            loader: path.resolve('loaders', 'index-page-loader.js'),
           }]
       },
       {
@@ -42,7 +41,7 @@ module.exports = {
         use: [
           "html-loader",
           {
-            loader: path.resolve('loaders', 'md-pug.js'),
+            loader: path.resolve('loaders', 'post-page-loader.js'),
           }]
       },
       {
@@ -67,21 +66,14 @@ module.exports = {
   },
 };
 
-function postHtmlPages() {
-  var posts = [];
-  fs.readdirSync('content').forEach(file => {
-
-    let slug = file.slice(0, file.lastIndexOf('.md'));
-    let href = slug + '.html';
-    posts.push(
-      new HtmlWebpackPlugin({
-        template: `content/${file}`,
-        filename: href,
-        meta: {
-          viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-        }
-      })
-    )
+function buildPostHtmlPlugins() {
+  return fs.readdirSync('content').map(file => {
+    return new HtmlWebpackPlugin({
+      template: `content/${file}`,
+      filename: path.basename(file) + '.html',
+      meta: {
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+      }
+    });
   });
-  return posts;
 }
