@@ -4,23 +4,19 @@ const path = require('path');
 const utils = require('./utils.js');
 const fs = require('fs');
 
-
 const postOrder = (p1, p2) =>
   (p2.priority ?? 0) - (p1.priority ?? 0) - p1.date.localeCompare(p2.date);
 
 module.exports = function (source) {
   let options = Object.assign({
     filename: this.resourcePath,
-    doctype: this.query.doctype || 'js',
     compileDebug: this.debug || false
   }, this.query)
 
   let template = pug.compile(source, options)
-  
   template.dependencies.forEach(this.addDependency)
 
   return template({
-    pretty: true,
     posts: compilePosts(),
     postOrder
   })

@@ -8,24 +8,21 @@ const utils = require('./utils.js');
 const formatDate = (dateStr) => datefmt.format(new Date(dateStr), 'MMM. yyyy');
 
 module.exports = function (source) {
-  this.addDependency(path.resolve('src', 'post.pug'));
+  const templateFile = path.resolve('src', 'post.pug');
+  this.addDependency(templateFile);
 
   let { content, frontMatter } = utils.splitFrontMatter(source);
 
-  let template = pug.compileFile('./src/post.pug', {
-    filename: this.resourcePath,
-    doctype: this.query.doctype || 'js',
+  let template = pug.compileFile(templateFile, {
+    filename: templateFile,
     compileDebug: this.debug || false,
   });
 
-  template.dependencies.forEach(dep => {
-    this.addDependency(path.resolve(dep));
-  });
+  template.dependencies.forEach(this.addDependency);
 
   return template({
-    pretty: true,
     content: md.render(content),
     ...frontMatter,
     formatDate
-  })
+  });
 }
