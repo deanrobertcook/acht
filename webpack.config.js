@@ -52,6 +52,10 @@ module.exports = {
         ],
       },
       {
+        test: /\.svg/,
+        type: 'asset'
+      },
+      {
         test: /\.js$/i,
         exclude: /(node_modules|bower_components)/,
         use: {
