@@ -34,7 +34,7 @@ function compilePosts() {
       return null;
     }
 
-    let slug = path.basename(file);
+    let slug = path.parse(file).name;
     return {
       slug,
       href: slug + '.html',

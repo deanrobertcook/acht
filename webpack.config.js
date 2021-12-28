@@ -70,7 +70,7 @@ function buildPostHtmlPlugins() {
   return fs.readdirSync('content').map(file => {
     return new HtmlWebpackPlugin({
       template: `content/${file}`,
-      filename: path.basename(file) + '.html',
+      filename: path.parse(file).name + '.html',
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
       }
