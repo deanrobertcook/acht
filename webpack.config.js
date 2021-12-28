@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs');
+const tailwindcss = require('tailwindcss');
+const autoprefixer = require('autoprefixer');
 
 var config = {
   entry: {
@@ -45,6 +47,18 @@ var config = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  tailwindcss('./tailwind.config.js'),
+                  autoprefixer,
+                  "postcss-preset-env",
+                ],
+              },
+            },
+          },
         ],
       },
       {
