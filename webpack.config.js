@@ -45,12 +45,11 @@ module.exports = {
           }]
       },
       {
-        test: require.resolve("./src/style.css"),
+        test: /\.css$/i,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
         ],
-        type: 'asset/resource'
       },
       {
         test: /\.js$/i,
