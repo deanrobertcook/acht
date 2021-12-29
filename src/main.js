@@ -7,8 +7,7 @@ function Square(props) {
   const active = props.active ? "hover--pointer" : "no-hover"
   const color = props.highlight ? "color-accent" : "color-hero"
   return (
-    <a className={`width-max height-max bg-color-hero block fs-l txt-center 
-    lh-4r mg-0 ${active} ${color}`}
+    <a className={`w-full h-full m-0 text-center bg-color-hero fs-l lh-4r ${active} ${color}`}
       onClick={props.onClick}
     >
       {props.value}
@@ -63,9 +62,9 @@ class Board extends React.Component {
     const status = this.state.winner == null ? `Next player: ${this.state.next}` : `Winner: ${this.state.winner}`;
 
     return (
-      <div className="flex-stack gap-m">
-        <div className="mg-center width-max-content block" >{status}</div>
-        <div className="grid-3 grid-square-4r gap-s place-items-center mg-center width-min" >
+      <div className="flex flex-col">
+        <div className="mx-auto w-max block mb-4">{status}</div>
+        <div className="grid grid-os-xs gap-2 place-items-center mx-auto w-min">
           {this.state.squares.map((square, index) => {
             const active = square == null && this.state.winner == null;
             let highlight; 
