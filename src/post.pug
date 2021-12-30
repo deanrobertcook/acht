@@ -1,15 +1,16 @@
 extends head.pug
 
 block body
-  div(class="min-h-80").bg-hero
-  div(class="mx-auto -mt-40 mb-40 max-w-prose").fs-l.shdw-l
-    a(href="index.html" class="block mb-2").color-hero &lt; Home
-    article(class="group:last-child:mb-0 p-6").bg-highlight
-      header(class="flex flex-row items-end justify-between")
-        h1(class="mb-2") #{title} 
-        p(class="mb-2 opacity-50 uc").fs-s.lh-1!=formatDate(date)
+  div(class="bg-temple bg-dark-blue min-h-80")
+  div(class="mx-auto -mt-40 mb-40 max-w-prose text-xl shadow-lg")
+    a(href="index.html" class="block mb-2 text-baby-blue") &lt; Home
+    article(class="bg-slate-50 p-6 group:last-child:mb-0")
+      header(class="flex flex-row items-end justify-between mb-2")
+        h1(class="mb-0 text-4xl") #{title} 
+        p(class="mb-0 opacity-50 uc text-base leading-none")!=formatDate(date)
       hr(class="mb-4 hr-big")
-      != content
+      div#post
+        != content
       
 
        

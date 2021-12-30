@@ -1,104 +1,29 @@
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/************************
- ** BASE STYLES
- ************************/
-:root {
-  --bg-color-1: #f8fafc;
-  --bg-color-2: #e2e8f0;
-
-  --bg-hero: #001845;
-
-  --font-color: #0f172a;
-  --font-color-hero: #85AFFF;
-  --font-color-accent: #DD6E42;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration-line: underline;
+  }
+  
+  a:hover {
+    @apply text-dark-orange;
+    text-decoration-line: underline;
+  }
 }
-
-html {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body {
-  font-family: system-ui;
-  font-size: 16px;
-  color: var(--font-color);
-  background-color: var(--bg-color-2);
-  margin: 0;
-}
-
-h1,h2,h3,h4,h5,h6,
-ul,ol,dd,
-p,figure,
-pre,table,fieldset,hr {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-}
-
-h1,h2,h3,h4,h5,h6 {
-  line-height: 1em;
-}
-
-h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
-
-p, ul, ol {
-  line-height: 1.5em;
-}
-
-a {
-  color: inherit;
-}
-
-a:hover {
-  color: var(--font-color-accent);
-}
-
-/************************
- ** Old Utilities
- ************************/
-
-.fs-res { font-size: 1rem; }
-.fs-xxl { font-size: 5em; }
-.fs-l { font-size: 1.3em; }
-.fs-s { font-size: 0.8em; }
-
-.lh-1 { line-height: 1em; }
-.lh-1p5 { line-height: 1.5em; }
-.lh-2 { line-height: 2em; }
-.lh-3r { line-height: 3rem; }
-.lh-4r { line-height: 4rem; }
-
-.bg-hero {
-  background: url('temple.svg');
-  background-color: var(--bg-hero);
-  z-index: -1;
-}
-
-.color-hero { color: var(--font-color-hero); }
-.color-accent { color: var(--font-color-accent); }
-
-.no-hover { pointer-events: none; }
-.hover--pointer:hover { cursor: pointer; }
-
-.hover--color-hero:hover { color: var(--font-color-hero); }
-.hover--color-main:hover { color: var(--font-color); }
-
-.bg-color-hero { background-color: var(--bg-hero); }
-
-.bg-highlight { background-color: var(--bg-color-1); }
-
-.shdw { box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); }
-.shdw-m { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
-.shdw-l { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
-.shdw-in { box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05); }
 
 @layer components {
+
+  .bg-temple {
+    background: url('temple.svg');
+  }
+
   .grid-os-xs { 
     grid-template-columns: repeat(3, 4rem); 
     grid-auto-rows: 4rem;
@@ -108,11 +33,6 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;
-  }
-  
-  .list-none {
-    list-style: none;
-    padding-left: 0;
   }
   
   .hr-big {
@@ -132,23 +52,13 @@ a:hover {
   }
 }
 
-/************************
- ** Animations
- ************************/
-.hover--animate-away:hover {
-  animation: 0.25s ease forwards anim;
+/* 
+* POST STYLES
+*/
+#post * {
+  @apply mb-6;
 }
 
-@media (max-width: 768px) {
-  .hover--animate-away:hover {
-    animation: none;
-  }
-}
-
-@keyframes anim {
-  to {
-    /* same as shdw-l */
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    transform: translate(0, -4px);
-  }
+#post h2 {
+  @apply text-3xl;
 }

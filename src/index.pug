@@ -1,24 +1,24 @@
 extends head.pug
 
 block body
-  div(class="flex flex-col items-center min-h-80 mb-4 pt-8").bg-hero.color-hero
+  div(class="bg-temple bg-dark-blue text-baby-blue flex flex-col items-center min-h-80 mb-4 pt-8")
     h1(class="mt-auto mb-2 text-7xl") #{blogTitle}
-    p(class="mb-auto text-center opacity-70 uc").lh-1.fs-l Under heavy construction
-    div(class="flex flex-col justify-center")
-      p(class="mb-2 text-center	") deanrobertcook@gmail.com
-      div(class="flex flex-row items-center justify-center mb-8 gap-2")
-        a(href="https://www.linkedin.com/in/deanrobertcook/" target="_blank" rel="noopener noreferrer")
-          img(src="linkedin.svg" class="m-0 w-8 h-8")
-        a(href="https://github.com/deanrobertcook" target="_blank" rel="noopener noreferrer")
-          img(src="github.svg" class="m-0 w-8 h-8")
+    p(class="mb-auto text-center opacity-70 uc text-xl leading-none") Under heavy construction
+    p(class="mb-2 text-center") deanrobertcook@gmail.com
+    div(class="flex flex-row items-center justify-center mb-8 gap-2")
+      a(href="https://www.linkedin.com/in/deanrobertcook/" target="_blank" rel="noopener noreferrer")
+        img(src="linkedin.svg" class="m-0 w-8 h-8")
+      a(href="https://github.com/deanrobertcook" target="_blank" rel="noopener noreferrer")
+        img(src="github.svg" class="m-0 w-8 h-8")
+      
 
   div
-    ul(class="grid grid-cols-1 md:grid-cols-3 auto-rows-fr gap-4 mb-4 mx-auto max-w-[100ch] list-none")
+    ul(class="grid grid-cols-1 md:grid-cols-3 auto-rows-fr gap-4 mb-4 mx-auto max-w-[100ch]")
       each post in posts.slice(0, 10).sort(postOrder)
         li
-          a(class="flex flex-col p-4 max-w-[50ch] mx-auto h-full no-underline" href=post.href).bg-highlight.hover--animate-away
-            h2 #{post.title}
-            p(class="m-0").maxlines-10
+          a(href=post.href class="flex flex-col bg-slate-50 p-4 max-w-[50ch] mx-auto h-full no-underline hover:no-underline md:hover:animate-lift")
+            h2(class="text-2xl mb-4") #{post.title}
+            p(class="m-0 maxlines-10")
               != post.preview
                   
       

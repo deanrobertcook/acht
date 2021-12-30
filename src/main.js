@@ -4,14 +4,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 function Square(props) {
-  const active = props.active ? "hover--pointer" : "no-hover"
-  const color = props.highlight ? "color-accent" : "color-hero"
+  const active = props.active ? "cursor-pointer" : "pointer-events-none"
+  const color = props.highlight ? "text-dark-orange" : "text-baby-blue"
   return (
-    <a className={`w-full h-full m-0 text-center bg-color-hero fs-l lh-4r ${active} ${color}`}
+    <p className={`w-full h-full m-0 text-center bg-dark-blue text-[2rem] leading-[4rem] ${active} ${color}`}
       onClick={props.onClick}
     >
       {props.value}
-    </a>
+    </p>
   );
 }
 
