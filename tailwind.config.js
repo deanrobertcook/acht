@@ -20,6 +20,7 @@ module.exports = {
       },
       animation: {
         lift: 'lift 0.25s ease forwards',
+        'ping-once': 'ping 1s cubic-bezier(0, 0, 0.2, 1) forwards',
       }
     }
   }

@@ -16,6 +16,17 @@
     @apply text-dark-orange;
     text-decoration-line: underline;
   }
+
+  /* 
+  * POST STYLES
+  */
+  .post > * {
+    @apply mb-6;
+  }
+
+  .post > h2 {
+    @apply text-3xl;
+  }
 }
 
 @layer components {
@@ -50,15 +61,4 @@
     -webkit-box-orient: vertical;  
     overflow: hidden;
   }
-}
-
-/* 
-* POST STYLES
-*/
-#post * {
-  @apply mb-6;
-}
-
-#post h2 {
-  @apply text-3xl;
 }
