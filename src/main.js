@@ -138,8 +138,8 @@ class Board extends React.Component {
             return <Square 
               key={index} 
               value={square} 
-              active={square == null && winner == null} 
-              highlight={winningLine ? winningLine.includes(index) : false} 
+              active={!square && !winner} 
+              highlight={winningLine && winningLine.includes(index)} 
               animate={animating.includes(index)}
               onClick={() => this.onSquareClick(index)} />;
           }) }
@@ -166,8 +166,8 @@ class Game extends React.Component {
 }
 
 // ========================================
+const root = document.getElementById('react');
+if (root) {
+  ReactDOM.render(<Game />, root);
+}
 
-ReactDOM.render(
-  <Game />,
-  document.getElementById('react')
-);
