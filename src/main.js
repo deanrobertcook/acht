@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 function Square(props) {
-  let {
+  const {
     active,
     highlight,
     animate,
@@ -33,6 +33,7 @@ class Board extends React.Component {
     winningLine: undefined,
     winner: undefined,
     animating: [],
+    draw: false,
   };
 
   constructor(props) {
@@ -40,12 +41,17 @@ class Board extends React.Component {
     this.state = Board.initialState;
 
     this.onSquareClick = (index) => {
-      if (this.state.squares[index] != null) {
+      const {
+        next, 
+        squares, 
+      } = this.state;
+
+      if (squares[index] != null) {
         return;
       }
 
-      const newSquares = this.state.squares.slice();
-      newSquares[index] = this.state.next;
+      const newSquares = squares.slice();
+      newSquares[index] = next;
       const winningLine = this.calculateWinningLine(newSquares);
 
       const draw = newSquares.every(x => !!x);
@@ -61,6 +67,7 @@ class Board extends React.Component {
         next: state.next == 'X' ? 'O' : 'X',
         winningLine,
         winner: winningLine ? newSquares[winningLine[0]] : undefined,
+        draw
       }))
     }
   }
@@ -103,15 +110,31 @@ class Board extends React.Component {
   }
 
   render() {
-    const status = this.state.winner == null ? `Next player: ${this.state.next}` : `Winner: ${this.state.winner}`;
+
+    const {
+      next, 
+      squares, 
+      winner, 
+      winningLine, 
+      animating, 
+      draw
+    } = this.state;
+
+    let status;
+    if (winner) {
+      status = `Winner: ${winner}`
+    } else if (draw) {
+      status = 'Draw!'
+    } else {
+      status = `Next player: ${next}`
+    }
 
     return (
       <div className="flex flex-col">
         <div className="mx-auto w-max block mb-4">{status}</div>
         <div className="grid grid-os-xs gap-2 place-items-center mx-auto w-min">
 
-          {this.state.squares.map((square, index) => {
-            const {winner, winningLine, animating} = this.state;
+          {squares.map((square, index) => {
             return <Square 
               key={index} 
               value={square} 
