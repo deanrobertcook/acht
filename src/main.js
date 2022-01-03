@@ -189,25 +189,9 @@ function getAiMove(board) {
   return availableMoveIndicies[nth]; //return the index of the nth element;
 }
 
-class Game extends React.Component {
-  render() {
-    return (
-      <div>
-        <div>
-          <Board />
-        </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
-        </div>
-      </div>
-    );
-  }
-}
-
 // ========================================
 const root = document.getElementById('react');
 if (root) {
-  ReactDOM.render(<Game />, root);
+  ReactDOM.render(<Board />, root);
 }
 
