@@ -62,12 +62,6 @@ class Board extends React.Component {
 
       const draw = newSquares.every(x => !!x);
 
-      if (winningLine) {
-        this.animateReset(winningLine);
-      } else if (draw) {
-        this.animateReset(Array.from(newSquares.keys()));
-      }
-
       this.setState((state, props) => ({
         squares: newSquares,
         next: state.next == 'X' ? 'O' : 'X',
@@ -76,11 +70,6 @@ class Board extends React.Component {
         winner: newSquares[winningLine?.at(0)]?.player,
         draw
       }));
-
-      if (next == 'X') {
-        // Fake a "thinking" time for the AI, then pick a move;
-        setTimeout(() => this.onSquareClick(getAiMove(newSquares)), Math.random() * 300 + 200);
-      }
     }
   }
 
@@ -105,6 +94,24 @@ class Board extends React.Component {
     return winningLine?.sort((a, b) => squares[a].turn - squares[b].turn);
   }
 
+  componentDidUpdate() {
+    const {
+      next,
+      draw,
+      winningLine,
+      squares,
+      animating
+    } = this.state;
+    if (winningLine && animating.length == 0) {
+      this.animateReset(winningLine);
+    } else if (draw && animating.length == 0) {
+      this.animateReset(Array.from(squares.keys()));
+    } else if (next == 'O' && !(winningLine || draw)) { //AI's turn
+      // Fake a "thinking" time for the AI, then pick a move;
+      setTimeout(() => this.onSquareClick(getAiMove(this.state.squares)), Math.random() * 300 + 500);
+    } 
+  }
+
   animateReset(elsToAnimate) {
     setTimeout(() => {
       elsToAnimate.forEach((e, i) => {
@@ -124,7 +131,6 @@ class Board extends React.Component {
   }
 
   render() {
-
     const {
       next, 
       squares, 
