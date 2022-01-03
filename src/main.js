@@ -10,7 +10,7 @@ function Square(props) {
     animate,
     value,
     onClick
-  } = props
+  } = props;
   const pointer = active ? "cursor-pointer" : "pointer-events-none";
   const color = highlight ? "text-dark-orange" : "text-baby-blue";
   const animation = animate ? "animate-ping-once" : "";
@@ -34,7 +34,7 @@ class Board extends React.Component {
     winningLine: undefined,
     winner: undefined,
     animating: [],
-    draw: false,
+    draw: false
   };
 
   constructor(props) {
@@ -45,10 +45,11 @@ class Board extends React.Component {
       const {
         next,
         turn,
-        squares, 
+        squares,
+        winner
       } = this.state;
 
-      if (squares[index] != null) {
+      if (squares[index] || winner) {
         return;
       }
 
@@ -74,7 +75,12 @@ class Board extends React.Component {
         winningLine,
         winner: newSquares[winningLine?.at(0)]?.player,
         draw
-      }))
+      }));
+
+      if (next == 'X') {
+        // Fake a "thinking" time for the AI, then pick a move;
+        setTimeout(() => this.onSquareClick(getAiMove(newSquares)), Math.random() * 300 + 200);
+      }
     }
   }
 
@@ -128,13 +134,15 @@ class Board extends React.Component {
       draw
     } = this.state;
 
+    const aiNext = next == 'O';
+
     let status;
     if (winner) {
-      status = `Winner: ${winner}`
+      status = winner == 'X' ? 'You won!' : 'I win!';
     } else if (draw) {
-      status = 'Draw!'
+      status = 'Draw!';
     } else {
-      status = `Next player: ${next}`
+      status = next == 'X' ? 'Your turn!' : 'Hmm...';
     }
 
     return (
@@ -146,15 +154,25 @@ class Board extends React.Component {
             return <Square 
               key={index} 
               value={square?.player} 
-              active={!square?.player && !winner} 
+              active={!aiNext && !square?.player && !winner} 
               highlight={winningLine && winningLine.includes(index)} 
               animate={animating.includes(index)}
-              onClick={() => this.onSquareClick(index)} />;
+              onClick={() => aiNext ? {} : this.onSquareClick(index)} />;
           }) }
         </div>
       </div>
     );
   }
+}
+
+// Returns the AI's next move choice (the index to put down an 'O')
+function getAiMove(board) {
+  const availableMoveIndicies = board
+    .map((v, i) => !v ? i : null) //map null elements to their index, otherwise null
+    .filter(v => !!v) //filter out the nulls
+
+  const nth = Math.floor(Math.random() * availableMoveIndicies.length); //pick the nth null spot
+  return availableMoveIndicies[nth]; //return the index of the nth element;
 }
 
 class Game extends React.Component {
