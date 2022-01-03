@@ -32,45 +32,42 @@ class Board extends React.Component {
     turn: 1,
     squares: Array(9).fill(null),
     winningLine: undefined,
-    winner: undefined,
     animating: [],
-    draw: false
   };
 
   constructor(props) {
     super(props);
     this.state = Board.initialState;
+  }
 
-    this.onSquareClick = (index) => {
-      const {
-        next,
-        turn,
-        squares,
-        winner
-      } = this.state;
+  onSquareClick(index) {
+    const {
+      next,
+      turn,
+      squares,
+      winningLine
+    } = this.state;
 
-      if (squares[index] || winner) {
-        return;
-      }
-
-      const newSquares = squares.slice();
-      newSquares[index] = {
-        player: next,
-        turn
-      };
-      const winningLine = this.calculateWinningLine(newSquares);
-
-      const draw = newSquares.every(x => !!x);
-
-      this.setState((state, props) => ({
-        squares: newSquares,
-        next: state.next == 'X' ? 'O' : 'X',
-        turn: state.next == 'O' ? state.turn + 1 : state.turn,
-        winningLine,
-        winner: newSquares[winningLine?.at(0)]?.player,
-        draw
-      }));
+    if (squares[index] || winningLine || this.isDraw()) {
+      return;
     }
+
+    const newSquares = squares.slice();
+    newSquares[index] = {
+      player: next,
+      turn
+    };
+
+    this.setState((state, props) => ({
+      squares: newSquares,
+      next: state.next == 'X' ? 'O' : 'X',
+      turn: state.next == 'O' ? state.turn + 1 : state.turn,
+      winningLine: this.calculateWinningLine(newSquares)
+    }));
+  }
+
+  isDraw() {
+    return this.state.squares.every(x => !!x);
   }
 
   calculateWinningLine(squares) {
@@ -97,16 +94,16 @@ class Board extends React.Component {
   componentDidUpdate() {
     const {
       next,
-      draw,
       winningLine,
       squares,
       animating
     } = this.state;
+    const draw = this.isDraw();
     if (winningLine && animating.length == 0) {
       this.animateReset(winningLine);
     } else if (draw && animating.length == 0) {
       this.animateReset(Array.from(squares.keys()));
-    } else if (next == 'O' && !(winningLine || draw)) { //AI's turn
+    } else if (next == 'O') { //AI's turn
       // Fake a "thinking" time for the AI, then pick a move;
       setTimeout(() => this.onSquareClick(getAiMove(this.state.squares)), Math.random() * 300 + 500);
     } 
@@ -134,13 +131,40 @@ class Board extends React.Component {
     const {
       next, 
       squares, 
-      winner, 
       winningLine, 
-      animating, 
-      draw
+      animating
     } = this.state;
 
     const aiNext = next == 'O';
+
+    return (
+      <div className="flex flex-col">
+        <div className="mx-auto w-max block mb-4">{this.getStatus()}</div>
+        <div className="grid grid-os-xs gap-2 place-items-center mx-auto w-min">
+
+          {squares.map((square, index) => {
+            return <Square 
+              key={index} 
+              value={square?.player} 
+              active={!aiNext && !square?.player && !winningLine} 
+              highlight={winningLine && winningLine.includes(index)} 
+              animate={animating.includes(index)}
+              onClick={() => aiNext ? {} : this.onSquareClick(index)} />;
+          }) }
+        </div>
+      </div>
+    );
+  }
+
+  getStatus() {
+    const {
+      next, 
+      squares,
+      winningLine
+    } = this.state;
+
+    const winner = squares[winningLine?.at(0)]?.player;
+    const draw = this.isDraw();
 
     let status;
     if (winner) {
@@ -151,23 +175,7 @@ class Board extends React.Component {
       status = next == 'X' ? 'Your turn!' : 'Hmm...';
     }
 
-    return (
-      <div className="flex flex-col">
-        <div className="mx-auto w-max block mb-4">{status}</div>
-        <div className="grid grid-os-xs gap-2 place-items-center mx-auto w-min">
-
-          {squares.map((square, index) => {
-            return <Square 
-              key={index} 
-              value={square?.player} 
-              active={!aiNext && !square?.player && !winner} 
-              highlight={winningLine && winningLine.includes(index)} 
-              animate={animating.includes(index)}
-              onClick={() => aiNext ? {} : this.onSquareClick(index)} />;
-          }) }
-        </div>
-      </div>
-    );
+    return status;
   }
 }
 
