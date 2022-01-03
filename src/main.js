@@ -29,6 +29,7 @@ class Board extends React.Component {
 
   static initialState = {
     next: 'X',
+    turn: 1,
     squares: Array(9).fill(null),
     winningLine: undefined,
     winner: undefined,
@@ -42,7 +43,8 @@ class Board extends React.Component {
 
     this.onSquareClick = (index) => {
       const {
-        next, 
+        next,
+        turn,
         squares, 
       } = this.state;
 
@@ -51,7 +53,10 @@ class Board extends React.Component {
       }
 
       const newSquares = squares.slice();
-      newSquares[index] = next;
+      newSquares[index] = {
+        player: next,
+        turn
+      };
       const winningLine = this.calculateWinningLine(newSquares);
 
       const draw = newSquares.every(x => !!x);
@@ -65,15 +70,16 @@ class Board extends React.Component {
       this.setState((state, props) => ({
         squares: newSquares,
         next: state.next == 'X' ? 'O' : 'X',
+        turn: state.next == 'O' ? state.turn + 1 : state.turn,
         winningLine,
-        winner: winningLine ? newSquares[winningLine[0]] : undefined,
+        winner: newSquares[winningLine?.at(0)]?.player,
         draw
       }))
     }
   }
 
-  calculateWinningLine(newSquares) {
-    return [
+  calculateWinningLine(squares) {
+    const winningLine = [
       [0, 1, 2],
       [3, 4, 5],
       [6, 7, 8],
@@ -85,10 +91,12 @@ class Board extends React.Component {
       [0, 4, 8],
       [2, 4, 6],
     ].find(line => {
-      return newSquares[line[0]] != null && 
-        newSquares[line[0]] === newSquares[line[1]] &&
-        newSquares[line[0]] === newSquares[line[2]]
+      return squares[line[0]]?.player && 
+        squares[line[0]]?.player === squares[line[1]]?.player &&
+        squares[line[0]]?.player === squares[line[2]]?.player
     });
+    // Sort the winning line in the turn order in which the winning player put down their pieces.
+    return winningLine?.sort((a, b) => squares[a].turn - squares[b].turn);
   }
 
   animateReset(elsToAnimate) {
@@ -137,8 +145,8 @@ class Board extends React.Component {
           {squares.map((square, index) => {
             return <Square 
               key={index} 
-              value={square} 
-              active={!square && !winner} 
+              value={square?.player} 
+              active={!square?.player && !winner} 
               highlight={winningLine && winningLine.includes(index)} 
               animate={animating.includes(index)}
               onClick={() => this.onSquareClick(index)} />;
