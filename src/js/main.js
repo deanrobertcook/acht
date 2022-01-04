@@ -1,7 +1,8 @@
-import './style.css';
+import '../style.css';
 
 import React from "react";
 import ReactDOM from "react-dom";
+import { getAiMove, WINNING_LINES} from './minimax'
 
 function Square(props) {
   const {
@@ -70,25 +71,14 @@ class Board extends React.Component {
     return this.state.squares.every(x => !!x);
   }
 
-  calculateWinningLine(squares) {
-    const winningLine = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-
-      [0, 4, 8],
-      [2, 4, 6],
-    ].find(line => {
-      return squares[line[0]]?.player && 
-        squares[line[0]]?.player === squares[line[1]]?.player &&
-        squares[line[0]]?.player === squares[line[2]]?.player
+  calculateWinningLine(board) {
+    const winningLine = WINNING_LINES.find(line => {
+      return board[line[0]]?.player &&
+        board[line[0]]?.player === board[line[1]]?.player &&
+        board[line[0]]?.player === board[line[2]]?.player
     });
     // Sort the winning line in the turn order in which the winning player put down their pieces.
-    return winningLine?.sort((a, b) => squares[a].turn - squares[b].turn);
+    return winningLine?.sort((a, b) => board[a].turn - board[b].turn);
   }
 
   componentDidUpdate() {
@@ -106,7 +96,7 @@ class Board extends React.Component {
     } else if (next == 'O') { //AI's turn
       // Fake a "thinking" time for the AI, then pick a move;
       setTimeout(() => this.onSquareClick(getAiMove(this.state.squares)), Math.random() * 300 + 500);
-    } 
+    }
   }
 
   animateReset(elsToAnimate) {
@@ -124,14 +114,14 @@ class Board extends React.Component {
         )
       });
     },
-    700);
+      700);
   }
 
   render() {
     const {
-      next, 
-      squares, 
-      winningLine, 
+      next,
+      squares,
+      winningLine,
       animating
     } = this.state;
 
@@ -143,14 +133,14 @@ class Board extends React.Component {
         <div className="grid grid-os-xs gap-2 place-items-center mx-auto w-min">
 
           {squares.map((square, index) => {
-            return <Square 
-              key={index} 
-              value={square?.player} 
-              active={!aiNext && !square?.player && !winningLine} 
-              highlight={winningLine && winningLine.includes(index)} 
+            return <Square
+              key={index}
+              value={square?.player}
+              active={!aiNext && !square?.player && !winningLine}
+              highlight={winningLine && winningLine.includes(index)}
               animate={animating.includes(index)}
               onClick={() => aiNext ? {} : this.onSquareClick(index)} />;
-          }) }
+          })}
         </div>
       </div>
     );
@@ -158,7 +148,7 @@ class Board extends React.Component {
 
   getStatus() {
     const {
-      next, 
+      next,
       squares,
       winningLine
     } = this.state;
@@ -177,16 +167,6 @@ class Board extends React.Component {
 
     return status;
   }
-}
-
-// Returns the AI's next move choice (the index to put down an 'O')
-function getAiMove(board) {
-  const availableMoveIndicies = board
-    .map((v, i) => !v ? i : null) //map null elements to their index, otherwise null
-    .filter(v => !!v) //filter out the nulls
-
-  const nth = Math.floor(Math.random() * availableMoveIndicies.length); //pick the nth null spot
-  return availableMoveIndicies[nth]; //return the index of the nth element;
 }
 
 // ========================================

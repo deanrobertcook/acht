@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 
 var config = {
   entry: {
-    main: './src/main.js'
+    main: './src/js/main.js'
   },
   mode: "production",
   output: {
@@ -68,12 +68,7 @@ var config = {
       {
         test: /\.js$/i,
         exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-react', '@babel/preset-env']
-          }
-        }
+        use: ['babel-loader']
       },
     ],
   },

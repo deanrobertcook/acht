@@ -7,7 +7,8 @@
     "dev": "webpack serve --open --mode=development",
     "compile": "webpack --mode=development",
     "clean": "rm www/*",
-    "deploy": "scp -r www/* admin@194.195.244.93:/home/www/achtfast"
+    "deploy": "scp -r www/* admin@194.195.244.93:/home/www/achtfast",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "file-loader": "^6.2.0",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.5",
     "jstransformer-markdown-it": "^2.1.0",
     "markdown-it": "^12.3.0",
     "mini-css-extract-plugin": "^2.4.5",
