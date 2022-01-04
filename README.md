@@ -1,25 +1,34 @@
+# Acht
 Welcome to the inner workings of my blog.
 
-Here's a brief summary of the tech stack:
+Here's a brief summary of the tech stack and what I've learnt from building the blog so far:
+### Backend: Linode, Alpine Linux and nginx
+First off, I wanted to make the underlying infrastructure of the website as simple as possible. If I'm going to start building websites, then I want to do so with full control while still keeping costs down and complexity low. I also wanted to avoid using AWS, GCP or MS Azure for a host of idealogical reasons. I then discovered the [Alternative Cloud](https://www.linode.com/category/alternative-cloud/) and Linode, which at least for now satisfied all my criteria. 
 
-### Hosting:
-Runs on a tiny node on [Linode](https://www.linode.com/) (a pretty cool Alternative cloud provider). 
+I then chose to use Alpine Linux as its motto is "Small. Simple. Secure." Can't get any better than that. I took my time to understand how it's package manager works, it's choice of musl standard library over glibc (as well as the tradeoffs one must accept there) and also how to properly secure a Linux node in the cloud. 
 
-### Backend: 
-Nginx on an Alpine Linux container. I can definitely get behind the philosophy of both technologies, particularly that they are small and focus on doing one thing well. 
-### Frontend:
-Self-rolled SSG, super minimal. About [100 lines of Node.js code](https://github.com/deanrobertcook/acht/blob/main/compile.js) putting together a few pug templates injected with my essays.
+Finally, I'd never setup an nginx server before, so I dove into the docs, philosophy and [architecture](http://aosabook.org/en/nginx.html) of arguably the best tool out there for serving static content. 
 
-### Design:
-I've focused on keeping things as simple as possible, and have done my best to keep things responsive as I update the design. 
 
-The CSS code also follows the [utility-first](https://tailwindcss.com/docs/utility-first) approach to styling markup. Even for a small project like this, it has a lot of benefits, particularly in its potential as a way of making learning CSS easier.
+### Build setup: Pug, webpack and tailwindcss
+I've used static site generators like Jekyll and Hugo before, but something about them bothered me for this blog. There's a fair bit to (re)learn to get them working properly and really I just wanted to run a few markdown files through an HTML template. 
 
----
+I then came across Pug and in just less than 50 lines (see [here](https://github.com/deanrobertcook/acht/blob/main/src/index.pug) and [here](https://github.com/deanrobertcook/acht/blob/main/src/post.pug)), I was done. Originally, I had my own simple compilation script that read in the markdown files, but soon I decided it was time to relearn React. Now I had to introduce webpack to bundle the js files and their dependencies, and then manually link them to the HTML output from my Pug templates. Still, only two manual build steps was manageable. 
+
+As I started tweaking my CSS every 10 minutes, however, things got harder to keep track of and small tweaks would break different parts of the design. I then started reading around and came across [this article](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/) from Adam Wathan, which catapulted my CSS knowledge several years into the future. With that, I started writing my own "utility classes".
+
+Having a small collection of my own utility classes and understanding their power, I decided to give [tailwindcss](https://tailwindcss.com/) a try, as managing utility classes and deciding what to call them is still a pain. For that though, I'd need a third compilation step: bundle the React, build the Pug templates (and include the js), and now run tailwindcss' build process. It was time to really dive into webpack and understand its internal workings to combine all the build steps into one. Given that webpack can handle pretty much anything (minification, transpilation, postcss, watching for file changes in development, etc.) with its loader and plugin ecosystem, it was well worth the effort to write my own [simple loaders](https://github.com/deanrobertcook/acht/tree/main/loaders) to combine them into one command.
+
+This whole process was a ton of fun, and helped refresh my Node.js knowledge too!
+
+### Frontend: HTML, CSS, React and UI design
+Perhaps the most interesting part of this journey was diving more into the principles of good web design. It's hard to list out exactly what I've learnt here, since it's much more of an art than a science, but you can see that the website behaves responsively on mobile and hopefully I've struck a good balance between topography, colour and layout. I still have a long way to go on this journey, but I now feel confident finding inspiration from Codepen, Free Frontend and Dribbble, and coding things up in HTML and CSS.
+
+Also, I've used React before, but here I wanted to really combine my custom component with CSS and animations to give it a little extra pop! It's also good just to refresh my knowledge in JavaScript and working with the browser!
 
 I'm still learning a great deal, especially when it comes to accessability and design, but so far it's a been a fun start 😊
 
-
+---
 ## Deployment Checklist
 Just a little note to self for whenever I have to redeploy an nginx server
 

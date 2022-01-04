@@ -22,10 +22,27 @@
   */
   .post > * {
     @apply mb-6;
+    @apply leading-relaxed;
   }
 
   .post > h2 {
     @apply text-3xl;
+    @apply mb-4;
+  }
+
+  .post > h3 {
+    @apply text-2xl;
+    @apply mb-2;
+    @apply font-semibold;
+  }
+
+  .post > ul {
+    @apply list-disc;
+    @apply pl-6;
+  }
+
+  .post li {
+    @apply mb-3;
   }
 }
 
