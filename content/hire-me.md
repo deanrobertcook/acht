@@ -15,9 +15,9 @@ But first, how about a quick game of naughts and crosses (or tic-tac-toe, for th
 
 <br>
 
-This is nothing special, just the [React introduction example](https://reactjs.org/tutorial/tutorial.html) with my own twist to it. The example is simple, but should hopefully give a quick TL;DR on my skills. Pease check out the [underlying code](https://github.com/deanrobertcook/acht/blob/main/src/main.js) and have a look around!
+This is nothing special, just the [React introduction example](https://reactjs.org/tutorial/tutorial.html) with my own twist to it. The example is simple, but should hopefully give a quick TL;DR on my skills. Pease check out the [underlying code](https://github.com/deanrobertcook/acht/tree/main/src/js) and have a look around!
 
-By the way, you can't win... I used a minimax algorithm which always at least guarantees a draw... Anyway, onto the story!
+By the way, you can't win... I used a minimax algorithm which in naughts and crosses always at least guarantees a draw... Anyway, onto the story!
 
 ## Background
 I've been working for the last year as a freelancer and remotely since before the pandemic. In that time I've had quite a few different projects, some successful and others not. Working alone most of the time has taught me a lot about myself and first hand the difficulties of having a remote setup. In all honesty, I'm sick of it. 
