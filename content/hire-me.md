@@ -43,6 +43,7 @@ Building the blog from scratch also had the desired effect of teaching me all of
 - a bunch of CSS fundamentals (thank you [Kevin Powell](https://www.youtube.com/kepowob)!),
 - the importance of HTML semantics,
 - more React and JavaScript,
+- testing with Jest,
 
 just to name a few!
 
