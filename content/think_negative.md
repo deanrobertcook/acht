@@ -2,6 +2,7 @@
 title: Think Negative
 date: 2021-03-10
 ---
+How often do you tell yourself "chin up", "just think positive", or "don't let it drag you down"? We have a lot of ways to remind ourselves to always look on the bright side of life. But what if our efforts to pretend that everything is okay ultimately waste our energy and only serve to strengthen the pain we feel, or worse, disconnect us from the very emotions trying to warn us something is wrong?
 
 ## What do I regret?
 
@@ -19,4 +20,4 @@ Negativity is a valence, a quality that something might have in a particular dir
 
 Pessimism is a state of mind, a very particular type of negativity - that of __being__ negative, and often what we think of when talking about negativity in relation to our mindsets or attitudes towards the world. Pessimism, while perhaps useful in some circumstances (I'll leave the reader to decide for themselves when that might be the case), tends to be toxic and only serves to demotivate and alienate you from others. There seems to be something fundamentally useful about [optimism](https://en.wikipedia.org/wiki/A*_search_algorithm) and I don't think it conflicts with the idea of negativity I'm trying to push here.
 
-To drive home the point of what David Whyte and the researchers that discovered ironic processes or mental contrasting are saying, we can hold the negative aspects of our lives - the things that have gone in the direction opposite to that which we arbitrarily defined for ourselves - in our minds without succumbing to fear or anger, or perhaps even with warmth and respect for ourselves. In fact, it might be necessary to do so if we want to really understand ourselves and make progress.
+To drive home the point of what David Whyte and the researchers that discovered ironic processes or mental contrasting are saying, we can call to mind the negative aspects of our lives - the things that have gone in the direction opposite to that which we arbitrarily defined for ourselves as positive - without succumbing to fear or anger, or perhaps even with warmth and respect. In fact, it might be necessary to do so if we want to really understand ourselves and make progress.
