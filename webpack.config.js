@@ -1,9 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const fs = require('fs');
 const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
+const utils = require('./build/utils')
 
 var config = {
   entry: {
@@ -31,7 +31,7 @@ var config = {
         use: [
           "html-loader",
           {
-            loader: path.resolve('loaders', 'index-page-loader.js'),
+            loader: path.resolve('build', 'index-page-loader.js'),
           }]
       },
       {
@@ -39,7 +39,7 @@ var config = {
         use: [
           "html-loader",
           {
-            loader: path.resolve('loaders', 'post-page-loader.js'),
+            loader: path.resolve('build', 'post-page-loader.js'),
           }]
       },
       {
@@ -85,13 +85,14 @@ module.exports = (env, argv) => {
 }
 
 function buildPostHtmlPlugins() {
-  return fs.readdirSync('content').map(file => {
-    return new HtmlWebpackPlugin({
-      template: path.resolve('content', file),
-      filename: path.parse(file).name + '.html',
-      meta: {
-        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-      }
-    });
+  return utils.getPosts()
+    .map(file => {
+      return new HtmlWebpackPlugin({
+        template: file,
+        filename: path.parse(file).name + '.html',
+        meta: {
+          viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+        }
+      });
   });
 }

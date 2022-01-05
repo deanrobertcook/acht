@@ -1,7 +1,6 @@
 ---
 title: Finding My Vocation
 date: 2021-02-28
-exclude: true
 ---
 
 > Some people die at 25 and aren't buried until 75 - Benjamin Franklin

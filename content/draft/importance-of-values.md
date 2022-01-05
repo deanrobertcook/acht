@@ -2,7 +2,6 @@
 title: The Importance of Values
 date: 2021-12-21
 draft: true
-exclude: true
 ---
 
 It's tempting to end the debate there: "just fix the incentives and boom! Mission accomplished". But which incentive structures do we pick for ourselves? Well, perhaps that can be answered with a few [well-conducted studies](https://www.gallup.com/home.aspx)? Just find out which structures offer the most utilitarian benefit and implement those, right? If it's obvious that more equal representation of women throughout our society brings us closer to say, [reaching our climate goals](https://bloombergcities.medium.com/5-women-mayors-to-watch-for-climate-leadership-3d3ea407afed), then that's a force for good we want to replicate elsewhere with similar incentive structures around the world.

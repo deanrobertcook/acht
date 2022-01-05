@@ -2,7 +2,6 @@
 title: In the Small
 date: 2021-12-15
 draft: true
-exclude: true
 ---
 
 - Our entire world is fractal in nature.

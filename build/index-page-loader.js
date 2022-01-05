@@ -23,19 +23,16 @@ module.exports = function (source) {
 }
 
 function compilePosts() {
-  return fs.readdirSync('content').reverse().map(file => {
-    let { content, frontMatter } = utils.splitFrontMatter(fs.readFileSync(`content/${file}`, 'utf8'));
+  return utils.getPosts()
+    .map(file => {
+      let { content, frontMatter } = utils.splitFrontMatter(fs.readFileSync(file, 'utf8'));
 
-    if (frontMatter['exclude']) {
-      return null;
-    }
-
-    let slug = path.parse(file).name;
-    return {
-      slug,
-      href: slug + '.html',
-      preview: utils.extractPreview(content),
-      ...frontMatter
-    };
-  }).filter(v => !!v);
+      let slug = path.parse(file).name;
+      return {
+        slug,
+        href: slug + '.html',
+        preview: utils.extractPreview(content),
+        ...frontMatter
+      };
+    })
 }
