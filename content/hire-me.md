@@ -37,10 +37,13 @@ Building the blog from scratch also had the desired effect of teaching me all of
 - Linux server hardening (e.g. user management and sshd config),
 - nginx server configuration,
 - Pug templates,
+- using webpack to automate my build (in effect creating my own SSG),
 - how to write a [webpack loader](https://github.com/deanrobertcook/acht/tree/main/build),
 - more Node.js internals (e.g. the difference between ES6 and Node modules),
 - tailwindcss and [utility classes](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/),
 - a bunch of CSS fundamentals (thank you [Kevin Powell](https://www.youtube.com/kepowob)!),
+- the basics of responsive design (try it out!) and media queries,
+- some typography, color theory and layout basics
 - the importance of HTML semantics,
 - more React and JavaScript,
 - testing with Jest,
