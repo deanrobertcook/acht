@@ -29,7 +29,7 @@ I've also spent a lot of time in the pandemic thinking about the role of technol
 ## This blog
 To that end, for the last month or so I've taken time off to teach myself the basics of building websites from scratch. Why websites? Well, websites are where we go to to find information about the real world - where to buy the things we need or when and where an event might take place. Through the right design, there's a huge opportunity in website construction to build an Internet that encourages people to get offline faster. 
 
-The first thing to do then was to build myself a blog. Not only would it give me the chance to build a website, but it's a platform on which I can explore my opinions and express them authentically. Turns out that writing is hard, but it's definitely having [a huge benefit](why-write.html).
+The first thing to do then was to build myself a blog, something I've wanted to do [for a while now](finding-my-vocation.html). Not only would it give me the chance to build a website, but it's a platform on which I can explore my opinions and express them authentically. Turns out that writing is hard, but it's definitely having [a huge benefit](why-write.html).
 
 Building the blog from scratch also had the desired effect of teaching me all of the necessary skills to be a successful frontend or fullstack developer. You can find a more detailed explanation of the blog's technical side on the [main Github README](https://github.com/deanrobertcook/acht), but here is a short list of some of the things I had to learn about along the way:
 - [Alternative Cloud](https://www.linode.com/category/alternative-cloud/) (Linode) providers,
