@@ -3,7 +3,8 @@ title: Finding My Vocation
 date: 2021-02-28
 ---
 
-> Some people die at 25 and aren't buried until 75 - Benjamin Franklin
+> Some people die at 25 and aren't buried until 75
+<div class="quote-author">Benjamin Franklin</div>
 
 I must have heard this quote for the first time some ten years ago and never thought for a moment it might one day apply to me. I write these words now in my 29th year of existence, now fully cognisant of the existentialist drag that accompanies the aging process. Experience has taught me some humility, and I eventually learnt I'm no more likely to avoid a dull and meaningless fate than the next person.
 
