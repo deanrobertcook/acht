@@ -16,6 +16,10 @@ module.exports = function (source) {
   let template = pug.compile(source, options)
   template.dependencies.forEach(this.addDependency)
 
+  const posts = compilePosts();
+  //The index page depends on the post pages to render itself. Add them here for file-watching
+  posts.map(p => p.file).forEach(this.addDependency);
+
   return template({
     posts: compilePosts(),
     postOrder
@@ -31,6 +35,7 @@ function compilePosts() {
       return {
         slug,
         href: slug + '.html',
+        file,
         preview: utils.extractPreview(content),
         ...frontMatter
       };

@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "webpack serve --open --mode=development",
     "compile": "webpack --mode=development",
+    "compile:prod": "webpack --mode=production",
     "clean": "rm www/*",
-    "deploy": "scp -r www/* admin@194.195.244.93:/home/www/achtfast",
+    "deploy": "npm run compile:prod && scp -r www/* admin@194.195.244.93:/home/www/achtfast",
     "test": "jest"
   },
   "repository": {
