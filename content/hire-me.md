@@ -11,7 +11,7 @@ I have now close to seven years of software programming experience in a professi
 
 But first, how about a quick game of naughts and crosses (or tic-tac-toe, for the Americans out there)?
 
-<div id="react"></div>
+<div id="hire-me"></div>
 
 <br>
 
