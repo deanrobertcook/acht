@@ -7,4 +7,4 @@ This page is a long work in progress. I'll be using it to explore shapes, whatev
 
 First off, here's a simple three app:
 
-<div id="shapes"></div>
+<div style="width: 100%; height: 500px" id="shapes"></div>
