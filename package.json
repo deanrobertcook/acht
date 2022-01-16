@@ -8,7 +8,7 @@
     "compile": "webpack --mode=development",
     "compile:prod": "webpack --mode=production",
     "clean": "rm www/*",
-    "deploy": "npm run compile:prod && scp -r www/* admin@194.195.244.93:/home/www/achtfast",
+    "deploy": "npm run compile:prod && ssh admin@194.195.244.93 'rm -rf /home/www/achtfast/*' && scp -r www/* admin@194.195.244.93:/home/www/achtfast",
     "test": "jest"
   },
   "repository": {
