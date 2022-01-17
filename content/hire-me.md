@@ -21,7 +21,8 @@ By the way, you can't win... I used a minimax algorithm which in naughts and cro
 
 
 <div style="width: 100%; height: 500px" id="shapes"></div>
-And this is just some fun I've been having trying to refresh my Uni knowledge of 3D animation using **three.js**. Here's the code
+
+And this is just some fun I've been having trying to refresh my Uni knowledge of 3D animation using **three.js** in order to improve my story telling. [Here's the code](https://github.com/deanrobertcook/acht/blob/main/src/js/shapes.js).
 
 Anyway, onto the story!
 
