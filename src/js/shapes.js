@@ -35,12 +35,25 @@ function main(div) {
   const objects = [];
   const spread = 3;
 
-  function addObject(x, y, obj) {
-    obj.position.x = x * spread;
-    obj.position.y = y * spread;
+  const ROWS = 4;
+  const COLS = 6;
+  for (var i = 0; i < ROWS * COLS; i++) {
+    const x = (i % COLS) - (COLS / 2) + 0.5;
+    const y = (ROWS / 2) - Math.floor(i / COLS) % ROWS - 0.5;
+    addSolidGeometry(x, y, selectShape());
+  }
 
-    scene.add(obj);
-    objects.push(obj);
+  function selectShape() {
+    switch (Math.floor(Math.random() * 4)) {
+      case 0:
+        return new THREE.BoxGeometry();
+      case 1:
+        return new THREE.ConeGeometry(0.5);
+      case 2:
+        return new THREE.CylinderGeometry(0.5, 0.5);
+      case 3:
+        return buildHeartGeometry();
+    }
   }
 
   function addSolidGeometry(x, y, geometry) {
@@ -61,12 +74,12 @@ function main(div) {
     return material;
   }
 
-  const ROWS = 4;
-  const COLS = 6;
-  for (var i = 0; i < ROWS * COLS; i++) {
-    const x = (i % COLS) - (COLS / 2) + 0.5;
-    const y = (ROWS / 2) - Math.floor(i / COLS) % ROWS - 0.5;
-    addSolidGeometry(x, y, new THREE.BoxGeometry());
+  function addObject(x, y, obj) {
+    obj.position.x = x * spread;
+    obj.position.y = y * spread;
+
+    scene.add(obj);
+    objects.push(obj);
   }
 
   const rates = objects.map(v => {
@@ -75,15 +88,43 @@ function main(div) {
     return [x, y];
   });
 
-  const RATE_ML = 0.01;
+  const RATE_MULT = 0.01;
   function animate() {
     requestAnimationFrame(animate);
 
     objects.forEach((obj, idx) => {
-      obj.rotation.x += RATE_ML * rates[idx][0];
-      obj.rotation.y += RATE_ML * rates[idx][1];
+      obj.rotation.x += RATE_MULT * rates[idx][0];
+      obj.rotation.y += RATE_MULT * rates[idx][1];
     })
     renderer.render(scene, camera);
   }
   animate();
+}
+
+function buildHeartGeometry() {
+  const shape = new THREE.Shape();
+  const x = -2.5;
+  const y = -5;
+  shape.moveTo(x + 2.5, y + 2.5);
+  shape.bezierCurveTo(x + 2.5, y + 2.5, x + 2, y, x, y);
+  shape.bezierCurveTo(x - 3, y, x - 3, y + 3.5, x - 3, y + 3.5);
+  shape.bezierCurveTo(x - 3, y + 5.5, x - 1.5, y + 7.7, x + 2.5, y + 9.5);
+  shape.bezierCurveTo(x + 6, y + 7.7, x + 8, y + 4.5, x + 8, y + 3.5);
+  shape.bezierCurveTo(x + 8, y + 3.5, x + 8, y, x + 5, y);
+  shape.bezierCurveTo(x + 3.5, y, x + 2.5, y + 2.5, x + 2.5, y + 2.5);
+
+  const extrudeSettings = {
+    steps: 2,  // ui: steps
+    depth: 2,  // ui: depth
+    bevelEnabled: true,  // ui: bevelEnabled
+    bevelThickness: 1,  // ui: bevelThickness
+    bevelSize: 1,  // ui: bevelSize
+    bevelSegments: 2,  // ui: bevelSegments
+  };
+
+  const heart = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+  
+  heart.scale(0.0909, 0.105, 0.1);
+  heart.rotateZ(Math.PI);
+  return heart;
 }
