@@ -44,7 +44,7 @@ function main(div) {
   }
 
   function selectShape() {
-    switch (Math.floor(Math.random() * 4)) {
+    switch (Math.floor(Math.random() * 5)) {
       case 0:
         return new THREE.BoxGeometry();
       case 1:
@@ -53,6 +53,8 @@ function main(div) {
         return new THREE.CylinderGeometry(0.5, 0.5);
       case 3:
         return buildHeartGeometry();
+      case 4:
+        return new THREE.TetrahedronGeometry();
     }
   }
 
@@ -85,7 +87,8 @@ function main(div) {
   const rates = objects.map(v => {
     const x = Math.floor(Math.random() * 5);
     const y = Math.floor(Math.random() * 5);
-    return [x, y];
+    const z = Math.floor(Math.random() * 5);
+    return [x, y, z];
   });
 
   const RATE_MULT = 0.01;
@@ -95,6 +98,7 @@ function main(div) {
     objects.forEach((obj, idx) => {
       obj.rotation.x += RATE_MULT * rates[idx][0];
       obj.rotation.y += RATE_MULT * rates[idx][1];
+      obj.rotation.z += RATE_MULT * rates[idx][2];
     })
     renderer.render(scene, camera);
   }
