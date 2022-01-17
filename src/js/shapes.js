@@ -13,7 +13,7 @@ function main(div) {
   const h = div.offsetHeight;
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xAAAAAA);
+  scene.background = new THREE.Color(0xf8fafc);
 
   const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000);
   camera.position.z = 10;
