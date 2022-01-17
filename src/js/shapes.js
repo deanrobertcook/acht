@@ -1,10 +1,16 @@
 import * as THREE from 'three';
 
-const root = document.getElementById('shapes');
-if (root) {
+addEventListener('load', (event) => {
+  const root = document.getElementById('shapes');
+  if (root) {
+    main(root)
+  }
+});
 
-  const w = root.offsetWidth;
-  const h = root.offsetHeight;
+function main(div) {
+
+  const w = div.offsetWidth;
+  const h = div.offsetHeight;
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0xAAAAAA);
@@ -14,7 +20,7 @@ if (root) {
 
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize(w, h);
-  root.appendChild(renderer.domElement);
+  div.appendChild(renderer.domElement);
 
   function addLight(x, y, z) {
     const color = 0xFFFFFF;
@@ -60,7 +66,6 @@ if (root) {
   for (var i = 0; i < ROWS * COLS; i++) {
     const x = (i % COLS) - (COLS / 2) + 0.5;
     const y = (ROWS / 2) - Math.floor(i / COLS) % ROWS - 0.5;
-    console.log(x, y);
     addSolidGeometry(x, y, new THREE.BoxGeometry());
   }
 
