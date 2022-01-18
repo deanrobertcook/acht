@@ -97,13 +97,16 @@ function main(div) {
 
     const w = div.offsetWidth;
     const h = div.offsetHeight;
-    
-    renderer.setSize(w, h);
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
+
+    const canvas = renderer.domElement;
+    if (w != canvas.clientWidth || h != canvas.clientHeight) {
+      renderer.setSize(w, h);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
     
     if (1 - time % 1 < 0.01) {
-      console.log("second elapsed", w, h);
+      console.log("second elapsed", w, h, canvas.clientWidth, canvas.clientHeight);
     }
 
     objects.forEach((obj, idx) => {
