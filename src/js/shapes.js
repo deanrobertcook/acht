@@ -91,18 +91,31 @@ function main(div) {
     return [x, y, z];
   });
 
-  const RATE_MULT = 0.01;
-  function animate() {
-    requestAnimationFrame(animate);
+  const RATE_MULT = 0.5;
+  function animate(time) {
+    time *= 0.001 //convert to seconds
+
+    const w = div.offsetWidth;
+    const h = div.offsetHeight;
+    
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    
+    if (1 - time % 1 < 0.01) {
+      console.log("second elapsed", w, h);
+    }
 
     objects.forEach((obj, idx) => {
-      obj.rotation.x += RATE_MULT * rates[idx][0];
-      obj.rotation.y += RATE_MULT * rates[idx][1];
-      obj.rotation.z += RATE_MULT * rates[idx][2];
+      obj.rotation.x = time * RATE_MULT * rates[idx][0];
+      obj.rotation.y = time * RATE_MULT * rates[idx][1];
+      obj.rotation.z = time * RATE_MULT * rates[idx][2];
     })
     renderer.render(scene, camera);
+
+    requestAnimationFrame(animate);
   }
-  animate();
+  requestAnimationFrame(animate);
 }
 
 function buildHeartGeometry() {
