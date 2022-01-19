@@ -104,10 +104,6 @@ function main(div) {
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
     }
-    
-    if (1 - time % 1 < 0.01) {
-      console.log("second elapsed", w, h, canvas.clientWidth, canvas.clientHeight);
-    }
 
     objects.forEach((obj, idx) => {
       obj.rotation.x = time * RATE_MULT * rates[idx][0];

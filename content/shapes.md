@@ -3,6 +3,8 @@ title: Shapes
 date: 2022-01-16
 ---
 
+<div style="height: 500px" id="shapes"></div>
+
 This article is a deep dive into creating and animating shapes, with more of a focus on the underlying mathematics. 
 ## Bezier curves
 <div style="height: 500px" id="bezier"></div>
