@@ -43,7 +43,6 @@ function main(div) {
   const lines = [new THREE.BufferGeometry().setFromPoints([p0, cp])];
 
   const box = new THREE.BoxGeometry();
-  console.log(box.attributes.position);
 
   for (let t = 0; t <= 1; t += (1 / MAX_POINTS)) {
     let x0 = lerp(p0.x, cp.x, t);
@@ -63,7 +62,6 @@ function main(div) {
   }
 
   const curve = new THREE.BufferGeometry().setFromPoints(points);
-  console.log(curve.attributes.position);
   lines.push(curve);
 
   const material = new THREE.LineBasicMaterial({ color: 0x000000 });
