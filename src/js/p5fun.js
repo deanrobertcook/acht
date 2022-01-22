@@ -91,8 +91,15 @@ function bezierExtremumInit(div) {
 
       s.push();
       s.strokeWeight(0);
-      s.text(`(${Math.round(extX)}, ${Math.round(extY)})`, extX - 10, extY - 10);
-      s.text(`(${Math.round(cp.x)}, ${Math.round(cp.y)})`, cp.x - 10, cp.y - 10);
+      function labelPoint(x, y) {
+        let px = s.constrain(x - 10, 0 + 10, s.width - 60);
+        let py = s.constrain(y - 10, 0 + 10, s.height - 2);
+        
+        s.text(`(${s.round(x)}, ${s.round(y)})`, px, py);
+      }
+
+      labelPoint(extX, extY);
+      labelPoint(cp.x, cp.y);
       s.pop();
 
       s.push();
