@@ -24,7 +24,7 @@ Bezier curves are defined by the anchor and control points around which the line
 
 It turns out, after doing the derivation, that the extremum is always at the position `t = 0.5`. Or another way of putting it, the middle most point (or points) will the be the highest/lowest point on the curve. We can then just plug `0.5` into our bezier function to find it's value at that point.
 
-Interestingly, if we draw a line between the middle of the curve and the control point, the line seems to intersect our bezier curve at exactly the extrema (TODO - prove this).
+Interestingly, if we draw a line from the point directly between the anchor points to the control point, the line seems to intersect our bezier curve at exactly the extrema (TODO - prove this).
 
 
 
