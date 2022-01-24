@@ -4,6 +4,7 @@
   "description": "My own website",
   "main": "compile.js",
   "scripts": {
+    "code": "cp -r code www/",
     "dev": "webpack serve --open --mode=development",
     "compile": "webpack --mode=development",
     "compile:prod": "webpack --mode=production",
