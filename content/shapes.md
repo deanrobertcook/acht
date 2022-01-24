@@ -22,4 +22,6 @@ Interestingly, if we draw a line from the point directly between the anchor poin
 ## Noise:
 <iframe class="mx-auto" scrolling="no" width="640" height="360" src="code/1dNoise/index.html"></iframe>
 
+## Diffusion-limited aggregation:
+<iframe class="mx-auto" scrolling="no" width="640" height="360" src="code/quadtree-dla/index.html"></iframe>
 
