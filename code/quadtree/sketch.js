@@ -12,8 +12,6 @@ function setup() {
 function draw() {
   background(51);
 
-  let queryCirc = [mouseX, mouseY, 50];
-
   quadtree = new QuadTree(0, 0, width, height, 4);
   points.forEach((p) => {
     p.move();
@@ -21,25 +19,17 @@ function draw() {
     quadtree.insert(p);
   });
 
+  points.forEach((p) => {
+    let queryCirc = [p.x, p.y, 2*p.r];
+    let others = quadtree.queryCirc(...queryCirc);
+    if (others.length > 1) {
+      p.highlight = true;
+    }
+  });
 
   points.forEach((p) => {
     p.draw();
   });
-
-  let circPoints = quadtree.queryCirc(...queryCirc);
-
-  circPoints.forEach(p => {
-    p.highlight = true;
-    p.draw();
-  });
-
-  push();
-  strokeWeight(0.25);
-  stroke(255);
-  noFill();
-  ellipseMode(RADIUS);
-  circle(...queryCirc);
-  pop();
 
 
   //quadtree.draw();
@@ -157,6 +147,8 @@ class QuadTree {
 
   queryCirc(x, y, r, found) {
     found = found ? found : [];
+
+    //TODO - over-eagerly returns true - could be slightly smarter
     const contains = x - r <= this.x + this.w && x + r > this.x &&
       y - r <= this.y + this.h && y + r > this.y;
 
