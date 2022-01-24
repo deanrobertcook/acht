@@ -69,11 +69,13 @@ and then run `sudo /etc/init.d/sshd restart` for the changes to take effect.
 2. Copy `/etc/nginx/http.d/default.conf` to create a new config for the site, and a minimal server directive:
 ```
 server {
-        server_name achtfast.me www.achtfast.me;
-        listen <node-ip>:80;
-        listen [::]:80;
+	server_name achtfast.me www.achtfast.me;
+	listen 194.195.244.93:80;
+	listen [::]:80;
 
-        root /home/www/achtfast;
+	root /home/www/achtfast;
+
+	location ~ /code/ {}
 }
 ```
 3. Make sure nginx is running with `sudo nginx` or reload the nginx config with `sudo nginx -s reload`
