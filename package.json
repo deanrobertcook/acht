@@ -5,12 +5,13 @@
   "main": "compile.js",
   "scripts": {
     "code": "cp -r code www/",
+    "watch:code": "nodemon --watch code -e js,html,css -x \"npm run code\"",
     "dev": "webpack serve --open --mode=development",
     "compile": "webpack --mode=development",
     "compile:prod": "webpack --mode=production",
     "clean": "rm www/*",
     "deploy": "npm run compile:prod && ssh admin@194.195.244.93 'rm -rf /home/www/achtfast/*' && npm run code && scp -r www/* admin@194.195.244.93:/home/www/achtfast",
-    "deploy:code": "ssh admin@194.195.244.93 'rm -rf /home/www/achtfast/code/*' && scp -r code/* admin@194.195.244.93:/home/www/achtfast/code", 
+    "deploy:code": "ssh admin@194.195.244.93 'rm -rf /home/www/achtfast/code/*' && scp -r code/* admin@194.195.244.93:/home/www/achtfast/code",
     "test": "jest"
   },
   "repository": {
@@ -45,6 +46,7 @@
     "jstransformer-markdown-it": "^2.1.0",
     "markdown-it": "^12.3.0",
     "mini-css-extract-plugin": "^2.4.5",
+    "nodemon": "^2.0.15",
     "postcss-cli": "^9.1.0",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.1.0",
