@@ -16,6 +16,10 @@ It turns out, after doing the derivation, that the extremum is always at the pos
 
 Interestingly, if we draw a line from the point directly between the anchor points to the control point, the line seems to intersect our bezier curve at exactly the extrema (TODO - prove this).
 
+## Brownian motion collision detection:
+<iframe class="mx-auto" scrolling="no" width="640" height="360" src="code/quadtree/index.html"></iframe>
+
 ## Noise:
 <iframe class="mx-auto" scrolling="no" width="640" height="360" src="code/1dNoise/index.html"></iframe>
+
 

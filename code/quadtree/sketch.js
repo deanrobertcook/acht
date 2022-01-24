@@ -47,9 +47,9 @@ class BrownianPoint extends p5.Vector {
     ellipseMode(RADIUS);
     noStroke()
     if (!this.highlight) {
-      fill(255, 0, 0);
+      fill(19, 111, 99);
     } else {
-      fill(0, 255, 0);
+      fill(224, 202, 60);
     }
     circle(this.x, this.y, this.r);
     pop();
