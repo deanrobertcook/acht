@@ -12,7 +12,7 @@ function setup() {
 function draw() {
   background(51);
 
-  let queryRect = [mouseX - 50, mouseY - 50, 100, 100];
+  let queryCirc = [mouseX, mouseY, 50];
 
   quadtree = new QuadTree(0, 0, width, height, 4);
   points.forEach((p) => {
@@ -26,9 +26,9 @@ function draw() {
     p.draw();
   });
 
-  let rectPoints = quadtree.queryRect(...queryRect);
+  let circPoints = quadtree.queryCirc(...queryCirc);
 
-  rectPoints.forEach(p => {
+  circPoints.forEach(p => {
     p.highlight = true;
     p.draw();
   });
@@ -37,7 +37,8 @@ function draw() {
   strokeWeight(0.25);
   stroke(255);
   noFill();
-  rect(...queryRect);
+  ellipseMode(RADIUS);
+  circle(...queryCirc);
   pop();
 
 
@@ -154,6 +155,23 @@ class QuadTree {
     return found;
   }
 
+  queryCirc(x, y, r, found) {
+    found = found ? found : [];
+    const contains = x - r <= this.x + this.w && x + r > this.x &&
+      y - r <= this.y + this.h && y + r > this.y;
+
+    if (!contains) {
+      return found;
+    }
+
+    if (this.points) {
+      return found.concat(this.points.filter(p => isInCirc(p, x, y, r)));
+    } else {
+      this.onChild(q => found = q.queryCirc(x, y, r, found));
+    }
+    return found;
+  }
+
   contains(p) {
     return isInRect(p, this.x, this.y, this.w, this.h);
   }
@@ -183,6 +201,12 @@ function isInRect(p, x, y, w, h) {
     p.x > x && p.x <= x + w &&
     p.y > y && p.y <= y + h
   );
+}
+
+function isInCirc(p, x, y, r) {
+  let v = createVector(x, y);
+  let d = v.dist(p);
+  return d <= r;
 }
 
 function logSecond(...msg) {
