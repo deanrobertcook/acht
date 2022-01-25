@@ -3,90 +3,115 @@ let points = [];
 
 let tree = [];
 
-const MAX_POINTS = 100;
-const POINT_R = 10;
+const MAX_POINTS = 2500;
+const POINT_R = 2;
+const CIRC = 2 * POINT_R;
+let speed = 5;
 
+let colorFrom; 
+let colorTo; 
+
+let perim;
 function setup() {
   createCanvas(640, 360);
 
-  tree.push(new BrownianPoint(width / 2, height / 2, POINT_R));
+  //snowflake
+  // colorFrom = color(43, 65, 98); 
+  // colorTo = color(245, 240, 246); 
 
-  // for (let i = 0; i < 4; i++) {
-  //   let p = new BrownianPoint(random(width), random(height), 25, i);
-  //   points.push(p);
-  // }
+  //leaf
+  colorFrom = color(19, 70, 17); 
+  colorTo = color(232, 252, 207); 
+
+  let center = new BrownianPoint(width / 2, height / 2, POINT_R);
+  center.setColor(colorFrom);
+  tree.push(center);
+  perim = center.getMinimalEnclosingBounds();
+  quadtree = new QuadTree(0, 0, width, height, 4);
+  quadtree.insert(center);
 }
 
 let walker;
-let perim;
+
 function draw() {
+  if (tree.length >= MAX_POINTS) {
+    return;
+  }
   if (!walker) {
-    let closest = ((tree.length + 2) * POINT_R) / 2;
+    speed++;
+    for (let p of tree) {
+      let [x, y, w, h] = perim;
+      if (p.x - p.r <= x) {
+        perim[0] = p.x - p.r;
+        perim[2] = w + x - (p.x - p.r);
+      }
 
-    let w = min(closest, width);
-    let h = min(closest, height);
+      if (p.x + p.r >= x + w) {
+        perim[2] = p.x + p.r - x;
+      }
 
-    perim = [width/2 - w/2, height/2 - h/2, w, h]
+      if (p.y - p.r <= y) {
+        perim[1] = p.y - p.r;
+        perim[3] = h + y - (p.y - p.r);
+      }
 
-    if (w >= width && h >= height) {
+      if (p.y + p.r >= y + h) {
+        perim[3] = p.y + p.r - y;
+      }
+    }
+
+    if (perim[2] >= width && perim[3] >= height) {
       return;
     }
 
     let v = randomPerimVector(...perim);
     walker = new BrownianPoint(v.x, v.y, POINT_R);
-    walker.setBounds(...perim);
-    walker.setSpeed(2 + tree.length / 8);
-  } else {
-    walker.move();
+    walker.setBounds(...addPerimToBounds(...perim, CIRC));
   }
-  background(51);
-
-  push();
-  stroke(255);
-  strokeWeight(1);
-  noFill();
-  rect(...perim);
-  pop();
-  walker.draw();
-  
 
   let stuck = false;
-  for (let p of tree) {
-    if (isInCirc(p, walker.x, walker.y, p.r * 2)) {
-      stuck = true
+  for (let i = 0; i < min(speed, 500) && !stuck; i++) {
+    walker.move();
+
+    let queryCirc = [walker.x, walker.y, 2*walker.r];
+    let others = quadtree.queryCirc(...queryCirc);
+    if (others.length > 0) {
+      stuck = true;
     }
   }
 
+  background(255);
   if (stuck) {
+    let color = lerpColor(colorFrom, colorTo, map(tree.length, 0, MAX_POINTS, 0, 1));
+    walker.setColor(color);
     tree.push(walker);
+    quadtree.insert(walker);
     walker = null;
+  } else {
+    walker.draw();
   }
-  
+
   for (let p of tree) {
     p.draw();
   }
+  
+  // push();
+  // stroke(255);
+  // strokeWeight(1);
+  // noFill();
+  // rect(...perim);
+  // pop();
 
-  // quadtree = new QuadTree(0, 0, width, height, 4);
-  // points.forEach((p) => {
-  //   p.move();
-  //   p.highlight = false;
-  //   quadtree.insert(p);
-  // });
+  // quadtree.draw();
+}
 
-  // points.forEach((p) => {
-  //   let queryCirc = [p.x, p.y, 2*p.r];
-  //   let others = quadtree.queryCirc(...queryCirc);
-  //   if (others.length > 1) {
-  //     p.highlight = true;
-  //   }
-  // });
-
-  // points.forEach((p) => {
-  //   p.draw();
-  // });
-
-
-  //quadtree.draw();
+function addPerimToBounds(x, y, w, h, perimWidth) {
+  return [
+    x - perimWidth,
+    y - perimWidth,
+    w + perimWidth * 2,
+    h + perimWidth * 2,
+  ]
 }
 
 class BrownianPoint extends p5.Vector {
@@ -97,30 +122,35 @@ class BrownianPoint extends p5.Vector {
 
     this.setBounds(0, 0, width, height);
     this.setSpeed(1);
+    this.setColor(color(255));
+  }
+
+  setColor(color) {
+    this.color = color;
   }
 
   draw() {
     push();
     ellipseMode(RADIUS);
-    noStroke()
-    if (!this.highlight) {
-      fill(19, 111, 99);
-    } else {
-      fill(224, 202, 60);
-    }
+    noStroke();
+    fill(this.color);
     circle(this.x, this.y, this.r);
     pop();
 
-    push();
-    textAlign(CENTER, CENTER);
     if (this.i >= 0) {
+      push();
+      textAlign(CENTER, CENTER);
       text(this.i, this.x, this.y);
+      pop();
     }
-    pop();
   }
 
   setSpeed(s) {
     this.speed = s;
+  }
+
+  getMinimalEnclosingBounds() {
+    return [this.x - this.r, this.y - this.r, this.r * 2, this.r * 2];
   }
 
   setBounds(x, y, w, h) {
@@ -264,9 +294,13 @@ function isInRect(p, x, y, w, h) {
 }
 
 function isInCirc(p, x, y, r) {
-  let v = createVector(x, y);
-  let d = v.dist(p);
-  return d <= r;
+  let xbar = p.x - x;
+  let ybar = p.y - y;
+
+  // let v = createVector(x, y);
+  // let d = v.dist(p);
+  // return d <= r;
+  return xbar * xbar + ybar * ybar <= r * r;
 }
 
 function logSecond(...msg) {
