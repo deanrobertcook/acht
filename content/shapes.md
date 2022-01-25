@@ -5,7 +5,7 @@ date: 2022-01-16
 
 <iframe class="mx-auto" scrolling="no" width="640" height="360" src="code/particle3D/index.html"></iframe>
 
-This article is a deep dive into creating and animating shapes, with more of a focus on the underlying mathematics. 
+This page is not exactly coherent just yet. I'm just having some fun creating 2D and 3D animations and learning a bit of physics and math along the way - heavily inspired by the [Coding Train](https://thecodingtrain.com/).
 ## Bezier curves
 ### Finding the extremum
 Bezier curves are defined by the anchor and control points around which the linear interpolation occurs. But what if we want to know exactly how much the curve itself buldges out? I.e, how would we find the maximum/minimum of the curve. Sticking to quadratic curves to make things easy:
