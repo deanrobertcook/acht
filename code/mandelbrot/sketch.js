@@ -1,40 +1,37 @@
-//STEP 1: draw complex numbers (addition + multiplication)
-//STEP 2: manually draw the first few iterations of the mandelbrot set
-//STEP 3: automate!
-
-let prev;
-let next;
-let c;
-const TOL = 0.001
-
+const MAX_ITER = 10;
+const SCALE = 50;
 let colorFrom; 
 let colorTo; 
+
 
 function setup() {
   createCanvas(640, 360);
   background(51);
-  next = [0, 0];
-  c = [random(2), random(2)];
 }
 
 function draw() {
+
   translate(width / 2, height / 2);
   scale(1, -1);
-  scale(50);
+  scale(SCALE);
   stroke(255);
   strokeWeight(0.1);
 
-  let m = magC(next);
-  logSecond(m, prev, next);
-  if (m >= 2 || (m > 0 && prev && equalsC(next, prev))) {  
-    next = [0, 0];
-    c = [random(2), random(2)];
-    return;
-  }
+  
+  
+  for (let x = 0; x < width; x += 2) {
+    for (let y = 0; y < height; y += 2) {
+      let z = [0, 0];
+      let c = [(x - width/2) / SCALE, -(y - height/2) / SCALE];
+      for (let i = 0; i < MAX_ITER && magC(z) < 10; i++) {
+        z = iterMandelbrot(z, c);
+      }
 
-  prev = next;
-  next = iterMandelbrot(next, c);
-  point(...next);
+      if (magC(z) < 10) {
+        point(...c);
+      }
+    }  
+  }
 }
 
 function iterMandelbrot(z, c) {
