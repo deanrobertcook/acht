@@ -1,6 +1,5 @@
 const RULE = 90;
-const CELL_COUNT = 120;
-
+let cellCount;
 let size;
 let memory = [];
 let maxGens;
@@ -8,6 +7,7 @@ let ruleSet;
 
 let colorFrom; 
 let colorTo; 
+let gen;
 
 function setup() {
   createCanvas(640, 360);
@@ -16,24 +16,31 @@ function setup() {
   let rule = urlParams.has('rule') ? parseInt(urlParams.get('rule')) : RULE;
   ruleSet = getRuleSet(rule);
 
-  size = width / CELL_COUNT;
-  let gen1 = Array(CELL_COUNT).fill(0);
+  cellCount = width;
+  size = width / cellCount;
+  gen = Array(cellCount).fill(0);
 
   // for (let i = 0; i < gen1.length; i++) {
   //   gen1[i] = round(random(1));
   // }
 
-  gen1[floor(CELL_COUNT / 2)] = 1;
+  gen[floor(cellCount / 2)] = 1;
 
-  memory.push(gen1);
+  memory.push(gen);
   maxGens = ceil(height / size);
   
   colorFrom = color(19, 70, 17); 
   colorTo = color(232, 252, 207); 
+  background(51);
+  fill(255);
+  noStroke();
 }
 
 function draw() {
+  drawOnce();
+}
 
+function drawScroll() {
   if (frameCount % 5 == 0) {
     background(51);
     for (let y = 0; y < memory.length; y++) {
@@ -43,7 +50,7 @@ function draw() {
       let c1 = lerpColor(colorFrom, colorTo, n);
       let c2 = color(n, 100, 50);
       fill(c1);
-      for (let x = 0; x < CELL_COUNT; x++) {
+      for (let x = 0; x < cellCount; x++) {
         if (gen[x]) {
           rect(x * size, y * size, size);
         }
@@ -55,7 +62,23 @@ function draw() {
       memory.shift();
     }
   } 
-  
+}
+
+let genCount = 0;
+function drawOnce() {
+  if (genCount >= height) {
+    return;
+  }
+  if (frameCount % 5 == 0) {
+    for (let x = 0; x < cellCount; x++) {
+      if (gen[x]) {
+        rect(x, genCount, 1);
+      }
+    }
+
+    gen = nextGen(gen, ruleSet);
+    genCount++;
+  }
 }
 
 function nextGen(generation, ruleSet) {
