@@ -1,3 +1,5 @@
 function logSecond(...msg) {
-  frameCount % 60 == 0 && console.log(...msg);
+  if (frameCount % 60 == 0 || frameCount == 1) {
+    console.log(...msg);
+  }
 }
