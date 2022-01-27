@@ -33,35 +33,47 @@ function draw() {
 
   loadPixels();
 
-  let y = ymin;
+  let y0 = ymin;
   for (let j = 0; j < height; j++) {
-    let x = xmin;
+    let x0 = xmin;
     for (let i = 0; i < width; i++) {
       
-      let z = [0, 0];
-      let c = [x, y];
+      // let z = [0, 0];
+      // let c = [x, y];
+      // let n = 0;
+      // while (n < MAX_ITER) {
+      //   z = iterMandelbrot(z, c);
+      //   if (magC(z) > 16) {
+      //     break;
+      //   }
+      //   n++;
+      // }
+      let x = 0;
+      let y = 0;
+      let x2 = 0;
+      let y2 = 0;
       let n = 0;
-      while (n < MAX_ITER) {
-        z = iterMandelbrot(z, c);
-        if (magC(z) > 16) {
-          break;
-        }
+      while (x2 + y2 < 4 && n < MAX_ITER) {
+        y = 2 * x * y + y0;
+        x = x2 - y2 + x0;
+        x2 = x * x;
+        y2 = y * y;
         n++;
       }
 
       const pix = (j * width + i) * 4;
       const norm = map(n, 0, MAX_ITER, 0, 1);
       // const bright = map(sqrt(norm), 0, 1, 0, 255);
-      const col = lerpColor(colorFrom, colorTo, norm);
+      const col = lerpColor(colorFrom, colorTo, sqrt(norm));
       if (n < MAX_ITER) {
         pixels[pix + 0] = red(col);
         pixels[pix + 1] = green(col);
         pixels[pix + 2] = blue(col);
         pixels[pix + 3] = 255;
       }
-      x += dx;
+      x0 += dx;
     }
-    y += dy;
+    y0 += dy;
   }
   updatePixels();
 }
