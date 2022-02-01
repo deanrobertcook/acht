@@ -4,29 +4,24 @@ const SCALE = 50;
 let colorFrom; 
 let colorTo;
 
+let fr;
 function setup() {
   createCanvas(640, 360);
   pixelDensity(1);
   colorFrom = color(19, 70, 17); 
   colorTo = color(232, 252, 207);   
+  fr = createP('');
+  noLoop();
 }
 
 function draw() {
 
-  // translate(width / 2, height / 2);
-  // scale(1, -1);
-  // scale(SCALE);
-  // stroke(255);
-  // strokeWeight(0.1);
-
   const w = 4;
-  const h = (w * height) / width;
+  stroke(0);
+  const [h, scl] = setupScale(w);
 
-  const xmin = -w/2;
-  const ymin = -h/2;
-
-  const xmax = xmin + w;
-  const ymax = ymin + h;
+  const [xmin, xmax] = [-w/2, w/2];
+  const [ymin, ymax] = [-h/2, h/2];
 
   const dx = (xmax - xmin) / width;
   const dy = (ymax - ymin) / height;
@@ -37,17 +32,6 @@ function draw() {
   for (let j = 0; j < height; j++) {
     let x0 = xmin;
     for (let i = 0; i < width; i++) {
-      
-      // let z = [0, 0];
-      // let c = [x, y];
-      // let n = 0;
-      // while (n < MAX_ITER) {
-      //   z = iterMandelbrot(z, c);
-      //   if (magC(z) > 16) {
-      //     break;
-      //   }
-      //   n++;
-      // }
       let x = 0;
       let y = 0;
       let x2 = 0;
@@ -76,33 +60,11 @@ function draw() {
     y0 += dy;
   }
   updatePixels();
+  drawCartesianCoordinates(w, h, scl);
+  showFrameRate(fr);
 }
 
 function iterMandelbrot(z, c) {
   return addC(multC(z, z), c);
-}
-
-const TOL = 0.0001;
-function equalsC(z1, z2) {
-  const [a, b] = z1;
-  const [c, d] = z2;
-  return abs(a - c) < TOL && abs(b - d) < TOL;
-}
-
-function magC(z) {
-  const [a, b] = z;
-  return sqrt(a * a + b * b)
-}
-
-function multC(z1, z2) {
-  const [a, b] = z1;
-  const [c, d] = z2;
-  return [a * c - (b * d), a * d + b * c];
-}
-
-function addC(z1, z2) {
-  const [a, b] = z1;
-  const [c, d] = z2;
-  return [a + c, b + d];
 }
 

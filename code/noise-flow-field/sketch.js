@@ -58,9 +58,7 @@ function draw() {
 
   // zoff += INC;
 
-  if (frameCount % 60 == 0) {
-    fr.html(floor(frameRate()));
-  }
+  showFrameRate(fr);
 }
 
 class Particle extends p5.Vector {

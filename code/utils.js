@@ -4,6 +4,35 @@ function logSecond(...msg) {
   }
 }
 
+function showFrameRate(fr) {
+  if (frameCount % 60 == 0) {
+    fr.html(floor(frameRate()));
+  }
+}
+
+function setupScale(w) {
+  const h = (w * height) / width;
+  const scl = width / w;
+  translate(width / 2, height / 2);
+  scale(scl, -scl);
+  return [h, scl];
+}
+
+function drawCartesianCoordinates(w, h, scl) {
+  push();
+  strokeWeight(0.5 / scl);
+  line(0, -h / 2, 0, h / 2);
+  line(-w/2, 0, w/2, 0);
+  strokeWeight(2 / scl);
+  for (let i = floor(-w / 2); i <= ceil(w / 2); i++) {
+    point(i, 0);
+  }
+  for (let i = floor(-h / 2); i <= ceil(h / 2); i++) {
+    point(0, i);
+  }
+  pop();
+}
+
 
 /**********************
  * COMPLEX ARITHMETIC
