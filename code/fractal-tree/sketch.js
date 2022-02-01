@@ -49,12 +49,17 @@ function drawBranch(startX, startY, angle, length) {
 
 const axiom = 'F';
 let sentence = axiom;
-let length = 100;
+let length = 5;
+// const rules = [
+//   ['F', 'FF+[+F-F-F]-[-F+F+F]'],
+//   // ['B', 'A']
+// ];
 const rules = [
-  ['F', 'FF+[+F-F-F]-[-F+F+F]'],
+  ['F', 'F+G'],
+  ['G', 'F-G'],
   // ['B', 'A']
 ];
-const ANGLE = Math.PI / 6;
+const ANGLE = Math.PI / 2;
 
 function setup() {
   createCanvas(640, 360);
@@ -73,10 +78,14 @@ function turtle(sentence) {
   background(51);
   stroke(255);
   resetMatrix();
-  translate(width / 2, height);
+  translate(2* width / 3, height / 3);
   for (let i = 0; i < sentence.length; i++) {
     switch (sentence.charAt(i)) {
       case 'F':
+        line(0, 0, 0, -length);
+        translate(0, -length);
+        break;
+      case 'G':
         line(0, 0, 0, -length);
         translate(0, -length);
         break;
@@ -94,7 +103,7 @@ function turtle(sentence) {
         break;
     }
   }
-  length = length / 2;
+  // length = length / 2;
 }
 
 function lSystem(sentence, rules) {
