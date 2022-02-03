@@ -51,6 +51,13 @@ function draw() {
   //logistic function to stretch y out a bit
   // let y2 = h * (Math.pow(Math.E, y) / (Math.pow(Math.E, y) + 1) - 0.5)
   point(2, y);
+
+  let theta = PI / 6;
+  let r = sqrt(v.x*v.x + v.y*v.y);
+  let rX = r * cos(angle + theta);
+  let rY = r * sin(angle + theta);
+  point(rX, rY);
+
 }
 
 
