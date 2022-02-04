@@ -1,10 +1,10 @@
 let colorFrom;
 let colorTo;
 
-let pth = Math.PI / 2;
-let pph = Math.PI / 2;
-const delta_th = Math.PI/64;
-const delta_ph = 0;
+let pth = Math.PI / 4;
+let pph = 0;
+const delta_th = Math.PI/256;
+const delta_ph = Math.PI/32;
 
 function setup() {
   // createCanvas(640, 360, WEBGL);
@@ -63,7 +63,7 @@ function draw() {
 
   {
     let x = cos(pph) * sin(pth);
-    let y = sin(pph) * cos(pth);
+    let y = sin(pph) * sin(pth);
     let z = cos(pth);
 
     const stX = x / (z + 1);
