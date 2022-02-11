@@ -1,68 +1,90 @@
-let img;
-let colors = [];
-let sortMode = null;
-let ar;
+const hues = [];
+const sats = [];
+const vals = [];
+
+const hueSettings = [
+  function () { return floor(random(0, 360)) },
+  function () { return floor(random(0, 120)) },
+  function () { return floor(random(120, 240)) },
+  function () { return floor(random(240, 360)) },
+]
+
+const sbSettings = [
+  function () { return floor(random(0, 100)) },
+  function () { return floor(random(0, 50)) },
+  function () { return floor(random(50, 100)) },
+]
+
+let h = 0, s = 0, b = 0;
+
+const colorsW = 360;
+
+let rows = [];
 
 function setup() {
-  ar = img.width / img.height;
-
-  let h = 350;
-  createCanvas(floor(ar * h), 2 * h);
+  createCanvas(windowWidth, windowHeight);
+  colorMode(HSB, 360, 100, 100, 100);
+  setColors();
   noStroke();
 
-  let tileXCount = floor(width / 1);
-  let tileYCount = floor(ar * tileXCount / 2);
-  console.log(ar, tileXCount, tileYCount)
-  
-  let imgRectSize = img.width / tileXCount;
-  for (let gridY = 0; gridY < tileYCount; gridY++) {
-    for (let gridX = 0; gridX < tileXCount; gridX++) {
-      let px = floor(gridX * imgRectSize);
-      let py = floor(gridY * imgRectSize);
-      let i = (py * img.width + px) * 4;
-      let c = color(img.pixels[i], img.pixels[i + 1], img.pixels[i + 2], img.pixels[i + 3]);
-      colors.push(c);
-    }
+  const maxRows = height / 20;
+
+  for (let i = 0; i < maxRows; i++) {
+    let xTiles = [];
+    recurseFillX(0, width, xTiles);
+    rows.push(xTiles);
   }
-
-  colorsDes = colors.map(a => {
-    return color(...chroma(red(a), green(a), blue(a)).desaturate(4).rgb())
-  });
-
-  colorsGs = colors.map(a => {
-    return color((red(a) * 0.222 + green(a) * 0.707 + blue(a) * 0.071));
-  });
-
-  let rectSize = width / tileXCount;
-  let i = 0;
-  for (let gridY = 0; gridY < tileYCount; gridY++) {
-    for (let gridX = 0; gridX < tileXCount; gridX++) {
-      fill(colorsDes[i]);
-      rect(gridX * rectSize, gridY * rectSize, rectSize, rectSize);
-      i++;
-    }
-  }
-
-  i = 0;
-  fill(color(255, 0, 0));
-  rect(0, (tileYCount + 10) * rectSize, rectSize, rectSize);
-  for (let gridY = 0; gridY < tileYCount; gridY++) {
-    for (let gridX = 0; gridX < tileXCount; gridX++) {
-      fill(colorsGs[i]);
-      rect(gridX * rectSize, (height / 2) + gridY * rectSize, rectSize, rectSize);
-      i++;
-    }
-  }
-}
-
-function preload() {
-  loadImage('img.png', setImage);
 }
 
 function draw() {
+
+  if (frameCount % 30 == 0) {
+
+    const tileYCount = floor(height / max(mouseY, 20));
+    const rectH = height / tileYCount;
+
+    let counter = 0;
+    for (let y = 0; y < tileYCount; y++) {
+      const row = rows[y];
+      row.forEach(([x, w]) => {
+        const i = counter % colorsW;
+        fill(hues[i], sats[i], vals[i]);
+        rect(x, y * rectH, w, rectH);
+        counter++;
+      })
+    }
+  }  
 }
 
-function setImage(loadedImg) {
-  img = loadedImg;
-  img.loadPixels();
+function recurseFillX(x, w, arr) {
+  if (w <= 1 || floor(random(2))) {
+    arr.push([x, w])
+  } else {
+    recurseFillX(x, w / 2, arr)
+    recurseFillX(x + w / 2, w / 2, arr)
+  }
+}
+
+function keyPressed() {
+
+  switch (key) {
+    case '1':
+      h = (h + 1) % hueSettings.length;
+      break;
+    case '2':
+      s = (s + 1) % sbSettings.length;
+      break;
+    case '3':
+      b = (b + 1) % sbSettings.length;
+      break;
+  }
+  setColors();
+}
+
+function setColors() {
+  for (let i = 0; i < colorsW; i++) {
+    hues[i] = hueSettings[h]();
+    sats[i] = sbSettings[s]();
+    vals[i] = sbSettings[b]();
+  }
 }
