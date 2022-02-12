@@ -14,16 +14,16 @@ let dx, dy;
 function setup() {
 
   createCanvas(640, 360);
-  // pixelDensity(1);
+  pixelDensity(1);
 
   w = 6;
-  // [h, scl] = setupScale(w);
+  [h, scl] = setupScale(w);
 
-  // [xmin, xmax] = [-w / 2, w / 2];
-  // [ymin, ymax] = [-h / 2, h / 2];
+  [xmin, xmax] = [-w / 2, w / 2];
+  [ymin, ymax] = [-h / 2, h / 2];
 
-  // dx = (xmax - xmin) / width;
-  // dy = (ymax - ymin) / height;
+  dx = (xmax - xmin) / width;
+  dy = (ymax - ymin) / height;
 
   // let x = random(xmin, xmax);
   // let y = random(ymin, ymax);
@@ -72,61 +72,47 @@ function setup() {
   ]
 
   fr = createP('');
-  // noLoop();
+  noLoop();
 }
 
 function draw() {
   background(255);
-  // loadPixels();
+  loadPixels();
+  [h, scl] = setupScale(w);
 
-  // let y0 = ymin;
-  // for (let j = 0; j < height; j++) {
-  //   let x0 = xmin;
-  //   for (let i = 0; i < width; i++) {
-  //     if (equalsC([x0, y0], [0, 0])) {
-  //       continue;
-  //     }
-
-      [h, scl] = setupScale(w);
-
-  
-
-      let [x0, y0] = getMouseXY(w, h, scl);
+  let y0 = ymin;
+  for (let j = 0; j < height; j++) {
+    let x0 = xmin;
+    for (let i = 0; i < width; i++) {
+      if (equalsC([x0, y0], [0, 0])) {
+        x0 += dx;
+        continue;
+      }
       let [x, y] = [x0, y0];
-      stroke(0);
-      strokeWeight(0.5 / scl);
-      noFill();
-      beginShape();
-      vertex(x, y);
       for (let it = 0; it < MAX_ITER; it++) {
         [x, y] = iteration(x, y);
-        vertex(x, y);
       }
-      endShape();
 
       const col = rootColors[closestRootIdx([x, y])];
-      stroke(col);
-      strokeWeight(16 / scl);
-      point(x0, y0);
-      // const pix = (j * width + i) * 4;
-      // pixels[pix + 0] = red(col);
-      // pixels[pix + 1] = green(col);
-      // pixels[pix + 2] = blue(col);
-      // pixels[pix + 3] = 255;
-  //     x0 += dx;
-  //   }
-  //   y0 += dy;
-  // }
-  // updatePixels();
+      const pix = (j * width + i) * 4;
+      pixels[pix + 0] = red(col);
+      pixels[pix + 1] = green(col);
+      pixels[pix + 2] = blue(col);
+      pixels[pix + 3] = 255;
+      x0 += dx;
+    }
+    y0 += dy;
+  }
+  updatePixels();
 
-  // push();
-  // noFill();
-  // stroke(255, 0, 0);
-  // strokeWeight(4 / scl);
-  // roots.forEach(([x, y], i) => {
-  //   point(x, y);    
-  // });
-  // pop();
+  push();
+  noFill();
+  stroke(0);
+  strokeWeight(4 / scl);
+  roots.forEach(([x, y], i) => {
+    point(x, y);    
+  });
+  pop();
 
   drawCartesianCoordinates(w, h, scl);
   
