@@ -50,14 +50,49 @@ function magC(z) {
   return sqrt(a * a + b * b)
 }
 
+//square of distance for fast dist comparison
+function distCSquared(z1, z2) {
+  const [a, b] = subC(z2, z1);
+  return a * a + b * b;
+}
+
 function multC(z1, z2) {
   const [a, b] = z1;
   const [c, d] = z2;
   return [a * c - (b * d), a * d + b * c];
 }
 
+function divC(z1, z2) {
+  const [r1, th1] = toPolar(z1);
+  const [r2, th2] = toPolar(z2);
+  return toRect([r1 / r2, th1 - th2]);
+}
+
 function addC(z1, z2) {
   const [a, b] = z1;
   const [c, d] = z2;
   return [a + c, b + d];
+}
+
+function subC(z1, z2) {
+  const [a, b] = z1;
+  const [c, d] = z2;
+  return [a - c, b - d];
+}
+
+function toPolar(z) {
+  const [a, b] = z;
+  const r = magC(z);
+  const th = atan2(b, a);
+  return [r, th];
+}
+
+function toRect(z) {
+  const [r, th] = z;
+  return [r * cos(th), r * sin(th)];
+}
+
+function squareC(z) {
+  const [a, b] = z;
+  return [a * a - b * b, 2 * a * b];
 }
