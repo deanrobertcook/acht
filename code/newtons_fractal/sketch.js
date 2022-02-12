@@ -77,6 +77,9 @@ function setup() {
 
 function draw() {
   background(255);
+
+  // roots[0] = getMouseXY(w, h, scl);
+
   loadPixels();
   [h, scl] = setupScale(w);
 
@@ -120,11 +123,20 @@ function draw() {
 }
 
 function iteration(x, y) {
-  const x2 = squareC([x, y]);
-  const x3 = multC(x2, [x, y]);
-  const fx = addC(subC(x3, x2), [1, 0]);
+  const z = [x, y];
+  [r0, r1, r2] = roots;
+  const fx = multC(multC(subC(z, r0), subC(z, r1)), subC(z, r2));
 
-  const dfx = subC(multC(x2, [3, 0]), [2 * x, 2 * y]);
+  const t1 = multC(squareC(z), [3, 0]);
+  const t2 = multC(multC(z, [2, 0]), addC(addC(r0, r1), r2));
+  const t3 = addC(addC(multC(r1, r2), multC(r0, r2)), multC(r0, r1));
+  const dfx = addC(subC(t1, t2), t3);
+
+  // const x2 = squareC([x, y]);
+  // const x3 = multC(x2, [x, y]);
+  // const fx = addC(subC(x3, x2), [1, 0]);
+
+  // const dfx = subC(multC(x2, [3, 0]), [2 * x, 2 * y]);
 
   return subC([x, y], divC(fx, dfx));
   // return divC(fx, dfx);
