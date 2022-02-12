@@ -18,8 +18,13 @@ function setupScale(w) {
   return [h, scl];
 }
 
+function getMouseXY(w, h, scl) {
+  return [(mouseX / scl) - w / 2, -((mouseY / scl) - h / 2)]
+}
+
 function drawCartesianCoordinates(w, h, scl) {
   push();
+  stroke(0);
   strokeWeight(0.5 / scl);
   line(0, -h / 2, 0, h / 2);
   line(-w/2, 0, w/2, 0);
@@ -38,8 +43,7 @@ function drawCartesianCoordinates(w, h, scl) {
  * COMPLEX ARITHMETIC
  **********************/
 
-const TOL = 0.0001;
-function equalsC(z1, z2, tol = TOL) {
+function equalsC(z1, z2, tol = 0.0001) {
   const [a, b] = z1;
   const [c, d] = z2;
   return abs(a - c) < tol && abs(b - d) < tol;

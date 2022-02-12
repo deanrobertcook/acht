@@ -1,83 +1,152 @@
-const ITER = 10;
+const MAX_ITER = 20;
 
 let fr;
 
-const roots = [
-  [Math.sqrt(2), 0],
-  [-Math.sqrt(2), 0]
-]
-
+let roots = [];
 let rootColors;
 
+let w, h, scl;
+
+let xmin, xmax, ymin, ymax;
+
+let dx, dy;
 
 function setup() {
-  createCanvas(640, 360);
-  pixelDensity(1);
 
+  createCanvas(640, 360);
+  // pixelDensity(1);
+
+  w = 6;
+  // [h, scl] = setupScale(w);
+
+  // [xmin, xmax] = [-w / 2, w / 2];
+  // [ymin, ymax] = [-h / 2, h / 2];
+
+  // dx = (xmax - xmin) / width;
+  // dy = (ymax - ymin) / height;
+
+  // let x = random(xmin, xmax);
+  // let y = random(ymin, ymax);
+  // while (roots.length < 3) {
+  //   if (equalsC([x, y], [0, 0])) {
+  //     x = random(xmin, xmax);
+  //     y = random(ymin, ymax);
+  //     continue;
+  //   }
+  //   const [xN, yN] = iteration(x, y);
+  //   const rootFound = distCSquared([xN, yN], [x, y]) < 0.0001;
+  //   [x, y] = [xN, yN];
+  //   if (rootFound) {
+  //     const root = roots.find(r => distCSquared(r, [x, y]) < 0.01);
+  //     if (!root) {
+  //       roots.push([x, y]);
+  //     }
+  //     x = random(xmin, xmax);
+  //     y = random(ymin, ymax);
+  //     continue;
+  //   }
+  // }
+
+  roots = [
+    [
+      0.8774275489403877,
+      0.744831412276122
+    ],
+    [
+        -0.7548624758907448,
+        0.000018084013353027693
+    ],
+    
+    [
+        0.8774387194093253,
+        -0.7448617065795554
+    ]
+]
+
+  // roots.sort(([a, b], [c, d]) => a - c + (d - b));
+  // console.log(roots);
   rootColors = [
-    color('#2890F8'),
-    color('#FF5907')
+    color('#2d87d6'),
+    color('#87d62c'),
+    color('#d62c86'),
   ]
-  
+
   fr = createP('');
-  noLoop();
-  colorMode(HSB);
+  // noLoop();
 }
 
 function draw() {
+  background(255);
+  // loadPixels();
 
-  const w = 6;
-  stroke(0);
-  const [h, scl] = setupScale(w);
+  // let y0 = ymin;
+  // for (let j = 0; j < height; j++) {
+  //   let x0 = xmin;
+  //   for (let i = 0; i < width; i++) {
+  //     if (equalsC([x0, y0], [0, 0])) {
+  //       continue;
+  //     }
 
-  const [xmin, xmax] = [-w/2, w/2];
-  const [ymin, ymax] = [-h/2, h/2];
+      [h, scl] = setupScale(w);
 
-  const dx = (xmax - xmin) / width;
-  const dy = (ymax - ymin) / height;
+  
 
-  loadPixels();
-
-
-  let y0 = ymin;
-  for (let j = 0; j < height; j++) {
-    let x0 = xmin;
-    for (let i = 0; i < width; i++) {
-      
-      let x = y0; 
-      let y = x0;
-      if (equalsC([x, y], [0, 0])) {
-        continue;
+      let [x0, y0] = getMouseXY(w, h, scl);
+      let [x, y] = [x0, y0];
+      stroke(0);
+      strokeWeight(0.5 / scl);
+      noFill();
+      beginShape();
+      vertex(x, y);
+      for (let it = 0; it < MAX_ITER; it++) {
+        [x, y] = iteration(x, y);
+        vertex(x, y);
       }
+      endShape();
 
-      for (let it = 0; it < ITER; it++) {
-        const z = addC(squareC([x, y]), [2, 0]);
-        const w = [2 * x, 2 * y];
-        [x, y] = divC(z, w);
-      }
+      const col = rootColors[closestRootIdx([x, y])];
+      stroke(col);
+      strokeWeight(16 / scl);
+      point(x0, y0);
+      // const pix = (j * width + i) * 4;
+      // pixels[pix + 0] = red(col);
+      // pixels[pix + 1] = green(col);
+      // pixels[pix + 2] = blue(col);
+      // pixels[pix + 3] = 255;
+  //     x0 += dx;
+  //   }
+  //   y0 += dy;
+  // }
+  // updatePixels();
 
-      const clIdx = closestRootIdx([x, y]);
-      const col = rootColors[clIdx];
-      const pix = (j * width + i) * 4;
-      pixels[pix + 0] = red(col);
-      pixels[pix + 1] = green(col);
-      pixels[pix + 2] = blue(col);
-      pixels[pix + 3] = 255;
+  // push();
+  // noFill();
+  // stroke(255, 0, 0);
+  // strokeWeight(4 / scl);
+  // roots.forEach(([x, y], i) => {
+  //   point(x, y);    
+  // });
+  // pop();
 
-      x0 += dx;
-    }
-    y0 += dy;
-  }
-  updatePixels();
   drawCartesianCoordinates(w, h, scl);
+  
   showFrameRate(fr);
-  noLoop();
+}
+
+function iteration(x, y) {
+  const x2 = squareC([x, y]);
+  const x3 = multC(x2, [x, y]);
+  const fx = addC(subC(x3, x2), [1, 0]);
+
+  const dfx = subC(multC(x2, [3, 0]), [2 * x, 2 * y]);
+
+  return subC([x, y], divC(fx, dfx));
+  // return divC(fx, dfx);
 }
 
 function closestRootIdx(z) {
-
-  let smallest = distCSquared(z, roots[0]);
   let closestIdx = 0;
+  let smallest = distCSquared(z, roots[closestIdx]);
   for (let i = 1; i < roots.length; i++) {
     const newDist = distCSquared(z, roots[i]);
     closestIdx = smallest <= newDist ? closestIdx : i
