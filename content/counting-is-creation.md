@@ -32,16 +32,8 @@ Do you even count yourself as a thing?
 
 What lies in the vast emptiness before a thing has been defined? Are you part of that emptiness? Is it a part of you? 
 
-
-
-
-
-## Questions:
-- Did chaos come first, or did the monad, the first thing? 
-- Do we actually choose what one finger is? Do we first see one, and decide for ourselves "that's a finger", or do we learn what a lot of "fingers" look like, and then work backward?
-- 
-
-## Other
-Coincidentally, before I stumbled upon this fact, I had just a few hours before been down the Wikipedia rabbit hole, reading a bit about (non-mathematical) chaos and what the term meant to various peoples throughout history. Hesiod, an early Greek philosopher describes Chaos as:
-
-> "the gaping void above the Earth created when Earth and Sky are separated from their primordial unity".
+## Links:
+- [Why Isn't 1 a Prime Number?](https://blogs.scientificamerican.com/roots-of-unity/why-isnt-1-a-prime-number/)
+- [Pythagorean Monad](https://en.wikipedia.org/wiki/Monad_(philosophy))
+- [Chaos (cosmogony)](https://en.wikipedia.org/wiki/Chaos_(cosmogony)#Greco-Roman_tradition)
+- [What Is A Monad? Leibniz’s Monadology](https://epochemagazine.org/36/what-is-a-monad-leibnizs-monadology/) - different to the Pythagorean monad, but interesting nonetheless!
