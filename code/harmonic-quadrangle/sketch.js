@@ -171,7 +171,6 @@ class DraggablePoint {
   released() {
     // Quit dragging
     this.dragging = false;
-    console.log(this.x, this.y)
   }
 }
 
