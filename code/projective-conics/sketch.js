@@ -6,15 +6,22 @@ const points = [];
 function setup() {
   createCanvas(500, 500);
 
-
-  let l = Line.fromPoints(new p5.Vector(0, height), new p5.Vector(width, 0));
-
+  let l0 = Line.fromPoints(new p5.Vector(0, height), new p5.Vector(width, 0));
+  let l = Line.fromPoints(new p5.Vector(width/4, 0), new p5.Vector(width/2, height));
+  let l2 = Line.fromPoints(new p5.Vector(width/8, height), new p5.Vector(width/4, height/4));
   
 
+  lines.push(l0);
   lines.push(l);
-  let p = new LineDraggablePoint(l, r);
+  lines.push(l2);
 
+  let p0 = new LineDraggablePoint(l0, r);
+  let p = new LineDraggablePoint(l, r);
+  let p2 = new LineDraggablePoint(l2, r);
+
+  points.push(p0);
   points.push(p);
+  points.push(p2);
 
   
 }
@@ -127,9 +134,13 @@ class DraggablePoint {
 
 class LineDraggablePoint extends DraggablePoint {
   constructor(l, r, i) {
-    let x = width/2;
     let [a, b, c] = [l.a, l.b, l.c];
-    let y = - c / b - (a / b) * x;
+    let [cx, cy] = [width/2, height/2];
+
+    let d = a*cy - b*cx;
+    let y = (a*d - b*c) / (a*a + b*b);
+    let x = (-b*d - a*c) / (a*a + b*b);
+
     super(x, y, r, i);
     this.l = l;
   }
@@ -138,7 +149,7 @@ class LineDraggablePoint extends DraggablePoint {
     // Adjust location if being dragged
     if (this.dragging) {
       let [a, b] = [this.l.a, this.l.b];
-      let [x, y] = [this.x, this.y]
+      let [x, y] = [this.x, this.y];
     
       let dot = b*(mouseX - x) - a*(mouseY - y);
       let den = a*a + b*b;
