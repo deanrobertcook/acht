@@ -32,22 +32,22 @@ function setup() {
 function draw() {
   background(255);
 
-  // let m1 = Line.fromPoints(o1, p1);
-  // let p2 = l2.findIntersectsWithLine(m1);
-  // p2.draw();
+  let m1 = Line.fromPoints(o1, p1);
+  let p2 = l2.findIntersectsWithLine(m1);
+  p2.draw();
 
-  // let m2 = Line.fromPoints(o2, p2);
-  // let p3 = l3.findIntersectsWithLine(m2);
-  // p3.draw();
+  let m2 = Line.fromPoints(o2, p2);
+  let p3 = l3.findIntersectsWithLine(m2);
+  p3.draw();
 
-  // let m3 = Line.fromPoints(p1, p3);
+  let m3 = Line.fromPoints(p1, p3);
 
-  // [m1, m2, m3].forEach(l => { 
-  //   push();
-  //   setLineDash([5, 5])
-  //   l.draw(); 
-  //   pop();
-  // });
+  [m1, m2, m3].forEach(l => { 
+    push();
+    setLineDash([5, 5])
+    l.draw(); 
+    pop();
+  });
 
   draggables.forEach(p => {
     p.over();
@@ -167,15 +167,16 @@ class DraggablePoint extends Point {
   }
 }
 
+function getCoordsOfPointOnLineClosestTo(l, x0, y0) {
+  let [a, b, c] = l.getCoefficients();
+  let d = a * y0 - b * x0;
+  let y = (a * d - b * c) / (a * a + b * b);
+  let x = (-b * d - a * c) / (a * a + b * b);
+  return [x, y];
+}
 class LineDraggablePoint extends DraggablePoint {
   constructor(l, r, i) {
-    let [a, b, c] = [l.a, l.b, l.c];
-    let [cx, cy] = [width / 2, height / 2];
-
-    let d = a * cy - b * cx;
-    let y = (a * d - b * c) / (a * a + b * b);
-    let x = (-b * d - a * c) / (a * a + b * b);
-
+    let [x, y] = getCoordsOfPointOnLineClosestTo(l, width / 2, height / 2);
     super(x, y, r, i);
     this.l = l;
   }
@@ -183,7 +184,7 @@ class LineDraggablePoint extends DraggablePoint {
   update() {
     // Adjust location if being dragged
     if (this.dragging) {
-      let [a, b] = [this.l.a, this.l.b];
+      let [a, b, c] = this.l.getCoefficients();
       let [x, y] = [this.x, this.y];
 
       let dot = b * (mouseX - x) - a * (mouseY - y);
@@ -191,6 +192,10 @@ class LineDraggablePoint extends DraggablePoint {
 
       this.x = b * dot / den + x;
       this.y = -a * dot / den + y;
+    } else { // ensure the point hugs the line:
+      let [x, y] = getCoordsOfPointOnLineClosestTo(this.l, this.x, this.y);
+      this.x = x;
+      this.y = y;
     }
   }
 }
@@ -200,16 +205,23 @@ class Line {
   //TODO - figure out a better way of drawing points, some might be drawn twice
   //depending on how they are kept track of in the draw method
   constructor(x1, y1, x2, y2, i) {
-    if (x1 <= 0)          { x1 += 10 }
-    else if (x1 >= width) { x1 -= 10 }
-    if (x2 <= 0)          { x2 += 15 }
-    else if (x2 >= width) { x2 -= 15 }
-    if (y1 <= 0)           { y1 += 10 }
-    else if (y1 >= height) { y1 -= 10 }
-    if (y2 <= 0)           { y2 += 15 }
-    else if (y2 >= height) { y2 -= 15 }
+    //TODO move this logic to points so that they are never drawn offscreen
+    if (x1 <= 0)          { x1 = 10 }
+    else if (x1 >= width) { x1 = width - 15 }
+    if (x2 <= 0)          { x2 = 10 }
+    else if (x2 >= width) { x2 = width - 15 }
+    if (y1 <= 0)           { y1 = 10 }
+    else if (y1 >= height) { y1 = height - 15 }
+    if (y2 <= 0)           { y2 = 10 }
+    else if (y2 >= height) { y2 = height - 15 }
     this.cp1 = new DraggablePoint(x1, y1, r, i);
     this.cp2 = new DraggablePoint(x2, y2, r, i);
+    this.points = [];
+    this.points.push(this.cp1, this.cp2);
+  }
+
+  addPoint(p) {
+    this.points.push(p);
   }
 
   static fromPoints(p1, p2, i) {
@@ -254,23 +266,27 @@ class Line {
   }
 
   over() {
-    this.cp1.over();
-    this.cp2.over();
+    this.points.forEach(p => {
+      p.over();
+    });
   }
 
   update() {
-    this.cp1.update();
-    this.cp2.update();
+    this.points.forEach(p => {
+      p.update();
+    })
   }
 
   pressed() {
-    this.cp1.pressed();
-    this.cp2.pressed();
+    this.points.forEach(p => {
+      p.pressed();
+    })
   }
 
   released() {
-    this.cp1.released();
-    this.cp2.released();
+    this.points.forEach(p => {
+      p.released();
+    })
   }
 
   /**
