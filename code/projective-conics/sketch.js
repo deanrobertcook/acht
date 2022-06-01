@@ -83,6 +83,10 @@ class Point {
     this.i = i;
   }
 
+  getPencilToLine(l, lineCount) {
+
+  }
+
   drawText() {
     if (this.i) {
       textSize(9);
@@ -234,27 +238,6 @@ class Line {
     let b = cp2.x - cp1.x;
     let c = (cp1.x * cp2.y) - (cp2.x * cp1.y);
     return [a, b, c];
-  }
-
-  findIntersectsWithCircle(r) {
-    let [a, b, c] = this.getCoefficients();
-
-    let x0 = -a * c / (a * a + b * b)
-    let y0 = -b * c / (a * a + b * b)
-
-    if (c * c > r * r * (a * a + b * b) + EPS) {
-      return [];
-    } else if (Math.abs(c * c - r * r * (a * a + b * b)) < EPS) {
-      return [new p5.Vector(x0, y0)]
-    } else {
-      let d = r * r - c * c / (a * a + b * b);
-      let mult = Math.sqrt(d / (a * a + b * b));
-      let ax = x0 + b * mult;
-      let bx = x0 - b * mult;
-      let ay = y0 - a * mult;
-      let by = y0 + a * mult;
-      return [new p5.Vector(ax, ay), new p5.Vector(bx, by)]
-    }
   }
 
   findIntersectsWithLine(l2) {
