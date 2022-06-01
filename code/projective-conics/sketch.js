@@ -1,42 +1,62 @@
 const r = 5;
 
-const lines = [];
-const points = [];
+let l1;
+let l2;
+let l3;
+
+const draggables = [];
+let p1
+let p2
+let p3
+
+let o1;
+
 
 function setup() {
   createCanvas(500, 500);
 
-  let l0 = Line.fromPoints(new p5.Vector(0, height), new p5.Vector(width, 0));
-  let l = Line.fromPoints(new p5.Vector(width/4, 0), new p5.Vector(width/2, height));
-  let l2 = Line.fromPoints(new p5.Vector(width/8, height), new p5.Vector(width/4, height/4));
+  l1 = Line.fromPoints(new p5.Vector(width/4, 0), new p5.Vector(width/2, height));
+  l2 = Line.fromPoints(new p5.Vector(width/8, height), new p5.Vector(width/4, height/4));
+  l3 = Line.fromPoints(new p5.Vector(0, 2*height/3), new p5.Vector(width, height/3));
+
+
+  p1 = new LineDraggablePoint(l1, r, "p1");
   
+  o1 = new DraggablePoint(width/8, height/8, r, "o1");
+  o2 = new DraggablePoint(3*width/4, 3*height/4, r, "o2");
 
-  lines.push(l0);
-  lines.push(l);
-  lines.push(l2);
-
-  let p0 = new LineDraggablePoint(l0, r);
-  let p = new LineDraggablePoint(l, r);
-  let p2 = new LineDraggablePoint(l2, r);
-
-  points.push(p0);
-  points.push(p);
-  points.push(p2);
-
+  draggables.push(p1, o1, o2);
   
 }
 
 function draw() {
   background(255);
 
-  points.forEach(p => {
+  let m1 = Line.fromPoints(o1, p1);
+  let p2 = l2.findIntersectsWithLine(m1);
+  p2.draw();
+  
+  let m2 = Line.fromPoints(o2, p2);
+  let p3 = l3.findIntersectsWithLine(m2);
+  p3.draw();
+
+  let m3 = Line.fromPoints(p1, p3);
+
+  [m1, m2, m3].forEach(l => { 
+    push();
+    setLineDash([5, 5])
+    l.draw(); 
+    pop();
+  });
+
+  draggables.forEach(p => {
     p.over();
     p.update();
     p.draw();
   });
-  lines.forEach(l => { 
+  [l1, l2, l3].forEach(l => { 
     l.draw(); 
-  });
+  }); 
 }
 
 function setLineDash(list) {
@@ -44,13 +64,13 @@ function setLineDash(list) {
 }
 
 function mousePressed() {
-  points.forEach(p => {
+  draggables.forEach(p => {
     p.pressed();
   })
 }
 
 function mouseReleased() {
-  points.forEach(p => {
+  draggables.forEach(p => {
     p.released();
   })
 }
@@ -58,14 +78,29 @@ function mouseReleased() {
 // Click and Drag an object
 // Inspired by Daniel Shiffman <http://www.shiffman.net>
 
-class DraggablePoint {
+class Point {
   constructor(x, y, r, i) {
-    this.dragging = false; // Is the object being dragged?
-    this.rollover = false; // Is the mouse over the ellipse?
     this.x = x;
     this.y = y;
     this.r = r;
     this.i = i;
+  }
+
+  draw() {
+    push()
+    fill(175, 200);
+    circle(this.x, this.y, this.r * 2);
+    pop();
+    if (this.i) {
+      text(this.i, this.x, this.y)
+    }
+  }
+}
+class DraggablePoint extends Point {
+  constructor(x, y, r, i) {
+    super(x, y, r, i);
+    this.dragging = false; // Is the object being dragged?
+    this.rollover = false; // Is the mouse over the ellipse?
     this.offsetX = 0;
     this.offsetY = 0;
   }
@@ -201,7 +236,7 @@ class Line {
     let l1 = this;
     let x = - (l1.c * l2.b - l2.c * l1.b) / (l1.a * l2.b - l2.a * l1.b);
     let y = - (l1.a * l2.c - l2.a * l1.c) / (l1.a * l2.b - l2.a * l1.b);
-    return new p5.Vector(x, y)
+    return new Point(x, y, r);
   }
 
   /**
