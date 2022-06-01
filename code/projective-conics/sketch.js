@@ -11,6 +11,8 @@ let p3
 
 let o1;
 
+lastLines = [];
+
 
 function setup() {
   createCanvas(500, 500);
@@ -34,17 +36,33 @@ function draw() {
 
   let m1 = Line.fromPoints(o1, p1);
   let p2 = l2.findIntersectsWithLine(m1);
+  p2.i = "p2";
   p2.draw();
 
   let m2 = Line.fromPoints(o2, p2);
   let p3 = l3.findIntersectsWithLine(m2);
+  p3.i = "p3";
   p3.draw();
 
   let m3 = Line.fromPoints(p1, p3);
+  if (frameCount % 5 == 0) {
+    lastLines.push(m3);
+    if (lastLines.length > 40) {
+      lastLines.shift();
+    }
+  }
 
   [m1, m2, m3].forEach(l => { 
     push();
     setLineDash([5, 5])
+    l.draw(); 
+    pop();
+  });
+
+  lastLines.forEach(l => { 
+    push();
+    stroke(255, 0, 0);
+    strokeWeight(1);
     l.draw(); 
     pop();
   });
@@ -81,10 +99,6 @@ class Point {
     this.y = y;
     this.r = r;
     this.i = i;
-  }
-
-  getPencilToLine(l, lineCount) {
-
   }
 
   drawText() {
@@ -272,14 +286,12 @@ class Line {
     })
   }
 
-  /**
-   * Draw the line as far as possible on the canvas
-   */
   draw() {
     this.cp1.draw();
     this.cp2.draw();
     let [a, b, c] = this.getCoefficients();
     push();
+    // Draw the line as far as possible on the canvas
     let x0 = 0;
     let y0 = (-a * x0 - c) / b
 
