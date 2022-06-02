@@ -1,17 +1,9 @@
 const r = 5;
 
-let l1;
-let l2;
-let l3;
+let l1, l2, l3;
+let o1, o2;
 
 const draggables = [];
-let p1
-let p2
-let p3
-
-let o1;
-
-lastLines = [];
 
 
 function setup() {
@@ -21,51 +13,43 @@ function setup() {
   l2 = new Line(width / 8, height, width / 4, height / 4, "l2");
   l3 = new Line(0, 2 * height / 3, width, height / 3, "l3");
 
-
-  p1 = new LineDraggablePoint(l1, r, "p1");
-
   o1 = new DraggablePoint(width / 8, height / 8, r, "o1");
   o2 = new DraggablePoint(3 * width / 4, 3 * height / 4, r, "o2");
 
-  draggables.push(p1, o1, o2, l1, l2, l3);
+  draggables.push(o1, o2, l1, l2, l3);
+
+  let pCount = 3
+  let [p1s, p2s] = getPerspectiveRange(o1, l1, l2, pCount);
+  let [_, p3s] = getPerspectiveRange(o2, l2, l3, p2s);
+
+  console.log(p1s, p2s, p3s);
+
+  for (let i = 0; i < pCount; i++) {
+    let [x1, y1] = p1s[i];
+    let [x2, y2] = p3s[i];
+    line(x1, y1, x2, y2);
+  }
+
+  draggables.forEach(p => {
+    // p.over();
+    // p.update();
+    p.draw();
+  });
 
 }
 
 function draw() {
   background(255);
 
-  let m1 = Line.fromPoints(o1, p1);
-  let p2 = l2.findIntersectsWithLine(m1);
-  p2.i = "p2";
-  p2.draw();
+  let pCount = 100;
+  let [p1s, p2s] = getPerspectiveRange(o1, l1, l2, pCount);
+  let [_, p3s] = getPerspectiveRange(o2, l2, l3, p2s);
 
-  let m2 = Line.fromPoints(o2, p2);
-  let p3 = l3.findIntersectsWithLine(m2);
-  p3.i = "p3";
-  p3.draw();
-
-  let m3 = Line.fromPoints(p1, p3);
-  if (frameCount % 5 == 0) {
-    lastLines.push(m3);
-    if (lastLines.length > 40) {
-      lastLines.shift();
-    }
+  for (let i = 0; i <= pCount; i++) {
+    let [x1, y1] = p1s[i];
+    let [x2, y2] = p3s[i];
+    line(x1, y1, x2, y2);
   }
-
-  [m1, m2, m3].forEach(l => { 
-    push();
-    setLineDash([5, 5])
-    l.draw(); 
-    pop();
-  });
-
-  lastLines.forEach(l => { 
-    push();
-    stroke(255, 0, 0);
-    strokeWeight(1);
-    l.draw(); 
-    pop();
-  });
 
   draggables.forEach(p => {
     p.over();
@@ -88,6 +72,31 @@ function mouseReleased() {
   draggables.forEach(p => {
     p.released();
   })
+}
+
+function getPerspectiveRange(cp, lineFrom, lineTo, samples) {
+
+  if (Number.isInteger(samples)) {
+    let n = samples
+    let lp1 = lineFrom.cp1;
+    let lp2 = lineFrom.cp2;
+    let dx = (lp2.x - lp1.x) / n;
+    let dy = (lp2.y - lp1.y) / n;
+    samples = [];
+    for (let i = 0; i <= n; i++) {
+      samples.push([lp1.x + i*dx, lp1.y + i*dy]);
+    }
+  }
+
+  let projections = [];
+  samples.forEach(p => {
+    let [a1, b1, c1] = lineTo.getCoefficients()
+    let [a2, b2, c2] = getLineEquationBetween(cp.x, cp.y, p[0], p[1]);
+    let x = - (c1 * b2 - c2 * b1) / (a1 * b2 - a2 * b1);
+    let y = - (a1 * c2 - a2 * c1) / (a1 * b2 - a2 * b1);
+    projections.push([x, y]);
+  })
+  return [samples, projections];
 }
 
 // Click and Drag an object
@@ -218,6 +227,13 @@ class LineDraggablePoint extends DraggablePoint {
   }
 }
 
+function getLineEquationBetween(x1, y1, x2, y2) {
+  let a = y1 - y2;
+  let b = x2 - x1;
+  let c = (x1 * y2) - (x2 * y1);
+  return [a, b, c];
+}
+
 class Line {
 
   //TODO - figure out a better way of drawing points, some might be drawn twice
@@ -247,11 +263,7 @@ class Line {
   }
 
   getCoefficients() {
-    let [cp1, cp2] = [this.cp1, this.cp2];
-    let a = cp1.y - cp2.y;
-    let b = cp2.x - cp1.x;
-    let c = (cp1.x * cp2.y) - (cp2.x * cp1.y);
-    return [a, b, c];
+    return getLineEquationBetween(this.cp1.x, this.cp1.y, this.cp2.x, this.cp2.y);
   }
 
   findIntersectsWithLine(l2) {
