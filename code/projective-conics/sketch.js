@@ -18,38 +18,28 @@ function setup() {
 
   draggables.push(o1, o2, l1, l2, l3);
 
-  let pCount = 3
-  let [p1s, p2s] = getPerspectiveRange(o1, l1, l2, pCount);
-  let [_, p3s] = getPerspectiveRange(o2, l2, l3, p2s);
-
-  console.log(p1s, p2s, p3s);
-
-  for (let i = 0; i < pCount; i++) {
-    let [x1, y1] = p1s[i];
-    let [x2, y2] = p3s[i];
-    line(x1, y1, x2, y2);
-  }
-
-  draggables.forEach(p => {
-    // p.over();
-    // p.update();
-    p.draw();
-  });
-
 }
 
 function draw() {
   background(255);
-
+  
   let pCount = 100;
   let [p1s, p2s] = getPerspectiveRange(o1, l1, l2, pCount);
   let [_, p3s] = getPerspectiveRange(o2, l2, l3, p2s);
 
+  push();
   for (let i = 0; i <= pCount; i++) {
-    let [x1, y1] = p1s[i];
-    let [x2, y2] = p3s[i];
-    line(x1, y1, x2, y2);
+    let [p1x, p1y] = p1s[i];
+    let [p3x, p3y] = p3s[i];
+    let [a, b, c] = getLineEquationBetween(p1x, p1y, p3x, p3y);
+    let x0 = 0;
+    let y0 = (-a * x0 - c) / b
+
+    let x1 = width;
+    let y1 = (-a * x1 - c) / b
+    line(x0, y0, x1, y1);
   }
+  pop();
 
   draggables.forEach(p => {
     p.over();
@@ -90,7 +80,7 @@ function getPerspectiveRange(cp, lineFrom, lineTo, samples) {
 
   let projections = [];
   samples.forEach(p => {
-    let [a1, b1, c1] = lineTo.getCoefficients()
+    let [a1, b1, c1] = lineTo.getCoefficients();
     let [a2, b2, c2] = getLineEquationBetween(cp.x, cp.y, p[0], p[1]);
     let x = - (c1 * b2 - c2 * b1) / (a1 * b2 - a2 * b1);
     let y = - (a1 * c2 - a2 * c1) / (a1 * b2 - a2 * b1);
