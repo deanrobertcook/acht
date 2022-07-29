@@ -3,29 +3,52 @@ title: On Categories and Leadership
 date: 2022-04-22
 ---
 
+- You can't simply write a checklist and expect that everyone is going to change their behaviour
+- Not everything can be automated, not every process can be captured in a spreadsheet or a script
+- The domain of automation is in small, mechanical systems.
+- The domain of categorisation is in describing inherently limited systems - do not try to categorise everything - it's literally impossible.
+- Constant reconnection and reevaluation is needed to deal with chaos
+- Parallelisation, redundancy, and decentralisation are key. They are features of complex, intelligent systems. They are the result of the organic, nonlinear, complicated composition of small, linear, mechanical building blocks - e.g. genes as the building blocks for the brain.
+- Reinventing the wheel can be okay. It a) spreads control and knowledge via practice b) creates the opportunity for innovation
+
+## Random thoughts on coding
+- Use standard tools that anyone can learn how to use online. Deviate from the standard with caution
+- Move away from everyone having the same equipment - forces generalisation of development environment. Don't force install scripts on other people's machines. Let them figure out and configure their own build environment.
+- Avoid over-standardisation as it can stifle creativity
+- Don't focus on ease, focus on understanding and simplicity
+
+--- 
+
 - The distinction between intelligent understanding and systematic communication
 - The goal is to achieve understanding. Understanding does not happen in the communication itself. Understanding requires context. It is the in-situ awareness 
+
+In his book, the *Master and His Emissary; The Divided Brain and the Making of the Western World*, Ian McGilchrist highlights the way in which our devotion to language, logic and linear reasoning may well be the driving cause of both the explosive progress and the now slow unmaking of our modern world. In this article - focusing on a similar dichotomy between categorisation and organic processes that highly parallels the left-right hemispheric distinction in the brain described by McGilchrist - I want to highlight the importance of the messy, organic, nonlinear process, how it is continuously neglected in favour of the tidy, mechanistic, linear process of categorisation, and finally suggest a way of unifying our capacity for both so that we can intelligently move forward in a chaotic world. 
 
 Something I'm seeing a lot of recently is the tendency to want to capture everything in spreadsheets, checklists, automated scripts and very strict build pipelines. 
 
 ## Language, computation and categories
 
-These things all have in common that they are attempting to disect and categorise the real world into processable, computable, understandable chunks. This is fundamentally how all communication works: our brains have the capacity to (at least partially) understand the complexity of all the simultaneous happenings going on around us. Our brains are so good at this because they too are incredibly parallel in nature. This understanding then eventually gets broken down into a linear, serial list of words or, in the modern context, a spreadsheet with values or computer program written as a serial set of instructions. In other words, we break the continous, interconnected world into a set of boxes with labels. We share this puny set of categories with another person via some medium, and from there they piece back together - with the help of the shared context between the two human beings, and perhaps a computer - what the speaker originally intended to show them, at which point their attention is drawn to the object at hand, and they then hopefully understand what is important about it. In this sense, language and computation have a pointing function, similar to how you might point at an object in the distance with your finger to show somebody there is something important *over there*. 
+These things all have in common that they are attempting to disect and categorise the real world into processable, computable, understandable chunks. This is fundamentally how all communication works: our brains have the capacity to (at least partially) understand the complexity of all the simultaneous happenings going on around us. Our brains are so good at this because they too are incredibly parallel in nature. This understanding then eventually gets broken down into a linear, serial list of words or, in the modern context, a spreadsheet with values or computer program written as a serial set of instructions. In other words, we break the continous, interconnected world into a set of boxes with labels. We share this incredibly incomplete set of categories with another person via some medium, and from there they piece back together - with the help of the shared context between the two human beings, and perhaps a computer - what the speaker originally intended to show them, at which point their attention is drawn to the object at hand, and they then hopefully understand what is important about it. In this sense, language and computation - and the categories they bring into being - have a pointing function, similar to how you might point at an object in the distance with your finger to show somebody there is something important *over there*. 
 
-Our words and our computations are becoming increasingly complex and powerful. There is no doubt that a modern computer (nothing but a series of ones and zeros, i.e. a series of words), can achieve a lot. But even a computer has one purpose - to point other human beings (or ourselves in the future) to something interesting *in the real world*. In other words: the point of computation is not computation, just as the point of language is not language. A computation that in no way ever affects a human being is utterly pointless, just as a word that has no real meaning is quickly forgotten. Even when we play with language or use computers for fun, that is computation translating into human experience. 
+Our capacity for categorisation is becoming increasingly complex and powerful. There is no doubt that a modern computer, can achieve a lot. But even a computer has one purpose - to point other human beings (or ourselves in the future) to something interesting *in the real world*. In other words: the point of computation is not computation, just as the point of language is not language. A computation that in no way ever affects a human being is utterly pointless, just as a word that has no real meaning is quickly forgotten. Even when we play with language or use computers for fun, that is computation translating into human experience. 
 
 To forget this is to be like a dog who looks at your finger when you point at something in the distance. To not understand this fact is to confuse the map for the terrain. 
 
-As our computations and with it our ability to express detail increase in power, it can become easy to get lost within our categories, and forget that we only care about the reality they point to. Hell, most white-collar professions in the last century have all been about supporting and improving upon our systems of categorisation. It's an easy trap to fall for to think that you can automate everything, classify anything, solve all problems with an app or change everyone's opinion if you could just find the right words (cough).
+As our categories become ever more powerful and complex, it can become easy to get lost within them, and forget that we ultimately care about the reality they point to. 
+
+
+Hell, most white-collar professions in the last century have all been about supporting and improving upon our systems of categorisation. It's an easy trap to fall for to think that you can automate everything, classify anything, solve all problems with an app or change everyone's opinion if you could just find the right words (I appreciate the irony of writing all of this in words).
 
 Finding the right words though, is ultimately impossible. In order to capture the full complexity of what's going on, you would need a computer that can work to infinite precision, or an infinite number of distinct words. That is, you would need a computer (or part of the brain dedicated to speach) that's bigger than the universe. 
 
+## Mechanics and Organics; what IT is.
+
 ## Intelligence
-Intelligence, the thing that does the understanding behind language and computation, seems to be a feature of complex, highly interconnected and highly parallel networks. A flood of input, a ton of processing, lot's of training and with some luck, you get an intelligent output. Intelligence allows us to look beyond the limits of our categories; to break the rules when they no longer make sense and to even gain insight into something that can't yet be put into words (e.g. the indian mathematician). 
+Intelligence, the thing that does the understanding behind language and computation, seems to be a feature of complex, highly interconnected and highly parallel networks. A flood of input, a ton of processing, lot's of training and with some luck, you get an intelligent output. Intelligence allows us to look beyond the limits of our categories; to break the rules when they no longer make sense and to even gain insight into something that can't yet be put into words (e.g. Srinivasa Ramanujan). 
 
-Any system that has these features is intelligent, whether it is your own brain, or a team full of experts working together to solve a problem. Even the whole universe can be considered intelligent, as it constantly breaks its own patterns and gives rise to new ones that would defy any linear system of rules.
+Any system that has these features is intelligent, whether it is your own brain, or a team full of experts working together to solve a problem and the highly parallel and interconnected computers they all use to do their analysis. 
 
-Intelligence is what we need more of, not rules or categories. We have enough of those 
+Intelligence is what we need more of, not rules or categories.
 
 
 
